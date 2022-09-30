@@ -1,0 +1,131 @@
+<section class=" collapsible">
+
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+    <div class="collapse show" >
+ 
+        <form action="#" class="form_content parsley js_form_validation ver">
+
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                <div class="image_group_content">
+                    <div class="thumbs_container fixed-element">
+                        <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+                            <div class="js_input_file">
+                                <div class="input_file">
+                                    <input type="file" name="explore_ptImg[]" id="explore_ptImg" class=" d-none" data-multiple-caption="{count} files selected" multiple disabled/>
+                                    <label  for="explore_ptImg">
+                                        {# <div class="file_uploaded"> XER </div> #}
+                                        <div class="acronym"> MR </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group default">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="name" placeholder="Nombre" autocomplete="off" 
+                        disabled 
+                        value="Mikel Reed">
+                   
+                    </div>
+                
+                    <div class="form-group default">
+                        <label for="lastname">Apellido</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellido" autocomplete="off" 
+                        disabled 
+                        value="Weaver">
+                    </div>
+                
+                    <div class="form-group default">
+                        <label for="enrollment">XMatricula #</label>
+                        <input type="text" class="form-control" name="enrollment" id="enrollment" placeholder="Número de matrícula" autocomplete="off" 
+                        disabled 
+                        value="XMN245678">
+                    </div>
+                </div>
+
+                <div class="form-group fixed-element">
+                    <label for="drDoctypeSee3">XDocumento Tipo</label>
+                    <select id="drDoctypeSee3" class="form-control select2 documentType" tabindex="-1" aria-hidden="true" name="drDoctypeSee3" style="width:110px" data-placeholder="Tipo"
+                    disabled >
+                        <option></option>
+                        <option value="0" selected >DNI</option>
+                        <option value="1">Passport</option>
+                        <option value="1">LE</option>
+                        <option value="1">LC</option>
+                    </select>
+                </div>
+
+                <div class="form-group default">
+                    <label for="enrollment">XNúmero de Documento #</label>
+                    <input type="text" class="form-control" name="enrollment" id="enrollment" placeholder="Número de documento" autocomplete="off" 
+                    disabled 
+                    value="277777684">
+                   
+                </div>
+               
+                 <div class="form-group default">
+                    <label for="email">XEmail</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="nombre@tumail.com" autocomplete="off" 
+                    disabled 
+                    value="mail@mail.com">
+                </div>
+
+                <div class="form-group default">
+                    <label for="phone">XTelefono</label>
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Teléfono" autocomplete="off"
+                    disabled 
+                    value="1541725303">
+                </div>
+                
+
+                <div class="form-group tags">
+                    <label for="specSee3">XEspecialidad</label>
+                    <select class="form-control select2 tag" multiple id="specSee3" data-placeholder="Ingrese una o más especialidades" 
+                    disabled>
+                        <option></option>
+                        <option selected>Clínica médica</option>
+                        <option selected>Pedriatría</option>
+                        <option>Traumatología</option>
+                        <option >Dermatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group tags">
+                    <label for="langNew3">XIdioma</label>
+                    <select class="form-control select2 tag" multiple id="langNew3" data-placeholder="Ingrese uno o más idiomas"
+                    disabled>
+                        <option></option>
+                        <option >Inglés</option>
+                        <option selected>Español</option>
+                        <option>Portugués</option>
+                    </select>
+                </div>
+             
+            </div>
+            <!--TODO DEV: Al cerrar form de usuario se debe =>
+            •	Guardar los datos del usuario
+            •	Eliminar tanto el nav_item (li) de la navegación como el contenido (tab_pane). 
+            •	Agregar clase active al siguiente nav-item / tab-pane 
+            •	Si es el último de la lista de 4 (dk) debe redirigir a abm-->
+             <div class="bottom_container">
+                <div class="element_half_container desktop_show">
+                    <a class="elem_link text" href="abm.html">
+                        <span class="icon icon-chevron-left"></span>
+                        Volver al listado de resultados
+                    </a>
+                </div>
+                <div class="element_half_container">
+                 
+                    <button class="btn md_btn alert_btn js_confirm ml-auto" type="submit">Borrar Datos</button>
+                </div>
+            </div>
+
+        </form>
+     
+    </div>
+</section>

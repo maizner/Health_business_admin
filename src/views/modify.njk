@@ -1,0 +1,53 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "3" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/edits.css">
+{% endblock %} 
+
+
+{% block content %}
+
+    <div class="abm modify layout">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body"> 
+                <div class="content_wrapper">
+                    <!-- Nav tabs -->
+                    {% block tab_delete_tabs %}
+                        {% include "partials/abm/nav-tabs/_modify-nav-tabs.njk" %}
+                    {% endblock %}
+
+                    <!-- Tab panes -->
+                    {% block tab_main_content %}
+                        {% include "partials/abm/tab-content/_modify-tab-content.njk" %}
+                    {% endblock %}
+                </div>
+            </div>
+        </section>
+        {% block confirmation_modal %}
+            {% include "shared/_modal-confirm.njk" %}
+        {% endblock %}
+        {% block success_modal %}
+            {% include "shared/_modal-success.njk" %}
+        {% endblock %}
+         {% block neutral_modal %}
+            {% include "shared/_modal-neutral.njk" %}
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block pagescript %}
+    <script src="content/js/modify.js"></script>
+    <script src="content/js/inputFile/inputfile.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+    <script src="content/js/vendor/select2-4.0.7/select2.js"></script>
+{% endblock %}

@@ -1,0 +1,76 @@
+/* -----------------------------------------------------------------------------*/
+/* .Cursor of components/datatables => /datatables/_datatable-search
+/* -----------------------------------------------------------------------------*/
+.myfilter{
+  	position:relative;
+
+  	.icon-search{
+		position:absolute;
+		left:10px;
+		//hay un padding del label, dentro del mismo contenedor en mobile que obliga a cambiar el posicionamiento top
+		@include media(mb){
+			top:20px;
+		}
+		@include media(dk){
+			top:10px;
+		}
+		
+		z-index: 2;
+		color:$light-grey-color-2;
+
+		
+	}
+	  
+}
+
+.dataTables_filter{
+
+  label{
+	  
+    display: flex;
+    margin:0px;
+	position:relative;
+	height:40px;
+
+	@include media(mb){
+
+		margin-top:10px;
+		margin-bottom:20px;
+		width:100%;
+		
+	}
+
+	@include media(dk){
+
+		width:33%;
+		margin-bottom:15px;
+
+	}
+	
+
+   input{
+
+		padding-left:35px;
+		width:100%;
+		height:100%;
+		font-family: $text-font-stack;
+		color: $black-color;
+		font-size: $t12;
+		outline:0;
+		font-weight: $normal-font-weight;
+		border-radius: 0px;
+		border:1px solid $light-grey-color;
+		color:$grey-text-default-color;
+		filter:chroma(color=#000000);
+	
+    }
+  }
+}
+// @include media(mb){
+// 	.dataTables_filter{
+// 		input[type=search]{
+// 			min-width: $table-min-width;
+// 		}
+// 	}
+
+// }

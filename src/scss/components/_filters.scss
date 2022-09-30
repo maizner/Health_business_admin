@@ -1,0 +1,94 @@
+/* -----------------------------------------------------------------------------*/
+/* This file contains CSS filters component in components/ filter
+/* -----------------------------------------------------------------------------*/
+
+.filters {
+    display:flex;
+    flex-direction:row;
+    background-color: $light-grey-color;
+    
+    @include media(mb){
+        padding: 0px 10px;
+    }
+    @include media(dk){
+        padding: 0px 18px;
+    }
+    
+    .button_container.button_container_left{
+        padding: 20px 10px;
+        width:70%;
+    }
+    .button_container.button_container_right{
+        padding: 20px 10px;
+        width:30%;
+    }
+    
+    &.d-none {
+        display:none;
+    }
+    
+    .filter{
+        display: flex;
+        align-items: center;
+        
+        border-radius:50px;
+        border:1px solid $semilight-grey-color;
+        background-color: darken($light-grey-color, 4%);
+        cursor:pointer;
+        @include transition(all,.2s,ease-in-out);
+
+        &:hover {
+            background-color: darken($light-grey-color, 7%);
+        }
+
+        &.filter_cancel {
+            border:1px solid $error-color;
+            color: $error-color;
+
+            .icon{
+                color: $error-color;
+            }
+           
+        }
+        &.filter_collapse {
+            background-color:white;
+            border-color: $grey-text-default-color;
+        }
+        @include media(mb){
+            margin:0px 3px;
+            padding: 1px 5px;
+            font-size: $t10;
+            max-height: 17px;
+
+            &.filter_cancel , 
+            &.filter_collapse {
+                padding:3px;
+                height: auto;
+                max-height: 25px;
+            }
+            
+        }
+        @include media(dk){
+            margin:0px 7px;
+            padding:1px 10px;
+            font-size: $t11;
+        }
+    }
+}
+.filters .icon{
+	font-size: 13px;
+	font-weight: $medium-font-weight;
+	color: $grey-text-default-color;
+    margin-left:7px;
+
+}
+.filter_cancel .text, .filter_collapse .text {
+    @include media(mb){
+        display:none;
+    }
+}
+.filter_cancel .icon, .filter_collapse .icon {
+    @include media(mb){
+        margin-left:0px;
+    }
+}

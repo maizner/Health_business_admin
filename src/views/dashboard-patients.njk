@@ -1,0 +1,45 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "1" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/dashboard.css">
+{% endblock %} 
+
+
+{% block content %}
+
+{# Mensajes de error #}
+
+    <div class="dashboard layout patients">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body">
+            {# <h1 class="page-title">Monitor de pacientes</h1> #}
+                <!-- Nav pills -->
+                {% block tab_pills %}
+                    {% include "partials/dashboard/nav-pills/_nav-pills-patients.njk" %}
+                {% endblock %}
+
+                <!-- Tab panes -->
+                {% block tab_content %}
+                    {% include "partials/dashboard/tab-content/_tab-content-patients.njk" %}
+                {% endblock %}
+            </div>
+        </section>
+      
+    </div>
+{% endblock %}
+{% block pagescript %}
+    <script src="content/js/dashboard.js"></script>
+    <script src="content/vendors/percent-chart/percent-chart.js"></script>
+    <script src="content/js/vendor/dataTables/datatables.min.js"></script>
+{% endblock %}

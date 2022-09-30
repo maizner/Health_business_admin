@@ -1,0 +1,98 @@
+/* -----------------------------------------------------------------------------*/
+/* dependent on Rows styles in components/tables/ _table-styles
+/* -----------------------------------------------------------------------------*/
+//Estilo de color para td combinado con clase en tr 
+tr {
+
+    &.row_warning-col_time {
+        background-color: rgba($error-color, .2);
+    }
+
+    
+}
+
+tr.version, 
+tr.table_title, 
+table.old thead tr {
+    height:56px;
+}
+//Flujo siendo atendidos ( pacientes)
+.row_flow-in-atention {
+
+    .col_status .col_text, 
+    .col_time .col_text .time-icon {
+        background-color:$active-green ;
+    }
+}
+
+//Flujo en espera ( pacientes) 
+.row_flow-in-queue {
+
+    .col_status .col_text, 
+    .col_time  .col_text .time-icon {
+
+        background-color:$yellow-color;
+    }
+}
+
+//Flujo médicos desconectados (para tabla de pacientes)
+.row_flow-disconnected {
+
+    .col_status .col_text, 
+    .col_time  .col_text .time-icon {
+
+        background-color:$purple-color ;
+    }
+}
+
+//Flujo conectados ( medicos)
+.row_flow-connected {
+
+    .col_status .col_text, 
+    .col_time .col_text .time-icon {
+        background-color:$active-green ;
+    }
+
+    //Y médico atendiendo
+    &.attending {
+
+        .col_status .col_text, 
+        .col_time .col_text .time-icon {
+            background-color:$active-green ;
+        }
+
+    }
+    //Y médico no displnible
+    &.not-available {
+        
+        .col_status .col_text, 
+        .col_time .col_text .time-icon {
+            background-color:$error-color ;
+        }
+
+    }
+    //Y médico disponible
+    &.available {
+        
+        .col_status .col_text, 
+        .col_time .col_text .time-icon {
+            background-color:$yellow-color;
+        }
+
+    }
+}
+
+
+
+//Flujo médicos desconectados para tabla de medicos
+.row_disconnected {
+
+    .col_time  .col_text {
+
+        color:$grey-text-default-color;
+    }
+    .col_lang{
+        color:$semilight-grey-color;
+    }
+
+}

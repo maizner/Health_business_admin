@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the login page.
+// -----------------------------------------------------------------------------
+.row {
+	
+	display: flex;
+	width: 100%;
+	
+}
+
+@include media(mb) {	
+	.row{
+
+		flex-direction:column;
+		
+	}
+
+}
+@include media(dk) {
+	.row{
+
+		flex-direction:row;
+	}
+}
+.background {
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: top;  
+	background-size: cover;
+	background-color: $semidark-grey-color;
+	min-height: 100vh;	
+	background-blend-mode: multiply;
+
+	.col {
+		padding:1.5em;
+	}
+
+	.logo_container {
+		max-width:185px;
+		height:auto;
+		
+		@include media(mb){	
+			padding-top:2em;
+		}
+		@include media(dk){	
+			padding-top:4em;
+		}
+
+		.logo{
+			width:100%;
+			height:auto;
+		}
+
+	}
+}
+
+@include media(mb) {	
+	.hero_section{
+		padding-top:2em;
+		
+	}
+
+}
+@include media(dk) {
+	.hero_section{
+		padding-top:4em;
+	}
+}
+
+.default_brand_color {
+	color:white;
+	margin-top:auto;
+}
+
+

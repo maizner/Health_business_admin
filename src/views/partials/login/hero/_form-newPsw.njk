@@ -1,0 +1,45 @@
+<form class="form_content parsley js_form_validation new_psw" name="Form"
+  data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden"
+ data-parsley-priority-enabled="true" data-parsley-validate>
+
+    <h2 class="form_title">Genera una nueva contraseña</h2>
+
+    <div class="form-group password">
+        <label for="password">Constraseña</label>
+        <input type="password" autocomplete="off" name="password1" id="password1" class="form-control password" placeholder="Nueva Contraseña"
+        data-parsley-errors-container=".toast-top-full-width"
+        data-parsley-trigger="submit"
+        data-parsley-minlength="8"
+        data-parsley-uppercase="1"
+        data-parsley-lowercase="1"
+        data-parsley-number="1"
+        data-parsley-special="1"
+        data-parsley-required-message= "Ingresa una contraseña para poder continuar"
+        data-parsley-minlength-message= "8 caractéres"
+        data-parsley-uppercase-message= "1 mayúscula"
+        data-parsley-lowercase-message= "1 minúscula"
+        data-parsley-number-message = "1 número"
+        data-parsley-special-message= "1 caracter especial"
+        data-parsley-required />
+        <span class="icon icon-password-invisible"></span>
+        <span class="default_validation_msj"></span>
+    </div>
+
+    <div class="form-group password">
+        <label for="password">Constraseña</label>
+        <input type="password" autocomplete="off" name="password2" id="password2" class="form-control password" placeholder="Repeti Contraseña"
+        data-parsley-errors-container=".toast-top-full-width"
+        data-parsley-trigger="submit"
+        data-parsley-equalto="#password1"
+        data-parsley-required-message= "Ingresa una contraseña para poder continuar"
+        data-parsley-equalto-message= "La contraseña no coincide con la anterior."
+        data-parsley-required />
+        <span class="icon icon-password-invisible"></span>
+        <span class="default_validation_msj"></span>
+    </div>
+
+    <p class="comment-form" >Utiliza un mínimo de 8 caracteres (letras, números y caracter especial) </p>
+    <p class="comment-form" >Caracteres especiales: ~! @ # $% ^& * -+ = ' | \ \ (){}\ []:; "' <>,.? /</p>
+    <button class="btn md_btn default_btn_1" type="submit">Guardar</button>
+
+</form>

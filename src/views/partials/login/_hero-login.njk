@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+
+            {# Contenido principal #}
+            {% block info %}
+                {% include "partials/login/hero/_info.njk" %}
+            {% endblock %}
+
+        </div>
+        <div class="col-md">
+            {# Formularios de login #}
+            {% block form %}
+                {% include "partials/login/hero/_form-login.njk" %}
+            {% endblock %}
+        </div>
+    </div>
+</div>

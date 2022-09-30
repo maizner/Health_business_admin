@@ -1,0 +1,59 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "6" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/tyc.css">
+    
+{% endblock %} 
+
+
+{% block content %}
+
+{# Mensajes de error #}
+
+    <div class="layout tyc">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body">
+
+                <div class="content_wrapper">
+                    <div class="content_header main">
+                       
+                        <div class="element_half_container left-auto">
+                            <a class="btn md_btn default_btn_1 ml-auto "  href="tycNew.html">Actualizar</a>
+                        </div>
+                    </div>
+                    <div class="table_wrapper" >
+                        {% block tyc_last %}
+                            {% include "partials/tyc/tables/_last.njk" %}
+                        {% endblock %}
+                        
+                        {% block tyc_old %}
+                            {% include "partials/tyc/tables/_old.njk" %}
+                        {% endblock %}
+                    </div>
+                    
+                </div>
+            </div>
+            {% block modal_upload %}
+                {% include "shared/_modal-upload.njk" %}
+            {% endblock %}
+
+
+        </section>
+      
+    </div>
+    
+{% endblock %}
+{% block pagescript %} 
+    <script src="content/js/tyc.js"></script>
+{% endblock %}

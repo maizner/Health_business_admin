@@ -1,0 +1,25 @@
+/* -----------------------------------------------------------------------------*/
+/* components/steps
+/* -----------------------------------------------------------------------------*/
+
+.nav_step {
+    display:flex;
+	font-family: $text-font-stack;
+    align-items: center;
+    justify-content: center;
+  	text-align: center;
+  	vertical-align: middle;
+  	user-select: none;
+  	background-color: transparent;
+    text-decoration:none;
+    border:none;
+	@include transition(all,.2s,ease-in-out);
+
+	cursor:pointer;
+    &:focus{
+        outline: none;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}

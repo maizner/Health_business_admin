@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Portal administrador de afiliados y profesionales">
+<meta name="HandheldFriendly" content="true">
+<meta name="robots" content="index,follow">
+
+     
+    <title>Telemedicina Business Admin</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="content/vendors/Icomoon/style.css">
+    <!-- 
+    La solución es transformar todo color ( rgb o hexadecimal) a parametros hsl cuando el usuario ingresa el color.
+    Transformación de color=> https://www.peko-step.com/es/tool/hslrgb.html
+    -->
+    <style>
+       
+        :root {
+        
+         
+         
+            --color:40, 100%; /*the base color*/
+            --rgb-color:244,179,0; /*the rgb parameters*/ 
+            --l:50%; /*the initial lightness*/
+            --default-color: hsl(var(--color),calc(var(--l)));
+            --default-color-darkest: hsl(var(--color),calc(var(--l) - 5%));  
+        }
+        .default_login_background{background-image:url(content/img/login-bg.jpg)}
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="content/css/edits.css">
+ 
+
+</head>
+<body>
+
+
+        
+    <section class="body-content" >
+        
+
+    <div class="abm modify layout">
+
+        
+            <nav class="nav sidebar navbar-collapse collapse" >
+    <span class="icon icon-close js_collapse_sidebar"></span>
+    <div class="logo-container">
+        <a href="login.html" alt="logo" >
+            <img class="logo" src="Content/img/logo-color.png" alt="Logo"/>
+        </a>
+        <!--TODO DSG: armar opción conectado y desconectado-->
+        <!--TODO DEV: Clase connected o disconnected -->
+        
+    </div>
+    <ul class="nav_list">
+        <li class="dashboard_menu expanded">
+
+            <a class="nav_link js_menu_toggler" href="#">
+                <span class="icon icon-dashboard"></span>Monitor<span class="icon icon-arrow icon-arrow-down"></span>
+            </a>
+
+            <ul class="nav_list nav_list_second">
+                <li class="nav_item ">
+                    <a class="nav_link" href="dashboard-patients.html"><span class="icon icon-affiliates"></span>Pacientes</a>
+                </li>
+                <li class="nav_item ">
+                    <a class="nav_link" href="dashboard-doctors.html"><span class="icon icon-medic"></span>Medicos</a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li class="nav_item active">
+            <a class="nav_link" href="abm.html"><span class="icon icon-abm"></span>Administrador</a>
+        </li>
+
+        
+
+        <li class="nav_item ">
+            <a class="nav_link" href="myweb.html"><span class="icon icon-configuration"></span>Mi Web</a>
+        </li>
+        
+
+
+        <li class="nav_item mobile_show ">
+            <a class="nav_link" href="#"><span class="icon icon-logout"></span>Cerrar Sesión</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+        
+        
+        <section class="main_section" >
+            
+                <!--TODO DEV: NUEVAS NOTICIAS:  se debe agregar la clase has_alerts y sacarla cuando fueron revisadas o no hay alertas-->
+<nav class="nav user right_sidebar has_alerts">
+    <div class="mobile_display">
+        <button class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".sidebar"
+        aria-controls=".sidebar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+            <span class="icon icon-hamburguer"></span>
+        </button>
+        <!--TODO DSG: armar opción conectado y desconectado-->
+        <!--TODO DEV: Clase connected cuando hay conexión -->
+        <span class="icon icon-connection connected"></span>
+    </div>
+
+    <div class="user_config">
+        <!--TODO: Si hay alertas de noticias se debe agregar la clase alerts en user_items y .user_alerts .nav_link.
+        Consecutivamente agregar abajo <span class="on_alert"></span> en ambos lugares-->
+        <a href="myaccount.html" class="user_item user_info">
+            <div class="user_name"> Dr. Juan Rivarola</div>
+            <div class="user_settings">Administrador</div>
+        </a>
+
+        <div class="user_item thumbs_container">
+            <a href="myaccount.html" class="thumbs thumbs_circle">
+                <img src="content/img/thumb-small.jpg" alt="" width="100%" class="img">
+                <span class="acronym">JR</span>
+            </a>
+        </div>
+        <div class="user_help desktop_show">
+            <a href="help.html" >
+                <span class="icon icon-help"></span>
+            </a>
+        </div>
+    </div>
+
+    
+    
+         <!-- AGREGO DIV CLASE DROPDOWN PARA NOTIFICACIONES -->
+    <div class="user_alerts news ">
+
+        <!-- AGREGO DIV CLASE DROPDOWN PARA NOTIFICACIONES -->
+
+            <a class="alerts nav_link dropdown-toggle" href="#"
+                role="button" id="drop-notifications" data-toggle="right_sidebar" aria-haspopup="true"
+                aria-expanded="false">
+               <span class="on_alert"></span>
+                <span class="icon icon-bell"></span>
+            </a>
+            <!-- /// INICIO DROPDOWN NOTIFICACIONES /// -->
+
+            <div class="notification_menu dropright_nav dropdown-fixed-size slow-box-shaddow" aria-labelledby="drop-notifications">
+                <div class="notify_menu desktop_show">
+                    <div class="user_config">
+                        <!--TODO: Si hay alertas de noticias se debe agregar la clase alerts en user_items y .user_alerts .nav_link.
+                        Consecutivamente agregar abajo <span class="on_alert"></span> en ambos lugares-->
+                        <a href="#" class="user_item user_info">
+                            <div class="user_name">Juan Rivarola</div>
+                            <div class="user_settings">Administrador</div>
+                        </a>
+                        <div class="user_item thumbs_container alerts">
+
+                            <a href="#" class="thumbs thumbs_circle">
+                                <img src="content/img/thumb-small.jpg" alt="" width="100%" class="img">
+                                <span class="acronym">JR</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="user_alerts alerts">
+                        <span class="on_alert"></span>
+                        <span class="icon icon-bell"></span>
+                    </div>
+                    <span class="icon icon-close"></span>
+                </div>
+                <p class="notification_header">Notificaciones <span class="icon icon-close mobile_show"></span></p>
+                <div class="notifications-wrapper"  >
+                    <div class="nano">
+                        <ul class="nano-content notifications-height">
+                            <!-- Item a replicar por cada notificacion-->
+                            <li class="notification_item">
+                                <div class="notification_item-date">15/01/2021</div>
+                                <div class="notification_item-title">
+                                    CAMBIO DE CONTRASEÑA
+                                    <span class="icon icon-arrow-down mobile_show"></span>
+                                </div>
+                                <div class="notification_item-text">
+                                Se realiza con éxito cambio de clave de usuario Administrador. <a> cambio de clave</a>
+
+                                </div>
+                            </li>
+                            <li class="notification_item read">
+                                <div class="notification_item-date">28/12/2020</div>
+                                <div class="notification_item-title">
+                                     MODIFICACIONES EN LA NOMINA PACIENTES
+                                    <span class="icon icon-arrow-down mobile_show"></span>
+                                </div>
+                                <div class="notification_item-text">
+                                Se realizaron con éxito las modificaciones en la nómina de afiliados.
+                                </div>
+                            </li>
+                            <li class="notification_item unread">
+                                <div class="notification_item-date">10/12/2020</div>
+                                <div class="notification_item-title">
+                                ALTA MÉDICO
+                                <span class="icon icon-arrow-down mobile_show"></span>
+                                </div>
+                                <div class="notification_item-text">El Dr. Esteban Quiroz fue dado de alta.
+                                </div>
+                            </li>
+                            <li class="notification_item">
+                                <div class="notification_item-date">15/11/2020</div>
+                                <div class="notification_item-title">
+                                    ESPERA PROLONGADA
+                                    <span class="icon icon-arrow-down mobile_show"></span>
+                                </div>
+                                <div class="notification_item-text">Hay pacientes con espera prolongada que necesitan ser atendidos para recibir la atención requerida.
+                                </div>
+                            </li>
+                            <li class="notification_item">
+                                <div class="notification_item-date">12/10/2020</div>
+                                <div class="notification_item-title">
+                                    MÉDICO DESCONECTADO
+                                    <span class="icon icon-arrow-down mobile_show"></span>
+                                </div>
+                                <div class="notification_item-text">
+                                    Un médico del staff en atención cambio su estado a desconectado.
+                                </div>
+                            </li>
+
+                            <!-- Fin Item a replicar por cada notificacion -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="notification_footer desktop_show">
+                    <a class="notification_link right-link" href="notifications.html">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- /// FIN DROPDOWN NOTIFICACIONES /// -->
+
+        <!-- FIN DIV CLASE DROPDOWN PARA NOTIFICACIONES-->
+
+
+    </div>
+    <!-- FIN DIV CLASE DROPDOWN PARA NOTIFICACIONES-->
+    
+
+    <div class="user_logout">
+        <a href="#" class="alerts">
+            <span class="icon icon-logout"></span>
+        </a>
+    </div>
+
+</nav>
+            
+            <div class="main_body"> 
+                <div class="content_wrapper">
+                    <!-- Nav tabs -->
+                    
+                        <ul class="nav nav_tabs main_nav_tabs">
+    <li class="nav_item first_tab">
+        <a class="nav_link cool-link active" data-toggle="tab" >
+            <div class="nav_link_content show-bottom">
+               Médicos
+            </div>
+        </a>
+    </li>
+</ul> 
+
+                    
+
+                    <!-- Tab panes -->
+                    
+                        <div class="tab_content">
+
+
+    <!-- Comienza sección contenido Modify-->
+    <section class="tab_pane main_first_pane active" >
+
+       
+        
+            <!-- Comienza segunda nav en tabs -->
+<ul class="nav nav_tabs second_nav_tabs editable_tabs">
+    <li class="nav_item first_tab">
+        <button class="nav_link nav_step active" data-toggle="tab" href=".first_tab_content .first_content">
+            <div class="nav_link_content">
+                <div class="icon icon-edit"></div>
+                <div class="text_ellipsis">Francisco José Ballesteros</div> 
+            </div>
+        </button>
+    </li>
+    <li class="nav_item second_tab">
+        <button class="nav_link nav_step" data-toggle="tab" href=".first_tab_content .second_content" >
+            <div class="nav_link_content">
+                <div class="icon icon-edit"></div>
+                <div class="text_ellipsis">Rebecca Giner</div> 
+            </div>
+        </button>
+    </li>
+    <li class="nav_item third_tab">
+        <button class="nav_link nav_step" data-toggle="tab" href=".first_tab_content .third_content">
+            <div class="nav_link_content">
+                <div class="icon icon-edit"></div>
+                <div class="text_ellipsis">Mikel Reed Weaver</div>
+            </div>
+        </button>
+    </li>
+    <li class="nav_item fourth_tab">
+        <button class="nav_link nav_step" data-toggle="tab" href=".first_tab_content .fourth_content" >
+            <div class="nav_link_content">
+                <div class="icon icon-edit"></div>
+                <div class="text_ellipsis">Susan Reed Weaver</div>
+            </div>
+        </button>
+    </li>
+
+</ul>
+<!-- Fin segunda nav en tabs -->
+
+        
+        
+
+        <!-- Comienza contenido de segunda navegación-->
+        <div class="tab_content first_tab_content">
+            <div class="tab_pane first_content active" >
+                
+                     
+ <section class="edits">
+
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+
+ 
+        <form action="#" class="form_content parsley js_form_validation editar">
+
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                <div class="image_group_content">
+                    
+                        
+ <div class="thumbs_container fixed-element">
+    <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+        <div class="js_input_file">
+            <div class="input_file">
+                <label  for="modify_ptImg1" >
+                    <div class="file_uploaded ellipsis" title="Subir" > Subir </div>
+                    <img src="content/img/thumb-dr3.png" alt="" width="100%"  height="auto" class="img">
+                </label>
+                <input type="file" name="modify_ptImg1[]" id="modify_ptImg1"  class=" d-none tooltip"
+                data-multiple-caption="{count} files selected" 
+                multiple />
+                <div class="acronym"> FB </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+                     
+                    
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" 
+        name="name1" id="name1" 
+        placeholder="Nombre" autocomplete="off" 
+        value="Francisco Jose "
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Apellido</label>
+        <input type="text" class="form-control" 
+        name="lastname1" id="lastname1" 
+        placeholder="Apellido" autocomplete="off" 
+        value="Ballesteros"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Afiliado #</label>
+        <input type="text" class="form-control" 
+        name="affiliate1" id="affiliate1" 
+        placeholder="Número de afiliado" autocomplete="off" 
+        value="8006 3332 2445"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+                </div>
+
+                
+                    
+  <div class="form-group fixed-element">
+        <label for="ptDoctypeModify33">Documento Tipo</label>
+        <select id="ptDoctypeModify33" name="ptDoctypeModify33" class="form-control select2" 
+        tabindex="-1" aria-hidden="true"  style="width:110px" data-placeholder="Tipo"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0" selected>DNI</option>
+            <option value="1" >Passport</option>
+            <option value="2" >LE</option>
+            <option value="3" >LC</option>
+        </select>
+    </div>
+
+                
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Número de Documento #</label>
+        <input type="number" class="form-control" 
+        name="docNumber1" id="docNumber1" 
+        placeholder="Número de documento" autocomplete="off" 
+        value="27454647"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Fecha de nacimiento</label>
+        <input type="date" class="form-control" 
+        name="date1" id="date1" 
+        placeholder="DD/MM/AAAA" autocomplete="off" 
+        value="2080-06-01"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Nacionalidad</label>
+        <input type="text" class="form-control" 
+        name="affiliate1" id="affiliate1" 
+        placeholder="Ingresa tu nacionalidad" autocomplete="off" 
+        value="Argentina"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+                
+                
+                    
+  <div class="form-group three_elem">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" 
+        name="email1" id="email1" 
+        placeholder="nombre@tumail.com" autocomplete="off" 
+        value="ballesterosdrjose_88@gmail.com"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-type-message= "XLa cuenta ingresada tiene un formato inválido."
+        data-parsley-required >
+    </div>
+
+                 
+
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">Número de celular</label>
+        <input type="number" class="form-control" 
+        name="celphone1" id="celphone1" 
+        placeholder="Ingresa tu celular" autocomplete="off"
+        value="54454672"
+        >
+    </div>
+
+                 
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">Número de Teléfono</label>
+        <input type="number" class="form-control" 
+        name="linephone1" id="linephone1" 
+        placeholder="Ingresa tu Teléfono" autocomplete="off"
+        value=""
+        >
+    </div>
+
+                 
+
+             
+               <div class="form-group tags">
+                    <label for="specSee4">Especialidad</label>
+                    <select class="form-control select2 tag" multiple id="specSee4" data-placeholder="Ingrese una o más especialidades" 
+                    >
+                        <option></option>
+                        <option selected>Clínica médica</option>
+                        <option selected>Pedriatría</option>
+                        <option>Traumatología</option>
+                        <option >Dermatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group tags">
+                    <label for="langNew4">Idioma</label>
+                    <select class="form-control select2 tag" multiple id="langNew4" data-placeholder="Ingrese uno o más idiomas"
+                    >
+                        <option></option>
+                        <option selected>Inglés</option>
+                        <option selected>Español</option>
+                        <option selected>Francés</option>
+                    </select>
+                </div>
+             
+            </div>
+            <!--TODO DEV: Al cerrar form de usuario se debe =>
+            •	Guardar los datos del usuario
+            •	Eliminar tanto el nav_item (li) de la navegación como el contenido (tab_pane). 
+            •	Agregar clase active al siguiente nav-item / tab-pane 
+            •	Si es el último de la lista de 4 (dk) debe redirigir a abm-->
+            <div class="bottom_container">
+                <div class="element_half_container desktop_show">
+                    <a class="elem_link text" href="abm.html">
+                        <span class="icon icon-chevron-left"></span>
+                        Volver al listado de resultados
+                    </a>
+                </div>
+                <div class="element_half_container">
+                    <a class="btn md_btn default_btn_2 ml-auto js_cancel_form" href="abm.html" >Cancelar</a>
+                    <button class="btn md_btn default_btn_1 js_confirm" type="submit" >Guardar</button>
+                </div>
+            </div>
+
+        </form>
+     
+
+</section>
+                  
+            </div>
+
+            <div class="tab_pane second_content" >
+
+                
+                     
+ <section class="edits">
+
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+
+ 
+        <form action="#" class="form_content parsley js_form_validation editar">
+
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                <div class="image_group_content">
+                    
+                        
+ <div class="thumbs_container fixed-element">
+    <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+        <div class="js_input_file">
+            <div class="input_file">
+                <label  for="modify_ptImg2" >
+                    <div class="file_uploaded ellipsis" title="Subir" > Subir </div>
+                    <img src="content/img/thumb-dr1.png" alt="" width="100%"  height="auto" class="img">
+                </label>
+                <input type="file" name="modify_ptImg2[]" id="modify_ptImg2"  class=" d-none tooltip"
+                data-multiple-caption="{count} files selected" 
+                multiple />
+                <div class="acronym"> RG </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+                     
+                    
+                    
+                        
+  <div class="form-group default">
+        <label for="name">XNombre</label>
+        <input type="text" class="form-control" 
+        name="name2" id="name2" 
+        placeholder="XNombre" autocomplete="off" 
+        value="Rebeca"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Apellido</label>
+        <input type="text" class="form-control" 
+        name="lastname2" id="lastname2" 
+        placeholder="Apellido" autocomplete="off" 
+        value="Giner"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Afiliado #</label>
+        <input type="text" class="form-control" 
+        name="affiliate2" id="affiliate2" 
+        placeholder="Número de afiliado" autocomplete="off" 
+        value="ABCD1234567891"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+                </div>
+
+                
+                    
+  <div class="form-group fixed-element">
+        <label for="ptDoctypeModify2">XDocumento Tipo</label>
+        <select id="ptDoctypeModify2" name="ptDoctypeModify2" class="form-control select2" 
+        tabindex="-1" aria-hidden="true"  style="width:110px" data-placeholder="Tipo"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0" selected>DNI</option>
+            <option value="1" >Passport</option>
+            <option value="2" >LE</option>
+            <option value="3" >LC</option>
+        </select>
+    </div>
+
+                
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Número de Documento #</label>
+        <input type="number" class="form-control" 
+        name="docNumber2" id="docNumber2" 
+        placeholder="Número de documento" autocomplete="off" 
+        value="27777684"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">XFecha de nacimiento</label>
+        <input type="date" class="form-control" 
+        name="date2" id="date2" 
+        placeholder="XDD/MM/AAAA" autocomplete="off" 
+        value="1989-06-01"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Nacionalidad</label>
+        <input type="text" class="form-control" 
+        name="affiliate2" id="affiliate2" 
+        placeholder="Ingresa tu nacionalidad" autocomplete="off" 
+        value="Argentina"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+                
+                
+                    
+  <div class="form-group three_elem">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" 
+        name="email2" id="email2" 
+        placeholder="nombre@tumail.com" autocomplete="off" 
+        value="Rebecalestrella@gmail.com"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-type-message= "XLa cuenta ingresada tiene un formato inválido."
+        data-parsley-required >
+    </div>
+
+                 
+
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">Número de celular</label>
+        <input type="number" class="form-control" 
+        name="celphone2" id="celphone2" 
+        placeholder="Ingresa tu celular" autocomplete="off"
+        value="11345437899"
+        >
+    </div>
+
+                 
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">Número de Teléfono</label>
+        <input type="number" class="form-control" 
+        name="linephone2" id="linephone2" 
+        placeholder="Ingresa tu Teléfono" autocomplete="off"
+        value="22334455"
+        >
+    </div>
+
+                 
+
+             <div class="form-group tags">
+                    <label for="specSee5">Especialidad</label>
+                    <select class="form-control select2 tag" multiple id="specSee5" data-placeholder="Ingrese una o más especialidades" 
+                    >
+                        <option></option>
+                        <option selected>Clínica médica</option>
+                        <option >Pedriatría</option>
+                        <option>Traumatología</option>
+                        <option selected>Dermatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group tags">
+                    <label for="langNew5">Idioma</label>
+                    <select class="form-control select2 tag" multiple id="langNew5" data-placeholder="Ingrese uno o más idiomas"
+                    >
+                        <option></option>
+                        <option selected>Inglés</option>
+                        <option >Español</option>
+                        <option selected>Francés</option>
+                    </select>
+                </div>
+             
+            </div>
+            <!--TODO DEV: Al cerrar form de usuario se debe =>
+            •	Guardar los datos del usuario
+            •	Eliminar tanto el nav_item (li) de la navegación como el contenido (tab_pane). 
+            •	Agregar clase active al siguiente nav-item / tab-pane 
+            •	Si es el último de la lista de 4 (dk) debe redirigir a abm-->
+            <div class="bottom_container">
+                <div class="element_half_container desktop_show">
+                    <a class="elem_link text" href="abm.html">
+                        <span class="icon icon-chevron-left"></span>
+                        Volver al listado de resultados
+                    </a>
+                </div>
+                <div class="element_half_container">
+                    <a class="btn md_btn default_btn_2 ml-auto js_cancel_form" href="abm.html" >XCancelar</a>
+                    <button class="btn md_btn default_btn_1 js_confirm" type="submit" >X Guardar</button>
+                </div>
+            </div>
+
+        </form>
+     
+
+</section>
+                  
+
+            </div>
+
+            <div class="tab_pane third_content" >
+                
+                     
+ <section class="edits">
+
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+
+ 
+        <form action="#" class="form_content parsley js_form_validation editar">
+
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                <div class="image_group_content">
+                    
+                        
+ <div class="thumbs_container fixed-element">
+    <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+        <div class="js_input_file">
+            <div class="input_file">
+                <label  for="modify_ptImg3" >
+                    <div class="file_uploaded ellipsis" title="Subir" > Subir </div>
+                    <img src="content/img/thumb-dr2.png" alt="" width="100%"  height="auto" class="img">
+                </label>
+                <input type="file" name="modify_ptImg3[]" id="modify_ptImg3"  class=" d-none tooltip"
+                data-multiple-caption="{count} files selected" 
+                multiple />
+                <div class="acronym"> MR </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+                     
+                    
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" 
+        name="name3" id="name3" 
+        placeholder="Nombre" autocomplete="off" 
+        value="Mikel"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Apellido</label>
+        <input type="text" class="form-control" 
+        name="lastname3" id="lastname3" 
+        placeholder="Apellido" autocomplete="off" 
+        value="Reed Weaver"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Afiliado #</label>
+        <input type="text" class="form-control" 
+        name="affiliate3" id="affiliate3" 
+        placeholder="Número de afiliado" autocomplete="off" 
+        value="ABCD1334567892"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+                </div>
+
+                
+                    
+  <div class="form-group fixed-element">
+        <label for="ptDoctypeModify3">Documento Tipo</label>
+        <select id="ptDoctypeModify3" name="ptDoctypeModify3" class="form-control select2" 
+        tabindex="-1" aria-hidden="true"  style="width:110px" data-placeholder="Tipo"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0" selected>DNI</option>
+            <option value="1" >Passport</option>
+            <option value="2" >LE</option>
+            <option value="3" >LC</option>
+        </select>
+    </div>
+
+                
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Número de Documento #</label>
+        <input type="number" class="form-control" 
+        name="docNumber3" id="docNumber3" 
+        placeholder="Número de documento" autocomplete="off" 
+        value="37777684"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Fecha de nacimiento</label>
+        <input type="date" class="form-control" 
+        name="date3" id="date3" 
+        placeholder="DD/MM/AAAA" autocomplete="off" 
+        value="2080-06-01"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Nacionalidad</label>
+        <input type="text" class="form-control" 
+        name="affiliate3" id="affiliate3" 
+        placeholder="Ingresa tu nacionalidad" autocomplete="off" 
+        value="Argentina"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+                
+                
+                    
+  <div class="form-group three_elem">
+        <label for="name">XEmail</label>
+        <input type="email" class="form-control" 
+        name="email3" id="email3" 
+        placeholder="nombre@tumail.com" autocomplete="off" 
+        value="test@test.com"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-type-message= "XLa cuenta ingresada tiene un formato inválido."
+        data-parsley-required >
+    </div>
+
+                 
+
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">XNúmero de celular</label>
+        <input type="number" class="form-control" 
+        name="celphone3" id="celphone3" 
+        placeholder="Ingresa tu celular" autocomplete="off"
+        value="333"
+        >
+    </div>
+
+                 
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">XNúmero de Teléfono</label>
+        <input type="number" class="form-control" 
+        name="linephone3" id="linephone3" 
+        placeholder="Ingresa tu Teléfono" autocomplete="off"
+        value="1313131"
+        >
+    </div>
+
+                 
+
+             
+               <div class="form-group tags">
+                    <label for="specSee6">Especialidad</label>
+                    <select class="form-control select2 tag" multiple id="specSee6" data-placeholder="Ingrese una o más especialidades" 
+                    >
+                        <option></option>
+                        <option selected>Clínica médica</option>
+                        <option >Pedriatría</option>
+                        <option>Traumatología</option>
+                        <option selected>Dermatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group tags">
+                    <label for="langNew6">Idioma</label>
+                    <select class="form-control select2 tag" multiple id="langNew6" data-placeholder="Ingrese uno o más idiomas"
+                    >
+                        <option></option>
+                        <option selected>Inglés</option>
+                        <option >Español</option>
+                        <option selected>Francés</option>
+                    </select>
+                </div>
+             
+            </div>
+            <!--TODO DEV: Al cerrar form de usuario se debe =>
+            •	Guardar los datos del usuario
+            •	Eliminar tanto el nav_item (li) de la navegación como el contenido (tab_pane). 
+            •	Agregar clase active al siguiente nav-item / tab-pane 
+            •	Si es el último de la lista de 4 (dk) debe redirigir a abm-->
+            <div class="bottom_container">
+                <div class="element_half_container desktop_show">
+                    <a class="elem_link text" href="abm.html">
+                        <span class="icon icon-chevron-left"></span>
+                        Volver al listado de resultados
+                    </a>
+                </div>
+                <div class="element_half_container">
+                    <a class="btn md_btn default_btn_2 ml-auto js_cancel_form" href="abm.html" >XCancelar</a>
+                    <button class="btn md_btn default_btn_1 js_confirm" type="submit" >X Guardar</button>
+                </div>
+            </div>
+
+        </form>
+     
+
+</section>
+                  
+            </div>
+
+            <div class="tab_pane fourth_content" >
+                 
+                     
+ <section class="edits">
+
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+
+ 
+        <form action="#" class="form_content parsley js_form_validation editar">
+
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                <div class="image_group_content">
+                    
+                        
+ <div class="thumbs_container fixed-element">
+    <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+        <div class="js_input_file">
+            <div class="input_file">
+                <label  for="modify_ptImg4" >
+                    <div class="file_uploaded ellipsis" title="Subir" > Subir </div>
+                    <img src="content/img/thumb-dr4.png" alt="" width="100%"  height="auto" class="img">
+                </label>
+                <input type="file" name="modify_ptImg4[]" id="modify_ptImg4"  class=" d-none tooltip"
+                data-multiple-caption="{count} files selected" 
+                multiple />
+                <div class="acronym"> SR </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+                     
+                    
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" 
+        name="name4" id="name4" 
+        placeholder="Nombre" autocomplete="off" 
+        value="Susan"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Apellido</label>
+        <input type="text" class="form-control" 
+        name="lastname4" id="lastname4" 
+        placeholder="Apellido" autocomplete="off" 
+        value="Reed Weaver"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+
+                    
+                        
+  <div class="form-group default">
+        <label for="name">Afiliado #</label>
+        <input type="text" class="form-control" 
+        name="affiliate4" id="affiliate4" 
+        placeholder="Número de afiliado" autocomplete="off" 
+        value="ABCD1444567893"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                     
+                </div>
+
+                
+                    
+  <div class="form-group fixed-element">
+        <label for="ptDoctypeModify4">Documento Tipo</label>
+        <select id="ptDoctypeModify4" name="ptDoctypeModify4" class="form-control select2" 
+        tabindex="-1" aria-hidden="true"  style="width:110px" data-placeholder="Tipo"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0" selected>DNI</option>
+            <option value="1" >Passport</option>
+            <option value="2" >LE</option>
+            <option value="3" >LC</option>
+        </select>
+    </div>
+
+                
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Número de Documento #</label>
+        <input type="number" class="form-control" 
+        name="docNumber4" id="docNumber4" 
+        placeholder="Número de documento" autocomplete="off" 
+        value="32777684"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Fecha de nacimiento</label>
+        <input type="date" class="form-control" 
+        name="date4" id="date4" 
+        placeholder="DD/MM/AAAA" autocomplete="off" 
+        value="2080-06-01"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+
+                
+                    
+  <div class="form-group default">
+        <label for="name">Nacionalidad</label>
+        <input type="text" class="form-control" 
+        name="affiliate4" id="affiliate4" 
+        placeholder="Ingresa tu nacionalidad" autocomplete="off" 
+        value="Argentina"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+
+                 
+                
+                
+                    
+  <div class="form-group three_elem">
+        <label for="name">XEmail</label>
+        <input type="email" class="form-control" 
+        name="email4" id="email4" 
+        placeholder="nombre@tumail.com" autocomplete="off" 
+        value="test@test.com"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-type-message= "XLa cuenta ingresada tiene un formato inválido."
+        data-parsley-required >
+    </div>
+
+                 
+
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">Número de celular</label>
+        <input type="number" class="form-control" 
+        name="celphone4" id="celphone4" 
+        placeholder="Ingresa tu celular" autocomplete="off"
+        value="444"
+        >
+    </div>
+
+                 
+
+                
+                    
+    <div class="form-group three_elem">
+        <label for="name">Número de Teléfono</label>
+        <input type="number" class="form-control" 
+        name="linephone4" id="linephone4" 
+        placeholder="Ingresa tu Teléfono" autocomplete="off"
+        value="1414141"
+        >
+    </div>
+
+                 
+
+             
+                <div class="form-group tags">
+                    <label for="specSee7">Especialidad</label>
+                    <select class="form-control select2 tag" multiple id="specSee7" data-placeholder="Ingrese una o más especialidades" 
+                    >
+                        <option></option>
+                        <option selected>Clínica médica</option>
+                        <option >Pedriatría</option>
+                        <option>Traumatología</option>
+                        <option >Dermatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group tags">
+                    <label for="langNew7">Idioma</label>
+                    <select class="form-control select2 tag" multiple id="langNew7" data-placeholder="Ingrese uno o más idiomas"
+                    >
+                        <option></option>
+                        <option >Inglés</option>
+                        <option selected>Español</option>
+                        <option >Francés</option>
+                    </select>
+                </div>
+             
+            </div>
+            <!--TODO DEV: Al cerrar form de usuario se debe =>
+            •	Guardar los datos del usuario
+            •	Eliminar tanto el nav_item (li) de la navegación como el contenido (tab_pane). 
+            •	Agregar clase active al siguiente nav-item / tab-pane 
+            •	Si es el último de la lista de 4 (dk) debe redirigir a abm-->
+            <div class="bottom_container">
+                <div class="element_half_container desktop_show">
+                    <a class="elem_link text" href="abm.html">
+                        <span class="icon icon-chevron-left"></span>
+                        Volver al listado de resultados
+                    </a>
+                </div>
+                <div class="element_half_container">
+                    <a class="btn md_btn default_btn_2 ml-auto js_cancel_form" href="abm.html" >Cancelar</a>
+                    <button class="btn md_btn default_btn_1 js_confirm" type="submit" > Guardar</button>
+                </div>
+            </div>
+
+        </form>
+     
+
+</section>
+                  
+            </div>
+        </div>
+        <!-- Fin contenido de segunda navegación-->
+    </section>
+    <!--Fin contenido modify -->
+</div>
+                    
+                </div>
+            </div>
+        </section>
+        
+            <!-- Modal => $('trigger').modal()-->
+<div class="modal fade modal_confirm"  tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="modal-dialog xl-modal" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-texts">
+            
+                    <p class="modal-text">Los datos serán modificados. ¿Querés continuar con la solicitud?.</p>
+                </div>
+                <div class="modal-buttons ">
+                    <button type="button" class="btn md_btn modal-btn" data-dismiss="modal" aria-label="Close">Volver</button>
+                    <button type="button" class="btn md_btn modal-btn js_accept">Continuar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+        
+        
+            <!-- Modal => $('trigger').modal()-->
+<div class="modal fade modal_success"  tabindex="-1" role="dialog" aria-hidden="true">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"></span>
+        
+    </button>
+    <div class="modal-dialog xl-modal" role="document">
+        <div class="modal-content">
+            <!-- TODO DEV: MODIFY  = 
+                <p class="modal-text">XLos datos fueron modificados con éxito</p>
+            -->
+            <!-- TODO DEV: DELETE  = 
+                <p class="modal-text">XLa baja fue realizada con éxito</p>
+            -->
+                <!-- TODO DEV: ABM/ALTA MASIVO = 
+                <p class="modal-text">XEl alta fue realizada con éxito</p>
+            -->
+            <!-- TODO DEV: ABM/ADMINISTRADOR MASIVO = 
+                <p class="modal-text">XEl archivo fue subido con éxito</p>
+            -->
+            <div class="modal-body">
+                <p class="modal-text">Los datos fueron modificados con éxito</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+        
+         
+            <!-- Modal => $('trigger').modal()-->
+<div class="modal fade modal_neutral"  tabindex="-1" role="dialog" aria-hidden="true">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"></span>
+        
+    </button>
+    <div class="modal-dialog xl-modal" role="document">
+        <div class="modal-content">
+            <!-- TODO DEV: MODIFY  = 
+                <p class="modal-text">XHa ocurrido un error al intentar guardar los cambios.Por favor vuelve a intentarlo</p>
+            -->
+            <!-- TODO DEV: DELETE  = 
+                <p class="modal-text">XHa ocurrido un error al intentar dar de baja.Por favor vuelve a intentarlo</p>
+            -->
+            <!-- TODO DEV: ABM/ALTA = 
+                <p class="modal-text">XHa ocurrido un error al intentar dar de alta.Por favor vuelve a intentarlo</p>
+            -->
+            <!-- TODO DEV: ABM/ADMINISTRADOR MASIVO = 
+                <p class="modal-text">XHa ocurrido un error al intentar subir el archivo. Por favor vuelve a intentarlo</p>
+            -->
+            <div class="modal-body">
+                <p class="modal-text">Ha ocurrido un error al intentar guardar los cambios.Por favor vuelve a intentarlo</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+        
+    </div>
+
+    </section>  
+    
+    <!--BUNDLES de layout-->
+    <!--TODO:  de jquery + bootstrap unifacion de bundle-->
+    <script src="content/vendors/jquery-3.3.1/jquery.min.js"></script>
+    <script src="content/js/vendor/bootstrap-4.5.0/popper.min.js"></script>
+    <script src="content/js/vendor/bootstrap-4.5.0/bootstrap.min.js"></script>
+    <!--TODO:  Utilizar los scripts comentados para cada idioma /Locale/ = parsley.js es "En" by default. -->
+    <script src="content/js/vendor/parsley/parsley.js"></script>
+    <!--<script src="content/js/vendor/parsley/Locale/es.js"></script>-->
+    <!--<script src="content/js/vendor/parsley/Locale/pt.js"></script>-->
+    <script src="content/js/vendor/toastr/toastr.min.js"></script>
+    <script src="content/js/layout.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+
+    <!--BUNDLE de página-->
+    <!--page sctipts-->
+    
+    
+    <script src="content/js/modify.js"></script>
+    <script src="content/js/inputFile/inputfile.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+    <script src="content/js/vendor/select2-4.0.7/select2.js"></script>
+
+    
+    <!--Toast Validation Container-->
+    <div id="toast-container" class="toast-top-full-width" aria-live="polite" role="alert"></div>
+
+    
+        <!-- Modal => $('trigger').modal()-->
+<div class="modal fade" id="generic" tabindex="-1" role="dialog" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"></span>
+        
+    </button>
+    <div class="modal-dialog xl-modal upload" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="modal-text">Revisa tu conexión a internet. No podemos conectarnos con el servidor.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+    
+    
+    <!--LOADER INFO: Para mostrar loader quitar la clase 'd-none' -->
+    <div id="container-loader" class="d-none">
+        
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 20 20" height="44" width="44" transform="rotate(324.447 50 50)">
+    <g class="ldl-layer">
+    	<g class="ldl-ani">
+    		<g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="Icons-/-20-/-Loading">
+                <g class="ldl-layer">
+        	        <g class="ldl-ani">
+        	            <path fill-rule="nonzero" fill="#000000" id="loader" d="M18.3671875,10.8828125 C18.5429688,10.8828125 18.6894531,10.8242188 18.8066406,10.7070312 C18.9355469,10.578125 19,10.4257812 19,10.25 C19,9.03125 18.765625,7.86523438 18.296875,6.75195313 C17.8398438,5.67382812 17.1953125,4.71875 16.3632812,3.88671875 C15.53125,3.0546875 14.5761719,2.41015625 13.4980469,1.953125 C12.3847656,1.484375 11.21875,1.25 10,1.25 C9.82421875,1.25 9.67480469,1.31152344 9.55175781,1.43457031 C9.42871094,1.55761719 9.3671875,1.70703125 9.3671875,1.8828125 C9.3671875,2.05859375 9.42871094,2.20800781 9.55175781,2.33105469 C9.67480469,2.45410156 9.82421875,2.515625 10,2.515625 C11.0546875,2.515625 12.0566406,2.71484375 13.0058594,3.11328125 C13.9316406,3.51171875 14.7519531,4.06835938 15.4667969,4.78320312 C16.1816406,5.49804688 16.7324219,6.31835938 17.1191406,7.24414062 C17.5292969,8.19335938 17.734375,9.1953125 17.734375,10.25 C17.734375,10.4257812 17.7958984,10.5751953 17.9189453,10.6982422 C18.0419922,10.8212891 18.1914062,10.8828125 18.3671875,10.8828125 Z" style="fill: rgb(0, 0, 0);">
+        		            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 10 10" to="360 10 10" repeatCount="indefinite"></animateTransform>
+        	            </path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+
+        
+    </div>
+
+    <script>
+    $(document).ready(function() {
+      
+
+        //efecto en segunda navegación línea arriba
+        $(".second-nav ul li:first-child").addClass("active")
+        
+        $(".cool-link-top").on("click", function(e){
+            $(".second-nav ul").find(".active").removeClass("active")
+            $(this).addClass("active")
+        });
+		        	
+    });
+    </script>
+
+</body>
+</html>

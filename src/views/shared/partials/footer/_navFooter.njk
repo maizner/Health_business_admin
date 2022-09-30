@@ -1,0 +1,16 @@
+{% for item in footerItems %}
+    {% for footer_links in item.footer_links %}
+        <div class="wrapper">
+            <h5 class="list-title">{{ footer_links.item_title }}</h5>
+            <ul class="nav-footer-list">
+                {% for page in footer_links.pages %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ page.item_link }}" title="{{page.item_name}}" >
+                            <h6>{{ page.item_name }}</h6>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endfor %}

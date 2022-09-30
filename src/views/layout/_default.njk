@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {# social meta block #}
+    {% block meta %}
+        {% include "shared/_meta.njk" %}
+    {% endblock %} 
+    <title>Telemedicina Business Admin</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="content/vendors/Icomoon/style.css">
+    <!-- 
+    La solución es transformar todo color ( rgb o hexadecimal) a parametros hsl cuando el usuario ingresa el color.
+    Transformación de color=> https://www.peko-step.com/es/tool/hslrgb.html
+    -->
+    <style>
+       
+        :root {
+        {# --color: rgb(244,179,0);   #}
+         {# --color: 40, 100%;   #}
+         {# 
+         --color:230, 70%; /*the base color*/
+        --rgb-color:51,85,155; /*the rgb parameters*/ 
+        #}
+            --color:40, 100%; /*the base color*/
+            --rgb-color:244,179,0; /*the rgb parameters*/ 
+            --l:50%; /*the initial lightness*/
+            --default-color: hsl(var(--color),calc(var(--l)));
+            --default-color-darkest: hsl(var(--color),calc(var(--l) - 5%));  
+        }
+        .default_login_background{background-image:url(content/img/login-bg.jpg)}
+    </style>
+    {% block pagestyle %}{% endblock %} 
+
+</head>
+<body>
+
+
+    {# main content block #}    
+    <section class="body-content" >
+        {% block content %}{% endblock %}
+    </section>  
+    
+    <!--BUNDLES de layout-->
+    <!--TODO:  de jquery + bootstrap unifacion de bundle-->
+    <script src="content/vendors/jquery-3.3.1/jquery.min.js"></script>
+    <script src="content/js/vendor/bootstrap-4.5.0/popper.min.js"></script>
+    <script src="content/js/vendor/bootstrap-4.5.0/bootstrap.min.js"></script>
+    <!--TODO:  Utilizar los scripts comentados para cada idioma /Locale/ = parsley.js es "En" by default. -->
+    <script src="content/js/vendor/parsley/parsley.js"></script>
+    <!--<script src="content/js/vendor/parsley/Locale/es.js"></script>-->
+    <!--<script src="content/js/vendor/parsley/Locale/pt.js"></script>-->
+    <script src="content/js/vendor/toastr/toastr.min.js"></script>
+    <script src="content/js/layout.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+
+    <!--BUNDLE de página-->
+    <!--page sctipts-->
+    
+    {% block pagescript %}{% endblock %}
+    
+    <!--Toast Validation Container-->
+    <div id="toast-container" class="toast-top-full-width" aria-live="polite" role="alert"></div>
+
+    {% block modal %}
+        {% include "shared/_modal.njk" %}
+    {% endblock %}
+    
+    <!--LOADER INFO: Para mostrar loader quitar la clase 'd-none' -->
+    <div id="container-loader" class="d-none">
+        {% block loader %}
+            {% include "shared/_loader.njk" %}
+        {% endblock %}
+    </div>
+
+    <script>
+    $(document).ready(function() {
+      
+
+        //efecto en segunda navegación línea arriba
+        $(".second-nav ul li:first-child").addClass("active")
+        
+        $(".cool-link-top").on("click", function(e){
+            $(".second-nav ul").find(".active").removeClass("active")
+            $(this).addClass("active")
+        });
+		        	
+    });
+    </script>
+
+</body>
+</html>

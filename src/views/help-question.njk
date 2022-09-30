@@ -1,0 +1,67 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "7" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/helpQuestion.css">
+{% endblock %} 
+
+
+{% block content %}
+
+    <div class="help layout">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body"> 
+                <div class="content_wrapper">
+                    <div class="help_header">
+                        <div>
+                            <span class="icon icon-chevron-left"></span>
+                            <h4 class="help_title">Ayuda</h4>
+                        </div>
+                        <div>
+                            <span class="icon icon-search"></span>
+                            <p>10 min de lectura</p>
+                        </div>
+                    </div>
+                    <ul class="help_list">
+                        <li class="help_item">
+                            <div class="help_item-header">
+                                <h3 class="help_item-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit? </h3>
+                            </div>
+                            <div class="help_item-content">
+                                <p class="help_item-content-text">Se realizaron con éxito las modificaciones en la nómina de afiliados. XLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur tempora.  
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur <tempora class=""></tempora></p>
+                                <p class="help_item-content-text">Lorem ips
+                                um, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur tempora.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        {% block confirmation_modal %}
+            {% include "shared/_modal-confirm.njk" %}
+        {% endblock %}
+        {% block success_modal %}
+            {% include "shared/_modal-success.njk" %}
+        {% endblock %}
+         {% block neutral_modal %}
+            {% include "shared/_modal-neutral.njk" %}
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block pagescript %}
+    <script src="content/js/help.js"></script>
+    {# <script src="Content/js/inputFile/inputfile.js"></script>
+    <script src="Content/js/vendor/scrollbar/nanoScroller.js"></script>
+    <script src="Content/js/vendor/select2-4.0.7/select2.js"></script> #}
+{% endblock %}

@@ -1,0 +1,7 @@
+.nav-section{
+    display:flex;
+    @include media(dk){
+        margin-left:auto;
+    }
+
+}

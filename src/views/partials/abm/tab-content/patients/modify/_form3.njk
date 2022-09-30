@@ -1,0 +1,111 @@
+ {% import "macros/macro-formField.njk" as pt %}
+ <section class="edits">
+
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+
+ 
+        <form action="#" class="form_content parsley js_form_validation editar">
+
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                <div class="image_group_content">
+                    {% block thumb %}
+                        {{ pt.thumbFileComponent("thumb-dr2.png", "modify_ptImg3","Subir","MR" ) }}
+                    {% endblock %} 
+                    
+                    {% block nombre %}
+                        {{ pt.inputValidation("text", "name3", "default","Nombre","Nombre",  "Mikel") }}
+                    {% endblock %} 
+
+                    {% block apellido %}
+                        {{ pt.inputValidation("text", "lastname3", "default","Apellido","Apellido", "Reed Weaver") }}
+                    {% endblock %} 
+
+                    {% block afiliado %}
+                        {{ pt.inputValidation("text", "affiliate3", "default",
+                        "Afiliado #","Número de afiliado", "ABCD1334567892") }}
+                    {% endblock %} 
+                </div>
+
+                {% block doctypeCombo %}
+                    {{ pt.comboSingleValidation("ptDoctypeModify3", "fixed-element", 
+                    "Documento Tipo", "Tipo", "width:110px", "DNI", "Passport", "LE", "LC", "selected") }}
+                {% endblock %}
+
+                {% block docNumber %}
+                    {{ pt.inputValidation("number", "docNumber3", "default",
+                    "Número de Documento #","Número de documento", "37777684") }}
+                {% endblock %} 
+
+                {% block birthdate %}
+                    {{ pt.inputValidation("date", "date3", "default",
+                    "Fecha de nacimiento","DD/MM/AAAA", "2080-06-01") }}
+                {% endblock %} 
+
+                {% block nationality %}
+                    {{ pt.inputValidation("text", "affiliate3", "default",
+                    "Nacionalidad","Ingresa tu nacionalidad", "Argentina") }}
+                {% endblock %} 
+                
+                {% block email %}
+                    {{ pt.inputMailValidation( "email3", "three_elem","XEmail","nombre@tumail.com", "test@test.com") }}
+                {% endblock %} 
+
+
+                {% block celphone %}
+                    {{ pt.input( "number", "celphone3","three_elem","XNúmero de celular","Ingresa tu celular", "333", "") }}
+                {% endblock %} 
+
+                {% block linephone %}
+                    {{ pt.input("number", "linephone3","three_elem","XNúmero de Teléfono","Ingresa tu Teléfono", "1313131", "" ) }}
+                {% endblock %} 
+
+             
+               <div class="form-group tags">
+                    <label for="specSee6">Especialidad</label>
+                    <select class="form-control select2 tag" multiple id="specSee6" data-placeholder="Ingrese una o más especialidades" 
+                    >
+                        <option></option>
+                        <option selected>Clínica médica</option>
+                        <option >Pedriatría</option>
+                        <option>Traumatología</option>
+                        <option selected>Dermatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group tags">
+                    <label for="langNew6">Idioma</label>
+                    <select class="form-control select2 tag" multiple id="langNew6" data-placeholder="Ingrese uno o más idiomas"
+                    >
+                        <option></option>
+                        <option selected>Inglés</option>
+                        <option >Español</option>
+                        <option selected>Francés</option>
+                    </select>
+                </div>
+             
+            </div>
+            <!--TODO DEV: Al cerrar form de usuario se debe =>
+            •	Guardar los datos del usuario
+            •	Eliminar tanto el nav_item (li) de la navegación como el contenido (tab_pane). 
+            •	Agregar clase active al siguiente nav-item / tab-pane 
+            •	Si es el último de la lista de 4 (dk) debe redirigir a abm-->
+            <div class="bottom_container">
+                <div class="element_half_container desktop_show">
+                    <a class="elem_link text" href="abm.html">
+                        <span class="icon icon-chevron-left"></span>
+                        Volver al listado de resultados
+                    </a>
+                </div>
+                <div class="element_half_container">
+                    <a class="btn md_btn default_btn_2 ml-auto js_cancel_form" href="abm.html" >XCancelar</a>
+                    <button class="btn md_btn default_btn_1 js_confirm" type="submit" >X Guardar</button>
+                </div>
+            </div>
+
+        </form>
+     
+
+</section>

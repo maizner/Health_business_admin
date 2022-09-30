@@ -1,0 +1,71 @@
+<div class="tab_content">
+
+    <div class="tab_pane first_pill_content active" >
+    
+        <!-- Comienza tabla -->
+        <section class="resultTable d-flex justify-content-center" >
+            <!--Elemento que colabora en el scroll responsive ( scroll-x)-->
+            {% block cursor_aff_all %}
+                {% include "shared/_mobile-cursor.njk" %}
+            {% endblock %}
+
+            <div class="table-responsive w-100">
+                {% block table_aff_all %}
+                    {% include "partials/dashboard/tables/patients/_all.njk" %}
+                {% endblock %}
+            </div>
+
+            <!--Elemento que carga async data en dataTables-->
+              {% block showmore_aff_all %}
+                {% include "shared/_show-more.njk" %}
+            {% endblock %}
+            
+        </section>
+        <!--Fin tabla -->
+    </div>
+
+    <div class="tab_pane second_pill_content fade" >
+        <!-- Comienza tabla -->
+        <section class="resultTable d-flex justify-content-center" >
+            <!--Elemento que colabora en el scroll responsive ( scroll-x)-->
+            {% block cursor_aff_flow_active %}
+                {% include "shared/_mobile-cursor.njk" %}
+            {% endblock %}
+
+            <div class="table-responsive w-100">
+                {% block table_flow_active %}
+                    {% include "partials/dashboard/tables/patients/_flow-active.njk" %}
+                {% endblock %}
+            </div>
+
+            <!--Elemento que carga async data en dataTables-->
+              {% block showmore_flow_active %}
+                {% include "shared/_show-more.njk" %}
+            {% endblock %}
+        </section>
+        <!--Fin tabla -->
+    </div>
+
+    <div class="tab_pane third_pill_content fade">
+        <!-- Comienza tabla -->
+        <section class="resultTable d-flex justify-content-center" >
+            <!--Elemento que colabora en el scroll responsive ( scroll-x)-->
+            {% block cursor_aff_flow_inqueue %}
+                {% include "shared/_mobile-cursor.njk" %}
+            {% endblock %}
+
+            <div class="table-responsive w-100">
+                {% block table_flow_inqueue %}
+                    {% include "partials/dashboard/tables/patients/_flow-in-queue.njk" %}
+                {% endblock %}
+            </div>
+
+            <!--Elemento que carga async data en dataTables-->
+              {% block showmore_flow_inqueue %}
+                {% include "shared/_show-more.njk" %}
+            {% endblock %}
+        </section>
+        <!--Fin tabla -->
+    </div>
+
+</div>

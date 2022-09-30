@@ -1,0 +1,24 @@
+.card {
+	display:flex;
+	flex-wrap: wrap;
+	flex: 2 1 50%;
+	height:200px;
+	background:transparent;
+	padding:20px 35px 35px 35px;
+	background:white;
+	
+}
+.card_body{
+    
+    width:100%;
+    // border:1px solid lighten($light-grey-color-2, 5%);
+}
+.card_title {
+	font-family: $text-font-stack;
+	font-weight: $medium-font-weight;
+	color:$grey-text-default-color;
+	font-size: $t14;
+	letter-spacing: -0.05px;
+	margin:0px;
+	margin-bottom:15px;
+}

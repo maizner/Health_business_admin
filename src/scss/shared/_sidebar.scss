@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// This file contains sidebar styles @imported from nav.
+// -----------------------------------------------------------------------------
+.navbar-collapse{
+    //esto es para sacar el display:none que viene de transitions bootstrap pero SOLO para este componente
+    &.collapse {
+        display: flex;
+    }
+}
+@include media(dk){
+    .navbar-collapse{
+        display:flex;
+        flex-direction:row;
+        
+    }
+    .sidebar-menu{
+        display:none;
+    }
+}
+
+@include media(mb){  
+
+    .sidebar-menu{
+        display:flex;
+        flex-direction:row;
+        width:100%;
+        height:100%;
+        align-items:center;
+        
+        .navbar-toggler{
+
+            .mdi{
+                color:white;
+                font-size: 40px;
+                margin:0px;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: none;
+              }
+        }
+        
+        .logo-section {
+            width:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .navbar-collapse{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        background:white;
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        
+        width: 0%;
+        height: 100vh;
+        overflow:hidden;
+        @include transition(all,.5s,ease-in-out);
+
+        ul.nav-list{
+            opacity:0;
+            @include transition(all,.5s,ease-in-out);
+        }
+        &.show{
+            width: 100%;
+            height: 100vh;
+            
+            ul.nav-list{
+                opacity:1;
+            }
+           
+        }
+
+        .lang-section{
+            display:none;
+        }
+
+        
+    }
+}

@@ -1,0 +1,141 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the notification page.
+// -----------------------------------------------------------------------------
+
+.content_wrapper {
+	padding: 24px;
+
+	@include media(dk) {
+		padding: 50px 163px 50px 120px;
+	}
+}
+
+// Header de la página 
+.help_header {
+	margin-top: 0;
+	margin-bottom: 50px;
+	font-size: $t16;
+	font-weight: $medium-font-weight;
+	font-family: $text-font-stack;
+	color: $grey-text-default-color;
+}	
+
+// Tìtulo del contenido de la página 
+.help_title {
+	margin-top: 0;
+	font-size: $t20;
+}
+
+// Texto/párrafo del contenido de la página
+.help_text {
+	margin-top: 0;	
+	font-size: $t16;
+}
+
+// Lista de topics
+.help_list {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+// Item de la lista de topics
+.help_item  {
+	position: relative;
+	border-bottom: 2px solid $light-grey-color;
+	padding: 10px 0 10px 35px;
+	cursor: pointer;
+
+	&:after {
+		display: block;
+		position: absolute;
+		top: 16px;
+		left: 0;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+		background-color: var(--default-color);
+		content: '';
+	}
+}
+
+// COntendedor del título e ìcono
+.help_item-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+// Texto del título del item
+.help_item-title {
+	font-size: $t18;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1;
+	font-weight: normal;
+}
+
+// Ícono (icon-arrow-down)
+.icon {
+	transition: .2s all ease-in;
+}
+
+// Contenedor desplegable del contenido del topic
+.help_item-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .2s ease-out;
+}
+
+// Contenedor interno del contenido del item
+.help_item-inner {
+	padding-top: 36px;
+	padding-bottom: 34px;
+}
+
+// Texto del contenido del item
+.help_item-content-text {
+	margin-top: 0;
+	line-height: 1.25;
+}
+
+// Contenedor de los links
+.help_link-container {
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+}
+
+.help_content-link:not(:last-of-type) {
+	margin-bottom: 15px;
+}
+
+// Link
+.help_content-link {
+	font-weight: 500;
+	color: var(--default-color);
+
+	&:hover {
+		color: var(--default-color-darkest);
+	}
+}
+
+// Accordion desplegado
+.help-item_expanded {
+
+	// Ícono (icon-arrow-down)
+	.icon {
+		transform: rotate(180deg);
+		transition: .2 all ease-in;
+	}
+
+
+	.help_item-title-text {
+		font-size: 1.125rem;
+		font-weight: 500;
+	}
+	
+	.help_item-content {
+		max-height: 10000px; // El valor tiene que ser uno mayor al alto que puede llegar a tener
+		transition: max-height 0.5s ease-in;
+	}
+}

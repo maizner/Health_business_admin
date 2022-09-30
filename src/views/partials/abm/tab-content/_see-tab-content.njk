@@ -1,0 +1,88 @@
+<div class="tab_content">
+
+
+    <!-- Comienza sección contenido Médico -->
+    <section class="tab_pane main_first_pane active" >
+
+       
+        {% block second_nav_tab_see %}
+            {% include "partials/abm/nav-tabs/tabs-content/doctors/_second-nav-tabs-see.njk" %}
+        {% endblock %}
+        
+
+        <!-- Comienza contenido de segunda navegación-->
+        <div class="tab_content first_tab_content">
+            <div class="tab_pane first_content active" >
+                {% block see_first_dr %}
+                    {% include "partials/abm/tab-content/doctors/see/_form1.njk" %}
+                {% endblock %}  
+            </div>
+
+            <div class="tab_pane second_content" >
+
+                {% block see_second_dr %}
+                    {% include "partials/abm/tab-content/doctors/see/_form2.njk" %}
+                {% endblock %}  
+
+            </div>
+
+            <div class="tab_pane third_content" >
+                {% block see_third_dr %}
+                    {% include "partials/abm/tab-content/doctors/see/_form3.njk" %}
+                {% endblock %}  
+            </div>
+
+            <div class="tab_pane fourth_content" >
+                 {% block see_fourth_dr %}
+                    {% include "partials/abm/tab-content/doctors/see/_form4.njk" %}
+                {% endblock %}  
+            </div>
+        </div>
+        <!-- Fin contenido de segunda navegación-->
+    </section>
+    <!--Fin contenido Médico -->
+
+
+    <!-- Comienza sección contenido Paciente -->
+    {# <section class="tab_pane main_second_pane fade" >
+        
+        <!-- Comienza segunda nav en tabs -->
+        {% block second_nav_tab_patients %}
+            {% include "partials/abm/nav-tabs/tabs-content/patients/_second-nav-tabs.njk" %}
+        {% endblock %}
+        <!-- Fin segunda nav en tabs -->
+
+         <!-- Comienza contenido de segunda navegación-->
+        <div class="tab_content second_tab_content">
+
+            <div class="tab_pane first_content active" >
+
+                {% block search_content_pt %}
+                    {% include "partials/abm/tab-content/patients/_search.njk" %}
+                {% endblock %}
+            
+            </div>
+
+            <div class="tab_pane second_content" >
+
+                {% block registration_content_pt %}
+                    {% include "partials/abm/tab-content/patients/_registration.njk" %}
+                {% endblock %}
+
+            </div>
+            
+            <div class="tab_pane third_content" >
+
+                {% block massive_content_pt %}
+                    {% include "partials/abm/tab-content/patients/_massive.njk" %}
+                {% endblock %}
+
+            </div>
+        </div>
+        <!-- Fin contenido de segunda navegación-->
+
+
+    </section> #}
+    <!--Fin contenido Paciente -->
+
+</div>

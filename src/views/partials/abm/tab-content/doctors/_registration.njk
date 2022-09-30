@@ -1,0 +1,70 @@
+{# import macros #}
+{% import "macros/macro-formField.njk" as dr %}
+
+<section class="registration">
+    <form action="#" class="form_content parsley js_form_validation alta">
+
+        <div class="fields_container container-large">
+            
+            <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+            dentro de la estructura-->
+            <div class="image_group_content">
+                
+                {% block thumb %}
+                    {{ dr.thumbFileComponent("thumb-big.jpeg", "explore_drImg","Editar","" ) }}
+                {% endblock %} 
+                
+                {% block nombre %}
+                    {{ dr.inputValidation("text", "name", "default","XNombre","Nombre") }}
+                {% endblock %} 
+
+                {% block apellido %}
+                    {{ dr.inputValidation("text", "lastname", "default","Apellido","Apellido") }}
+                {% endblock %} 
+
+                {% block matricula %}
+                    {{ dr.inputValidation("text", "enrollment", "default",
+                    "Matricula #","Número de matrícula") }}
+                {% endblock %} 
+
+            </div>
+
+            {% block doctypeCombo %}
+                {{ dr.comboSingleValidation("drDoctypeNew", "fixed-element", 
+                "Documento Tipo", "Tipo", "width:110px", "DNI", "Passport", "LE", "LC") }}
+            {% endblock %}
+
+            {% block docNumber %}
+                {{ dr.inputValidation("number", "docNumber", "default",
+                "Número de Documento #","Número de documento") }}
+            {% endblock %} 
+
+            {% block email %}
+                {{ dr.inputMailValidation( "email", "default","Email","nombre@tumail.com") }}
+            {% endblock %} 
+
+            {% block phoneNumber %}
+                {{ dr.inputValidation("number", "phoneNumber", "default","Teléfono","Teléfono") }}
+            {% endblock %} 
+
+            
+            {% block specialtyCombo %}
+                {{ dr.comboMultipleValidation("specNew", "Especialidad", 
+                "Ingrese una o más especialidades", "Clínica médica","Pedriatría", 
+                "Traumatología","Dermatología") }}
+            {% endblock %} 
+
+            {% block langCombo %}
+                {{ dr.comboMultipleValidation("langNew", "Idioma", 
+                "Ingrese uno o más idiomas", "Inglés","Español", "Portugués","Italiano") }}
+            {% endblock %} 
+
+            
+        </div>
+
+        <div class="button_container button_container_right">
+            <button class="btn md_btn default_btn_1" type="submit">Guardar</button>
+        </div>
+
+    </form>
+</section>

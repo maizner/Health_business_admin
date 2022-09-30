@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the dashboard page.
+// -----------------------------------------------------------------------------
+
+.main_body{
+
+	@include media(dk){
+		padding-right:15px;
+	}
+}
+.dashboard .first_pill_content .table-wrapper {
+	border-top: 3px solid $tab-a-color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+.dashboard .second_pill_content .table-wrapper {
+	border-top: 3px solid $tab-b-color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+.dashboard.doctors .third_pill_content .table-wrapper {
+	border-top: 3px solid $tab-d-color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.dashboard.patients .third_pill_content .table-wrapper {
+	border-top: 3px solid $tab-c-color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}

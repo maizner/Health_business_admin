@@ -1,0 +1,143 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the myweb page.
+// -----------------------------------------------------------------------------
+// .modal-backdrop.show{
+//     opacity: 0;
+// }
+
+
+.cards_container {
+    display:flex;
+    flex-wrap:wrap;
+    // padding-right: 15px;
+    
+    form{
+        border:1px solid lighten($light-grey-color-2, 5%);
+        border-radius:6px;
+        background:white;
+    }
+   
+    .card:nth-child(0n+1) {
+        border-right:1px solid lighten($light-grey-color-2, 5%);
+        border-top-left-radius: 6px;
+        
+    }
+    .card:nth-child(0n+2) {
+        border-top-right-radius: 6px;
+    }
+
+    .card:nth-child(0n+3) {
+        border-right:1px solid lighten($light-grey-color-2, 5%);
+        border-top:1px solid lighten($light-grey-color-2, 5%);
+        border-bottom:1px solid lighten($light-grey-color-2, 5%);
+        
+    }
+    .card:nth-child(0n+4) {
+        border-top:1px solid lighten($light-grey-color-2, 5%);
+        border-bottom:1px solid lighten($light-grey-color-2, 5%);
+        
+    }
+
+    
+}
+
+.formul {
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+.myweb {
+    .element_half_container{
+        width:100%;
+        display:flex;
+        justify-content:flex-end;
+        margin-top:5em;
+        margin-bottom:5em;
+        padding-right: 10px;
+    }
+}
+
+.js_uploadmodal {
+    top: 0px;
+    .modal-content{
+        background-color:white;
+        padding: 0px;
+        padding-bottom: 3em;
+        margin-top:100px;
+        box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
+        border-radius:7px;
+        overflow: hidden;
+    }
+    .preview_img {
+        position: relative;
+        display: block;
+        width: auto;    
+        min-height: 300px;
+        margin: 50px;
+        margin-top: 70px;
+        background: rgba($light-grey-color, 0);
+        transition: opacity 0.1s ease-in;
+        &:hover {
+            background: rgba($light-grey-color, 1);
+        }
+        
+    }
+    .thumbnail {
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto 100%;
+        // background-size: cover;
+        // background-position: top;
+      
+    }
+    .image_thumb {
+        height: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Color picker
+// -----------------------------------------------------------------------------
+
+.colorpicker {
+    margin-top: 1rem;
+
+    &-subtitle {
+        margin-top: .25rem;
+        font-size: 0.75rem;
+        color: $light-grey-color-2;
+    }
+    
+    &-label {
+        line-height: 2;
+        font-size: 0.813rem;
+    }
+    
+    &-input {
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        font-weight: normal;
+        letter-spacing: normal;
+        color: $light-grey-color-2;
+    }
+}
+
+// Este elemento es nuevo, no esto dentro de los estilos del plugin
+// Se mantiene la nomenglatura original
+.sp-title {
+    margin-top: 0;
+    margin-bottom: .3rem;
+    color: $semilight-grey-color;
+    text-transform: uppercase;
+}
+

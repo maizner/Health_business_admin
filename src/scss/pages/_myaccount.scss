@@ -1,0 +1,123 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the myAccount page.
+// -----------------------------------------------------------------------------
+
+.myaccount .main_body {
+	padding-right:15px;
+}
+.account_header {
+	display: flex;
+	flex-direction: row;
+
+	@include media(mb) {
+		align-items: center;
+	}
+	@include media(dk) {
+		align-items: flex-end;
+	}
+
+	padding:15px 25px;
+	height:140px;
+	background-color: rgba(var(--rgb-color), 0.1);
+
+	.thumbs_container{
+		margin-right:15px;
+	}
+	.user_info {
+
+		.user_name {
+			font-family: $text-font-stack;
+            color: $grey-text-default-color;
+			font-weight: $medium-font-weight;
+			font-size:$t20;
+			line-height: $t24;
+           
+		}
+		.user_email {
+			font-family: $text-font-stack;
+            color: $semidark-grey-color;
+			font-weight: $medium-font-weight;
+			font-size:$t15;
+			line-height: $t24;
+           
+		}
+		.user_settings {
+			font-family: $text-font-stack;
+            color: $semilight-grey-color;
+			font-weight: $medium-font-weight;
+			font-size:$t12;
+			line-height: $t24;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.myaccount .tab_content > .active{
+	display:flex;
+}
+
+.group_1,
+.group_2 {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+.group_2 {
+	@include media(dk) {
+		margin-bottom:100px;
+	}
+
+	@include media(mb) {
+
+		// min-width:130px;
+	}
+}
+
+.account_title {
+	height:60px;
+	display:flex;
+	align-items:center;
+	padding:10px 20px;
+	font-family: $text-font-stack;
+	color: $grey-text-default-color;
+	font-weight: $medium-font-weight;
+	font-size:$t14;
+	line-height: $t24;
+}
+
+.myaccount input.form-control, 
+.myaccount .form-group,
+.myaccount .comment-form {
+	max-width: 430px;
+	width:100%;
+	
+}
+
+
+.element_half_container.mobile_show {
+	padding-bottom:50px;
+}
+
+@include media(mb) {
+	.myaccount .tab_content {
+		height:320px;
+	}
+	.myaccount .comment-form{
+		font-size:$t14;
+		padding:0px 10px;
+	}
+	.tab_pane.active {
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+	.js_form_validation button{
+		height:100%;
+		&:focus {
+			outline:none;
+
+		}
+	}
+}

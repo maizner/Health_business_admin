@@ -1,0 +1,177 @@
+/* -----------------------------------------------------------------------------*/
+/* This file contains all styles related to the button component.*/
+/* -----------------------------------------------------------------------------*/
+button{
+	border:0;
+	background:transparent;
+	padding:0;
+	margin:0;
+}
+.btn {
+	display:flex;
+	font-family: $text-font-stack;
+    align-items: center;
+    justify-content: center;
+  	text-transform: uppercase;
+  	text-align: center;
+  	vertical-align: middle;
+  	user-select: none;
+  	background-color: transparent;
+	border: 2px solid transparent;
+	border-radius:1px;
+	text-decoration:none;
+	@include transition(all,.2s,ease-in-out);
+	margin-left:10px;
+	margin-right:10px;
+	cursor:pointer;
+	
+	&:focus {
+
+		outline:none;
+	}
+
+	&:disabled,
+	&.disabled {
+		opacity:.5;
+		cursor: not-allowed
+
+	}
+	&.d-none {
+
+		display:none;
+	}
+	
+
+
+  	@include media(dk) {
+
+  		font-size: $t13;
+  		font-weight: $normal-font-weight;
+  	}
+
+  	@include media(mb) {
+
+  		font-size: $t10;
+  		font-weight: $medium-font-weight;
+  		letter-spacing: $letter-spacing-one-half;
+
+  		&.top-space-1 {
+
+			margin-top: $space-top-btn-2;
+		}
+  	}
+}
+
+/*button sizes*/
+.btn.sm_btn {
+
+	font-size: $sm-font-size-btn;
+	padding: $sm-padding-btn;
+  letter-spacing: $letter-spacing-one-half;
+	
+	@include media(mb) {
+
+		font-size: $md-font-size-btn;
+	}
+}
+
+.btn.md_btn {
+
+	font-size: $md-font-size-btn;
+	padding: $md-padding-btn;
+	letter-spacing: $letter-spacing-two;
+	height:50px;
+  
+  
+	@include media(dk) {
+		min-width:150px;
+	}
+
+	@include media(mb) {
+
+		min-width:130px;
+	}
+
+	@include media(xs) {
+
+		min-width:100px;
+
+	}
+
+}
+
+
+//Buttons color options
+.default_btn_1{
+	color:white;
+	font-weight: $medium-font-weight;
+	background:var(--default-color);
+	
+
+	&:hover{
+		color:white;
+		background-color: var(--default-color-darkest);	
+	}
+}
+
+.default_btn_2{
+	border-color: var(--default-color);
+	color:var(--default-color);
+	background-color: rgba(var(--rgb-color), 0.1);
+	font-weight: $medium-font-weight;
+	
+
+	&:hover{
+		color:var(--default-color);
+		background-color: rgba(var(--rgb-color), 0);
+	}
+}
+
+.default_btn_3{
+	border-color: var(--default-color);
+	color:var(--default-color);
+	background-color: white;
+	font-weight: $medium-font-weight;
+	
+
+	&:hover{
+		color:var(--default-color);
+		background-color: rgba(var(--rgb-color), 0.1);
+	}
+}
+
+.default_btn_4{
+	color:white;
+	font-weight: $medium-font-weight;
+	background-color: rgba(var(--rgb-color), 0.5);
+	border-color:var(--default-color);
+
+	&:hover{
+		color:white;
+		opacity:1;
+		background-color: var(--default-color);
+	}
+}
+
+.alert_btn{
+	border-color: $error-color;
+	color:$error-color;
+	background-color: white;
+	font-weight: $medium-font-weight;
+	
+
+	&:hover{
+		color:$error-color;
+		background-color: rgba($error-color, 0.1);
+	}
+	
+}
+
+.modal-btn{
+	border-color:white;
+	color:white;
+
+	&:hover {
+		opacity:.8;
+	}
+}

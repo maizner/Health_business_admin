@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="Portal administrador de afiliados y profesionales">
+<meta name="HandheldFriendly" content="true">
+<meta name="robots" content="index,follow">
+
+     
+    <title>Telemedicina Business Admin</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="content/vendors/Icomoon/style.css">
+    <!-- 
+    La solución es transformar todo color ( rgb o hexadecimal) a parametros hsl cuando el usuario ingresa el color.
+    Transformación de color=> https://www.peko-step.com/es/tool/hslrgb.html
+    -->
+    <style>
+       
+        :root {
+        
+         
+         
+            --color:40, 100%; /*the base color*/
+            --rgb-color:244,179,0; /*the rgb parameters*/ 
+            --l:50%; /*the initial lightness*/
+            --default-color: hsl(var(--color),calc(var(--l)));
+            --default-color-darkest: hsl(var(--color),calc(var(--l) - 5%));  
+        }
+        .default_login_background{background-image:url(content/img/login-bg.jpg)}
+    </style>
+    
+      <link rel="stylesheet" type="text/css" href="content/css/login.css">
+ 
+
+</head>
+<body>
+
+
+        
+    <section class="body-content" >
+        
+
+
+
+    <div class="default_login_background background">
+        
+        <section class="hero_section" >
+            
+            
+                 <div class="container">
+    <div class="row">
+        <div class="col-md">
+
+            
+            
+                <div class="logo_container">
+    <a href="/" alt="logo" >
+        <img class="logo" src="content/img/logo-blanco.png" alt="Logo"/>
+    </a>
+</div>
+<h1 class="title">Administrador salud</h1>
+<p class="subtitle">Monitorea tu consultorio en tiempo real. Gestioná altas, bajas y modificaciones de médicos y pacientes.</p>
+
+
+
+            
+
+        </div>
+        <div class="col-md ">
+            
+            
+                <form class="form_content parsley js_form_validation login forgot_psw" name="Form"
+  data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden"
+ data-parsley-priority-enabled="true" data-parsley-validate>
+
+    <h2 class="form_title">Reestablece la Contraseña</h2>
+
+    <div class="form-group">
+        <label for="InputEmail">Email</label>
+        <input autocomplete="off" type="email" class="form-control" id="InputEmail" placeholder="nombre@tumail.com" name="email"
+        data-parsley-errors-container=".toast-top-full-width"
+        data-parsley-trigger="submit"
+        data-parsley-required-message= "Ingresa una cuenta de email para poder continuar."
+        data-parsley-type-message= "La cuenta ingresada tiene un formato inválido."
+        data-parsley-required>
+        <span class="default_validation_msj"></span>
+    </div>
+    <p class="comment-form" >Ingresa la dirección de correo electrónico que utilizaste
+    para iniciar sesión y te enviaremos instrucciones para restablecer tu contraseña.</p>
+
+    <button class="btn md_btn default_btn_1" type="submit">Enviar</button>
+</form>
+
+
+            
+        </div>
+    </div>
+</div>
+
+            
+
+        </section>
+      
+    </div>
+
+    </section>  
+    
+    <!--BUNDLES de layout-->
+    <!--TODO:  de jquery + bootstrap unifacion de bundle-->
+    <script src="content/vendors/jquery-3.3.1/jquery.min.js"></script>
+    <script src="content/js/vendor/bootstrap-4.5.0/popper.min.js"></script>
+    <script src="content/js/vendor/bootstrap-4.5.0/bootstrap.min.js"></script>
+    <!--TODO:  Utilizar los scripts comentados para cada idioma /Locale/ = parsley.js es "En" by default. -->
+    <script src="content/js/vendor/parsley/parsley.js"></script>
+    <!--<script src="content/js/vendor/parsley/Locale/es.js"></script>-->
+    <!--<script src="content/js/vendor/parsley/Locale/pt.js"></script>-->
+    <script src="content/js/vendor/toastr/toastr.min.js"></script>
+    <script src="content/js/layout.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+
+    <!--BUNDLE de página-->
+    <!--page sctipts-->
+    
+    
+    <script src="content/js/login.js"></script>
+
+    
+    <!--Toast Validation Container-->
+    <div id="toast-container" class="toast-top-full-width" aria-live="polite" role="alert"></div>
+
+    
+        <!-- Modal => $('trigger').modal()-->
+<div class="modal fade" id="generic" tabindex="-1" role="dialog" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"></span>
+        
+    </button>
+    <div class="modal-dialog xl-modal upload" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="modal-text">Revisa tu conexión a internet. No podemos conectarnos con el servidor.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+    
+    
+    <!--LOADER INFO: Para mostrar loader quitar la clase 'd-none' -->
+    <div id="container-loader" class="d-none">
+        
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 20 20" height="44" width="44" transform="rotate(324.447 50 50)">
+    <g class="ldl-layer">
+    	<g class="ldl-ani">
+    		<g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="Icons-/-20-/-Loading">
+                <g class="ldl-layer">
+        	        <g class="ldl-ani">
+        	            <path fill-rule="nonzero" fill="#000000" id="loader" d="M18.3671875,10.8828125 C18.5429688,10.8828125 18.6894531,10.8242188 18.8066406,10.7070312 C18.9355469,10.578125 19,10.4257812 19,10.25 C19,9.03125 18.765625,7.86523438 18.296875,6.75195313 C17.8398438,5.67382812 17.1953125,4.71875 16.3632812,3.88671875 C15.53125,3.0546875 14.5761719,2.41015625 13.4980469,1.953125 C12.3847656,1.484375 11.21875,1.25 10,1.25 C9.82421875,1.25 9.67480469,1.31152344 9.55175781,1.43457031 C9.42871094,1.55761719 9.3671875,1.70703125 9.3671875,1.8828125 C9.3671875,2.05859375 9.42871094,2.20800781 9.55175781,2.33105469 C9.67480469,2.45410156 9.82421875,2.515625 10,2.515625 C11.0546875,2.515625 12.0566406,2.71484375 13.0058594,3.11328125 C13.9316406,3.51171875 14.7519531,4.06835938 15.4667969,4.78320312 C16.1816406,5.49804688 16.7324219,6.31835938 17.1191406,7.24414062 C17.5292969,8.19335938 17.734375,9.1953125 17.734375,10.25 C17.734375,10.4257812 17.7958984,10.5751953 17.9189453,10.6982422 C18.0419922,10.8212891 18.1914062,10.8828125 18.3671875,10.8828125 Z" style="fill: rgb(0, 0, 0);">
+        		            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 10 10" to="360 10 10" repeatCount="indefinite"></animateTransform>
+        	            </path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+
+        
+    </div>
+
+    <script>
+    $(document).ready(function() {
+      
+
+        //efecto en segunda navegación línea arriba
+        $(".second-nav ul li:first-child").addClass("active")
+        
+        $(".cool-link-top").on("click", function(e){
+            $(".second-nav ul").find(".active").removeClass("active")
+            $(this).addClass("active")
+        });
+		        	
+    });
+    </script>
+
+</body>
+</html>

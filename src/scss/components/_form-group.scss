@@ -1,0 +1,75 @@
+/* -----------------------------------------------------------------------------*/
+/* components/_form-group styles .*/
+/* -----------------------------------------------------------------------------*/
+
+
+.form-group {
+	
+	display:flex;
+	flex-direction:column;    
+	justify-content: space-around;
+	display:flex;
+	width:auto;
+
+	label {
+
+		display: inline-block;
+		font-family: $text-font-stack;
+		color: $grey-text-default-color;
+		font-weight: $bold-font-weight;
+		font-size: $t11;
+		letter-spacing: $letter-spacing-one-half;
+		vertical-align: middle;
+		background-color: transparent;
+		padding-bottom: 5px;
+
+	}
+
+	&.three_elem {
+		flex-basis:33.3%;
+		flex-grow:3;
+	}
+
+	&.default {
+		flex-basis:25%;
+		flex-grow:4;
+
+	}
+	&.small {
+		
+		min-width: 170px;
+		width: 100%;
+		@include media(dk) {
+			max-width: 200px;
+		}
+	}
+
+	&.fixed-element {
+		flex-basis:110px;
+	}
+
+	@include media(dk) {
+
+		padding: 0px 7px;
+		margin:15px 0px;
+
+	}
+	@include media(mb) {
+		width:100%;
+		padding: 0px 10px;
+		margin:10px 0px;
+		
+	}
+
+}
+.fixed-element {
+	flex-basis:110px;
+}
+.default.form-group {
+
+	@include media(dk) {
+		max-width: 350px;
+		min-width: 170px;
+		width: 100%;
+	}
+}

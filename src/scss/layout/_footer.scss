@@ -1,0 +1,158 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the layout/footer of the site/application.
+// -----------------------------------------------------------------------------
+footer{
+    background-color: $light-grey-color;
+    height: 100%;
+    width:100%;
+
+    //Estilos generales
+    section{
+        padding-top:1.5em;
+        padding-bottom:1.5em;
+
+        &:not(:first-child){
+            border-top:1px solid $light-grey-color-2;
+        }
+    }
+//Estilos por sección
+    .social-links{
+        display:flex;
+        flex-direction: row;
+        img{
+            display:block;
+            max-height:67px;
+            width:auto;
+        }
+
+        .social-footer-list{
+            display:flex;
+            list-style: none;
+            margin-left:auto;
+            padding-left:0px;
+
+            li.nav-item{
+                padding:0px;
+                .nav-link{
+                    padding:2px 6px;
+                    margin:3px;
+                    border-radius:5px;
+                    background: lighten($semilight-grey-color, 7%);
+
+                    i,span,.mdi{
+                        color:white;
+                        font-size:20px;
+                    }
+                    &:hover{
+                        color:darken($semilight-grey-color, 30%);
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-footer{
+        display:flex;
+        flex-wrap: wrap;
+        
+        .wrapper{
+            @include media(mb){
+                width:50%;
+            }
+            @include media(dk){
+                width:25%;
+            }
+            
+        }
+        h5,.list-title{
+            padding: 0.5rem 1rem;
+            font-family: $text-font-stack;
+            font-weight: $normal-font-weight;
+            letter-spacing: 0.21px;
+            font-size:$t20;
+            color:$brand-color;
+        }
+
+        .nav-footer-list{
+            list-style:none;
+            padding:0px;
+            width:100%;
+
+           li.nav-item{
+            .nav-link{  
+                font-family: $text-font-stack;
+                font-weight: $normal-font-weight;
+                color:$semilight-grey-color;
+                padding: 0.2rem 1rem;
+                &:hover{
+                    color:darken($semilight-grey-color, 10%);
+                    text-decoration:underline;
+                }   
+                span,p,h6,div{
+                    padding:0px;
+                    margin:0px;
+                    font-weight: $normal-font-weight;
+                }
+               
+                @include media(mb){
+                    span,p,h6,div{
+                        font-size: $t15;
+                        
+                    }
+
+                }
+                @include media(dk){
+                    span,p,h6,div{
+                        font-size: $t12;
+                    }
+                }
+            }
+
+           } 
+           
+        }
+        // @include media(mb){
+        //     h5,.list-title, .nav-footer-list .nav-link{
+        //         text-align: center;
+        //     }
+        // }
+    }
+
+    .disclaimer{
+        .nav-footer-list{
+            list-style:none;
+            padding:0px;
+            width:100%;
+            display: flex;
+
+            @include media(mb){
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+            }
+
+            @include media(dk){
+                flex-direction:row;
+            }
+            
+
+            justify-content:center;
+
+            .nav-link{
+                font-family: $text-font-stack;
+                font-weight: $normal-font-weight;
+                color:$semilight-grey-color;
+                font-size: $t12;
+            }
+
+        }
+        .disclaimer-text{
+            font-family: $text-font-stack;
+            font-weight: $normal-font-weight;
+            color:$semilight-grey-color;
+            font-size: $t12;
+            text-align: center;
+        }
+    }
+   
+}

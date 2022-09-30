@@ -1,0 +1,212 @@
+/* -----------------------------------------------------------------------------*/
+/* Col styles  components/tables/table-styles/_col-styles
+/* -----------------------------------------------------------------------------*/
+
+/* -----------------------------------------------------------------------------*/
+/* ABM AND DASHBOARD TD STYLES
+/* -----------------------------------------------------------------------------*/
+.col_name {
+    width: 25%;
+    text-align: left;
+    font-weight: $medium-font-weight;
+
+    @include media(mb){
+        min-width: 220px;
+    }
+    @include media(dk){
+        min-width: 350px;
+    }
+
+    .col_text{
+        text-align: left;
+        font-weight: $medium-font-weight;
+    }
+}
+.col_last_conn{
+    width: 25%;
+    text-align: left;
+}
+.col_status {
+
+    width: 15%;
+    max-width:120px;
+    color:white;
+
+    .col_text{
+
+        color:white;
+        margin: 0 auto;
+
+        @include media(mb) {
+
+			width: auto;
+		}
+
+		@include media(dk) {
+
+			max-width: 120px;
+		}
+    }
+}
+.col_time {
+    
+    width: 15%;
+    min-width:100px;
+    text-align:left;
+    
+    .col_text{
+        position:relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align:left;
+        color: $semilight-grey-color;
+
+        .time-icon{
+            width:8px;
+            height:8px;
+            border-radius:50px;
+            margin-right:8px;
+        }
+    }
+
+}
+.col_plan {
+    width: 15%;
+    min-width:100px;
+    .col_text{
+        font-weight: $bold-font-weight;
+    }
+}
+.col_group {
+    width: 15%;
+    min-width:100px;
+
+    .col_text{
+        color:$semilight-grey-color;
+    }
+}
+.col_spec,
+.col_lang {
+    width: 15%;
+    text-align:left;
+    
+    .col_tooltip {
+        
+        display: inline-flex;
+
+    }
+ 
+}
+
+.col_spec .col_text {
+
+    font-weight: $medium-font-weight;
+
+}
+.col_lang .col_text {
+
+    font-weight: $normal-font-weight;
+
+}
+.col_last_conn .col_text {
+
+    font-weight: $normal-font-weight;
+    text-align: left;
+
+}
+
+.col_text-detail {
+    
+    margin-left:7px;
+    color:$semilight-grey-color;
+
+}
+
+.col_inline {
+
+    display: inline-flex;
+    width:auto;
+}
+
+/* -----------------------------------------------------------------------------*/
+/* TYC TD STYLES
+/* -----------------------------------------------------------------------------*/
+
+
+table.old .version:last-child{
+    td {
+        border-bottom: $table-border-width solid $table-border-color;
+    }
+}
+
+table.last,
+table.old{
+
+    .version td,
+    .table_title td, 
+    thead th{
+
+        padding:1rem;
+        font-size:$t14;
+        text-align:left;
+        vertical-align: middle;
+
+        &.see_btn{
+            text-align: right;
+            font-size:22px;
+            font-weight: $medium-font-weight;
+
+            &:hover{
+                opacity:.8;
+            }
+        }
+        &.close_btn{
+            text-align: right;
+            font-size:14px;
+            font-weight: $medium-font-weight;
+
+            &:hover{
+                opacity:.8;
+            }
+        }
+    }
+    thead th{
+        border-top: $table-border-width solid $table-border-color;
+    }
+}
+
+.version .date{
+    width:10%;
+    min-width:150px
+}
+.tyc .old .version td.version_number{
+    width:10%;
+    min-width:80px;
+    
+}
+.last .version td.version_number{
+    width:15%;
+    min-width:160px;
+    
+}
+.tyc table.old .version td.version_number {
+    color: darken( $light-grey-color-2, 5%);
+}
+.version .validity{
+    width:25%;
+    min-width:180px
+}
+.tyc table.old .version td.validity .time {
+    color:darken( $light-grey-color-2, 5%);
+}
+.tyc .old .version .user_name{
+    width:50%;
+    min-width:180px;
+    font-weight: $medium-font-weight;
+}
+.version .see_btn, 
+.version .close_btn{
+    width:5%;
+    min-width:50px;
+}

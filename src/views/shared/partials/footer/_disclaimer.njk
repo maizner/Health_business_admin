@@ -1,0 +1,22 @@
+ <ul class="nav-footer-list">
+    {% for item in footerItems %}
+        {% for footer_disclaimer in item.footer_disclaimer %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{footer_disclaimer.item_link }}" title="{{footer_disclaimer.item_name}}" target="_blank" >
+                    {{footer_disclaimer.item_name }}
+                </a>
+            </li>
+        {% endfor %}
+    {% endfor %}
+</ul>
+<p class="disclaimer-text">
+XLos servicios ASSIST CARD tienen limitaciones exclusivas según el tipo de producto adquirido. 
+Aplican las limitaciones y exclusiones de uso habitual y/o legal en el país en que se emita el Producto ASSIST CARD. 
+A partir de los 70 años inclusive se aplica un incremento del 50% sobre las tarifas. 
+Productos y tarifas de la web no aplican para pasajeros de 75 años o más. 
+Los servicios y productos se rigen por Condiciones Generales que se informan con la compra de cada Producto ASSIST CARD y se hallan a su
+disposición ingresando en el portal web, así como en las oficinas comerciales y locales de ASSIST CARD donde pueden ser solicitadas 
+en forma personal, telefónicamente o por e-mail. Las enfermedades preexistentes tienen exclusiones y limitaciones. 
+ASSIST CARD no es una empresa de seguros, sino que actúa en calidad de tomadora en beneficio de sus clientes. ASSIST CARD Argentina S.A.
+de Servicios, Arias Nº 3751°, Piso 10, CP 1430, CABA. CUIT 33-54799242-9. Tel: +5411-5555-2000
+</p>

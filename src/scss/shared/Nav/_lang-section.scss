@@ -1,0 +1,19 @@
+.lang-section{
+    .nav-link{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+
+        img,.flag{
+            margin:$space-x1;
+            border-radius:2px;
+        }
+        .country{
+            @extend a.nav-link;
+        }
+        
+    }
+    
+    
+}

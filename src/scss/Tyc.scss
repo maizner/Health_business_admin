@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+@import
+	'utilities/variables',
+	'utilities/functions',
+	'utilities/mixins';
+
+@import
+	'base/base',
+	'base/fonts',
+	'base/typography',
+	'base/helpers';
+
+
+@import
+	'vendor/normalize';
+
+@import
+	'layout/layout',
+	'layout/nav',
+	'layout/nav/sidebar',
+	'layout/nav/topbar',
+	'layout/toast',
+	'layout/loader';
+
+
+@import
+	'components/form-group',
+	'components/button',
+	'components/input',
+	'components/input-file',
+	'components/tables',
+	'components/thumbs',
+	'components/daterangepicker',
+	'components/modal';
+
+
+@import
+	'pages/tyc';

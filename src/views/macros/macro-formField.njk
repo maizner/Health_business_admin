@@ -1,0 +1,124 @@
+
+{% macro thumbFileComponent(imagesrc, name, text, acronym,type='file') %}
+ <div class="thumbs_container fixed-element">
+    <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+        <div class="js_input_file">
+            <div class="input_file">
+                <label  for="{{ name }}" >
+                    <div class="file_uploaded ellipsis" title="{{ text }}" > {{ text }} </div>
+                    <img src="content/img/{{ imagesrc }}" alt="" width="100%"  height="auto" class="img">
+                </label>
+                <input type="{{ type }}" name="{{ name }}[]" id="{{ name }}"  class=" d-none tooltip"
+                data-multiple-caption="{count} files selected" 
+                multiple />
+                <div class="acronym"> {{ acronym }} </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{# DODO DSG = Elementos sin validaciones. Ver como dinamizar luego #}
+{% macro input(type, name, class,label,  placeholder, value, dynamic) %}
+    <div class="form-group {{ class }}">
+        <label for="name">{{ label }}</label>
+        <input type="{{ type }}" class="form-control" 
+        name="{{ name }}" id="{{ name }}" 
+        placeholder="{{ placeholder }}" autocomplete="off"
+        value="{{ value }}"
+        {{dynamic }}>
+    </div>
+{% endmacro %}
+
+{% macro comboSingle(name, class,label, placeholder, style, o0, o1, o2, o3) %}
+  <div class="form-group {{ class }}">
+        <label for="{{ name }}">{{ label }}</label>
+        <select id="{{ name }}" name="{{ name }}" class="form-control select2" 
+        tabindex="-1" aria-hidden="true"  style="{{ style }}" data-placeholder="{{ placeholder }}" >
+            <option></option>
+            <option value="0" >{{ o0 }}</option>
+            <option value="1" >{{ o1 }}</option>
+            <option value="2" >{{ o2 }}</option>
+            <option value="3" >{{ o3 }}</option>
+        </select>
+    </div>
+{% endmacro %}
+
+{% macro comboMultiple(name, label, placeholder, o0, o1, o2, o3) %}
+    <div class="form-group tags">
+        <label for="{{ name }}">{{ label }}</label>
+        <select class="form-control select2 tag" multiple id="{{ name }}" name="{{ name }}"  data-placeholder="{{ placeholder }}" 
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0">{{ o0 }}</option>
+            <option value="1">{{ o1 }}</option>
+            <option value="2">{{ o2 }}</option>
+            <option value="3">{{ o3 }}</option>
+        </select>
+    </div>
+{% endmacro %}
+{# DODO DSG = FIN Elementos sin validaciones. Ver como dinamizar luego #}
+
+
+{% macro inputValidation(type, name, class,label,  placeholder, value) %}
+  <div class="form-group {{ class }}">
+        <label for="name">{{ label }}</label>
+        <input type="{{ type }}" class="form-control" 
+        name="{{ name }}" id="{{ name }}" 
+        placeholder="{{ placeholder }}" autocomplete="off" 
+        value="{{ value }}"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-required >
+    </div>
+{% endmacro %}
+
+{% macro inputMailValidation(type="email", name, class,label,  placeholder, value) %}
+  <div class="form-group {{ class }}">
+        <label for="name">{{ label }}</label>
+        <input type="{{ type }}" class="form-control" 
+        name="{{ name }}" id="{{ name }}" 
+        placeholder="{{ placeholder }}" autocomplete="off" 
+        value="{{ value }}"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XCompletar el campo obligatorio"
+        data-parsley-type-message= "XLa cuenta ingresada tiene un formato inválido."
+        data-parsley-required >
+    </div>
+{% endmacro %}
+
+{% macro comboSingleValidation(name, class,label, placeholder, style, o0, o1, o2, o3, selected) %}
+  <div class="form-group {{ class }}">
+        <label for="{{ name }}">{{ label }}</label>
+        <select id="{{ name }}" name="{{ name }}" class="form-control select2" 
+        tabindex="-1" aria-hidden="true"  style="{{ style }}" data-placeholder="{{ placeholder }}"
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0" {{ selected }}>{{ o0 }}</option>
+            <option value="1" >{{ o1 }}</option>
+            <option value="2" >{{ o2 }}</option>
+            <option value="3" >{{ o3 }}</option>
+        </select>
+    </div>
+{% endmacro %}
+
+{% macro comboMultipleValidation(name, label, placeholder, o0, o1, o2, o3, selected) %}
+    <div class="form-group tags">
+        <label for="{{ name }}">{{ label }}</label>
+        <select class="form-control select2 tag" multiple id="{{ name }}" name="{{ name }}"  data-placeholder="{{ placeholder }}" 
+        data-parsley-trigger="change"
+        data-parsley-required-message= "XFalta Selección"
+        data-parsley-required>
+            <option></option>
+            <option value="0">{{ o0 }}</option>
+            <option value="1" {{ selected }}>{{ o1 }}</option>
+            <option value="2">{{ o2 }}</option>
+            <option value="3">{{ o3 }}</option>
+        </select>
+    </div>
+{% endmacro %}

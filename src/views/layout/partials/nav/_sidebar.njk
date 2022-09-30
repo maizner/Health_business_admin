@@ -1,0 +1,52 @@
+<nav class="nav sidebar navbar-collapse collapse" >
+    <span class="icon icon-close js_collapse_sidebar"></span>
+    <div class="logo-container">
+        <a href="login.html" alt="logo" >
+            <img class="logo" src="Content/img/logo-color.png" alt="Logo"/>
+        </a>
+        <!--TODO DSG: armar opción conectado y desconectado-->
+        <!--TODO DEV: Clase connected o disconnected -->
+        {# <span class="icon icon-connection connected"></span> #}
+    </div>
+    <ul class="nav_list">
+        <li class="dashboard_menu expanded">
+
+            <a class="nav_link js_menu_toggler" href="#">
+                <span class="icon icon-dashboard"></span>Monitor<span class="icon icon-arrow icon-arrow-down"></span>
+            </a>
+
+            <ul class="nav_list nav_list_second">
+                <li class="nav_item {% if page_id == 1 %}active{% endif %}">
+                    <a class="nav_link" href="dashboard-patients.html"><span class="icon icon-affiliates"></span>Pacientes</a>
+                </li>
+                <li class="nav_item {% if page_id == 2 %}active{% endif %}">
+                    <a class="nav_link" href="dashboard-doctors.html"><span class="icon icon-medic"></span>Medicos</a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li class="nav_item {% if page_id == 3 %}active{% endif %}">
+            <a class="nav_link" href="abm.html"><span class="icon icon-abm"></span>Administrador</a>
+        </li>
+
+        {# <li class="nav_item {% if page_id == 4 %}active{% endif %}">
+            <a class="nav_link" href="reports.html"><span class="icon icon-reports"></span>Reportes</a>
+        </li> #}
+
+        <li class="nav_item {% if page_id == 5 %}active{% endif %}">
+            <a class="nav_link" href="myweb.html"><span class="icon icon-configuration"></span>Mi Web</a>
+        </li>
+        {# <li class="nav_item separate desktop_show {% if page_id == 6 %}active{% endif %}">
+            <a class="nav_link" href="tyc.html"><span class="icon icon-tyc"></span>Términos y condiciones</a>
+        </li> #}
+
+
+        <li class="nav_item mobile_show ">
+            <a class="nav_link" href="#"><span class="icon icon-logout"></span>Cerrar Sesión</a>
+        </li>
+
+    </ul>
+</nav>
+

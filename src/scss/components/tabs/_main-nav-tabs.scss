@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains main tabs navigation styles in components/tabs/_main-nav-tabs.scss.
+// -----------------------------------------------------------------------------
+
+.main_nav_tabs {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+    .nav_link_content {
+
+        @include media(mb){
+            font-size: $t13;
+        }
+        @include media(dk){
+            
+            font-size: $t14;
+          
+        }
+        
+    }
+    
+}
+.main_nav_tabs, .empty_tabs {
+    height:60px;
+}
+@import '../cool-links';

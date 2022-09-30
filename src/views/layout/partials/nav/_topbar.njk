@@ -1,0 +1,50 @@
+<!--TODO DEV: NUEVAS NOTICIAS:  se debe agregar la clase has_alerts y sacarla cuando fueron revisadas o no hay alertas-->
+<nav class="nav user right_sidebar has_alerts">
+    <div class="mobile_display">
+        <button class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".sidebar"
+        aria-controls=".sidebar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+            <span class="icon icon-hamburguer"></span>
+        </button>
+        <!--TODO DSG: armar opción conectado y desconectado-->
+        <!--TODO DEV: Clase connected cuando hay conexión -->
+        <span class="icon icon-connection connected"></span>
+    </div>
+
+    <div class="user_config">
+        <!--TODO: Si hay alertas de noticias se debe agregar la clase alerts en user_items y .user_alerts .nav_link.
+        Consecutivamente agregar abajo <span class="on_alert"></span> en ambos lugares-->
+        <a href="myaccount.html" class="user_item user_info">
+            <div class="user_name"> Dr. Juan Rivarola</div>
+            <div class="user_settings">Administrador</div>
+        </a>
+
+        <div class="user_item thumbs_container">
+            <a href="myaccount.html" class="thumbs thumbs_circle">
+                <img src="content/img/thumb-small.jpg" alt="" width="100%" class="img">
+                <span class="acronym">JR</span>
+            </a>
+        </div>
+        <div class="user_help desktop_show">
+            <a href="help.html" >
+                <span class="icon icon-help"></span>
+            </a>
+        </div>
+    </div>
+
+    {# notification sidebar #}
+    {% block rightSidebar %}
+        {% include "layout/partials/nav/_rightSidebar.njk" %}
+    {% endblock %}
+
+    <div class="user_logout">
+        <a href="#" class="alerts">
+            <span class="icon icon-logout"></span>
+        </a>
+    </div>
+
+</nav>

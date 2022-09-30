@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains sections/abm/massive-registration styles 
+// -----------------------------------------------------------------------------
+
+//.tab_pane.third_content representa la pestaña correspondiente a ABM Masiva
+.tab_pane.third_content .button_container .text {
+    @include media(dk) {
+        padding-left: 35px;
+    }
+    @include media(mb) {
+        padding: 20px;
+    }
+    .paragraph{
+        font-family: $text-font-stack;
+        color: $grey-text-default-color;
+        font-size: $t14;
+        font-weight: $normal-font-weight;
+        letter-spacing: $letter-spacing-half;
+        margin:0px;
+    }
+}
+

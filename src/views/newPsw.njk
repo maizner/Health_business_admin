@@ -1,0 +1,30 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+
+
+{# import macros #}
+{# {% import "macros/_macro-flag.njk" as f %}
+{% import "macros/_macro-background-image.njk" as bgimage %} #}
+
+{% block pagestyle %}
+      <link rel="stylesheet" type="text/css" href="content/css/login.css">
+{% endblock %} 
+{% block content %}
+
+{# Mensajes de error #}
+
+    <div class="default_login_background background">
+        
+        <section class="hero_section" >
+            
+            {% block heroContent %}
+                {% include "partials/login/_hero-newPsw.njk" %}
+            {% endblock %}
+
+        </section>
+      
+    </div>
+{% endblock %}
+{% block pagescript %}
+    <script src="content/js/login.js"></script>
+{% endblock %}

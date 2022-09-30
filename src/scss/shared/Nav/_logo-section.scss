@@ -1,0 +1,27 @@
+.logo-section{
+
+    &.logo-dk{
+
+        @include media(mb){
+            display:none;
+        }
+
+        @include media(dk){
+            display:flex;
+        }
+    }
+
+    a{
+        @extend  .logo-section;
+        line-height: 0px;
+        width:166px;
+
+        @include media(dk){
+            margin-left:120px;
+        }
+
+        img{
+            width:100%;
+        }
+    }
+}

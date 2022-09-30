@@ -1,0 +1,37 @@
+/* -----------------------------------------------------------------------------*/
+/* Variantes de estilos para elementos de tabla  components/tables/ _table-styles
+/* -----------------------------------------------------------------------------*/
+
+table {
+    border-collapse: collapse;
+    @include media(mb){
+        //Este es el ancho mínimo es la suma de todos ls min-width de td (640px) 
+        min-width: $table-min-width;
+    }
+    //Estilo para tr unicamente
+    th,
+    td{
+        font-family: $text-font-stack;
+        font-weight: $normal-font-weight;
+        text-align:center;
+
+        .col_text{
+            border-radius:50px;       
+        }
+   
+    }
+   
+}
+/* -----------------------------------------------------------------------------*/
+/* TYC 
+/* -----------------------------------------------------------------------------*/
+.table_wrapper{
+    @include media(mb){
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+}
+@import 'table-styles/_tab-styles';
+@import 'table-styles/_col-styles';
+@import 'table-styles/_row-styles';

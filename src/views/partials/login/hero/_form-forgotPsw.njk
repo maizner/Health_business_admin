@@ -1,0 +1,22 @@
+<form class="form_content parsley js_form_validation login forgot_psw" name="Form"
+  data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden"
+ data-parsley-priority-enabled="true" data-parsley-validate>
+
+    <h2 class="form_title">Reestablece la Contraseña</h2>
+
+    <div class="form-group">
+        <label for="InputEmail">Email</label>
+        <input autocomplete="off" type="email" class="form-control" id="InputEmail" placeholder="nombre@tumail.com" name="email"
+        data-parsley-errors-container=".toast-top-full-width"
+        data-parsley-trigger="submit"
+        data-parsley-required-message= "Ingresa una cuenta de email para poder continuar."
+        data-parsley-type-message= "La cuenta ingresada tiene un formato inválido."
+        data-parsley-required>
+        <span class="default_validation_msj"></span>
+    </div>
+    <p class="comment-form" >Ingresa la dirección de correo electrónico que utilizaste
+    para iniciar sesión y te enviaremos instrucciones para restablecer tu contraseña.</p>
+
+    <button class="btn md_btn default_btn_1" type="submit">Enviar</button>
+</form>
+

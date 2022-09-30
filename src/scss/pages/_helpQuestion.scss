@@ -1,0 +1,61 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the notification page.
+// -----------------------------------------------------------------------------
+
+.content_wrapper {
+	padding: 24px;
+
+	@include media(dk) {
+		padding: 50px 163px 50px 120px;
+	}
+}
+
+// Header de la página 
+.help_header {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+// Tìtulo del contenido de la página 
+.help_title {
+	margin-top: 0;
+	margin-bottom: 50px;
+	font-weight: $medium-font-weight;
+	font-family: $text-font-stack;
+	color: $grey-text-default-color;
+}	
+
+// Texto del título del item
+.help_item-title {
+	font-size: 1.125rem;
+	font-weight: 500;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1;
+}
+
+// Lista de topics
+.help_list {
+	padding-left: 0;
+	list-style: none;
+	margin:0px;
+}
+
+// Item de la lista de topics
+.help_item  {
+	position: relative;
+	padding: 10px 0 10px 35px;
+
+	&:after {
+		display: block;
+		position: absolute;
+		top: 16px;
+		left: 0;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+		background-color: $brand-color; // Color custom?
+		content: '';
+	}
+}

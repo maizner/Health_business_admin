@@ -1,0 +1,54 @@
+
+@charset 'UTF-8';
+@import
+	'utilities/variables',
+	'utilities/functions',
+	'utilities/mixins';
+
+@import
+	'base/base',
+	'base/fonts',
+	'base/typography',
+	'base/helpers';
+
+
+@import
+	'vendor/normalize';
+
+
+@import
+	'layout/layout',
+	'layout/nav',
+	'layout/nav/sidebar',
+	'layout/nav/topbar',
+	'layout/toast',
+	'layout/loader';
+
+@import
+	'sections/abm/search',
+	'sections/abm/registration',
+	'sections/abm/massive-registration';
+
+@import
+	'components/tabs',
+	'components/button',
+	'components/form-group',
+	'components/input',
+	'components/input-file',
+	'components/steps',
+	'components/tables',
+	'components/datatables',
+	'components/thumbs',
+	'components/filters',
+	'components/checkbox',
+	'components/select',
+	'components/select2',
+	'components/scrollbar',
+	'components/collapsible-panel',
+	'components/fg-default-validations',
+	'components/modal',
+	'components/tooltip';
+
+
+@import
+	'pages/abm';

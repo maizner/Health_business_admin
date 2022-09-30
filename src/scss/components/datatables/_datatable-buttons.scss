@@ -1,0 +1,15 @@
+/* -----------------------------------------------------------------------------*/
+/* .Cursor of components/datatables => /datatables/_datatable-buttons
+/* -----------------------------------------------------------------------------*/
+//Tooltip personalizado para uso interno de la tabla
+.dt-buttons {
+    display: flex;
+    flex-direction:row;
+    .icon {
+        font-size:21px;
+        color: $grey-text-default-color;
+        font-weight: $bold-font-weight;
+
+    }
+    
+}

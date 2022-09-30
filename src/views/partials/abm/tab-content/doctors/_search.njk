@@ -1,0 +1,114 @@
+{# import macros #}
+{% import "macros/macro-formField.njk" as dr %}
+<!--Sección colapsables => Filtros + Form-->
+<section class=" collapsible_panel">
+    <!-- Info DEV:  
+    •   El Elemento filters está oculto bajo la clase d-none. Se realiza interacción con el click del btn Buscar (js_form_collapse). 
+    •	Los filtros seleccionados se pueden eliminar de forma unitaria haciendo click en la X.
+    •	El botón “Cancelar” elimina todos los filtros q se hayan seleccionado juntos y limpia los resultados de la búsqueda. Es el mismo comportamiento que se tiene al ingresar al Buscar por primera vez. 
+    •	“Ver buscador” es el elemento que permite desplegar y colapsar los filtros. 
+    -->
+    <div class="filters d-none" >
+        <!-- Info DEV:El sector izquierdo carga filtros-->
+        <div class="button_container button_container_left">
+            <div class="filter" >
+                <span class="text" >Guardia</span>
+                <span class="icon icon-close remove_this" ></span>
+            </div>
+            <div class="filter" >
+                <span class="text" >Español</span>
+                <span class="icon icon-close remove_this" ></span>
+            </div>
+        </div>
+        <!-- Info DEV:El sector derecho tiene btns : cancel=> Limpia filtros + descolapsa-->
+        <div class="button_container button_container_right">
+            <!--INFO DEV: filter_cancel LIMPIAR FILTROS DE LA TABLA -->
+            <a class="filter filter_cancel" >
+                <span class="text" >Cancel</span>
+                <span class="icon icon-close remove_all" ></span>
+            </a>
+            <a class="filter filter_collapse" data-toggle="collapse" 
+                href=".js_drSearch" 
+                role="button" 
+                aria-expanded="false" 
+                aria-controls=".js_drSearch">
+                
+                <span class="text" >Ver buscador</span>
+                <span class="icon icon-arrow-down animated-arrow"></span>
+            </a>
+        </div>
+
+    </div>
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+    <div class="collapse show js_drSearch" >
+ 
+        <form action="#">
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                {% block nombre %}
+                    {{ dr.input("text", "nameSearch", "three_elem","Nombre","Nombre") }}
+                {% endblock %} 
+
+                {% block apellido %}
+                    {{ dr.input("text", "lastnameSearch", "three_elem","Apellido","Apellido") }}
+                {% endblock %} 
+
+                {% block matricula %}
+                    {{ dr.input("text", "enrollmentSearch", "three_elem","Matricula #","Número de matrícula") }}
+                {% endblock %} 
+
+                {% block doctypeCombo %}
+                    {{ dr.comboSingle("drDoctypeSearch", "fixed-element", 
+                    "Documento Tipo", "Tipo", "width:110px", "DNI", "Passport", "LE", "LC") }}
+                {% endblock %}
+
+                {% block docNumber %}
+                    {{ dr.input("number", "docNumberSearch", "default", "Número de Documento #",
+                    "Número de documento") }}
+                {% endblock %} 
+
+                {% block email %}
+                    {{ dr.input( "email","emailSearch", "default","Email","nombre@mail.com") }}
+                {% endblock %} 
+
+                {% block phoneNumber %}
+                    {{ dr.input("number", "phoneNumber", "default","Teléfono","Teléfono") }}
+                {% endblock %} 
+
+                {% block specialtyCombo %}
+                    {{ dr.comboMultiple("specSearch", "Especialidad", 
+                    "Ingrese una o más especialidades", "Clínica médica","Pedriatría",
+                     "Traumatología","Guardia" ) }}
+                {% endblock %} 
+
+                {% block langCombo %}
+                    {{ dr.comboMultiple("langSearch", "Idioma", "Ingrese uno o más idiomas", 
+                    "Español","Inglés", "Portugués","Francés") }}
+                {% endblock %} 
+                
+            </div>
+
+            <div class="button_container button_container_right">
+                <button class="btn md_btn default_btn_1 js_form_collapse" >Buscar</button>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+<!--Sección resultado de búsqueda => Tabla-->
+<section class="resultTable" >
+    <div class="table-responsive w-100">
+        {% block res_cursor_dr %}
+            {% include "shared/_mobile-cursor.njk" %}
+        {% endblock %}
+        {% block search_result_dr %}
+            {% include "Partials/abm/tables/_resultTable.njk" %}
+        {% endblock %}
+        {% block res_showmore_dr %}
+            {% include "shared/_show-more.njk" %}
+        {% endblock %}
+    </div>
+</section>

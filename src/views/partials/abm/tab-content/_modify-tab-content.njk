@@ -1,0 +1,44 @@
+<div class="tab_content">
+
+
+    <!-- Comienza sección contenido Modify-->
+    <section class="tab_pane main_first_pane active" >
+
+       
+        {% block second_nav_tab_modify %}
+            {% include "partials/abm/nav-tabs/tabs-content/patients/_second-nav-tabs-modify.njk" %}
+        {% endblock %}
+        
+
+        <!-- Comienza contenido de segunda navegación-->
+        <div class="tab_content first_tab_content">
+            <div class="tab_pane first_content active" >
+                {% block modify_first_dr %}
+                    {% include "partials/abm/tab-content/patients/modify/_form1.njk" %}
+                {% endblock %}  
+            </div>
+
+            <div class="tab_pane second_content" >
+
+                {% block modify_second_dr %}
+                    {% include "partials/abm/tab-content/patients/modify/_form2.njk" %}
+                {% endblock %}  
+
+            </div>
+
+            <div class="tab_pane third_content" >
+                {% block modify_third_dr %}
+                    {% include "partials/abm/tab-content/patients/modify/_form3.njk" %}
+                {% endblock %}  
+            </div>
+
+            <div class="tab_pane fourth_content" >
+                 {% block modify_fourth_dr %}
+                    {% include "partials/abm/tab-content/patients/modify/_form4.njk" %}
+                {% endblock %}  
+            </div>
+        </div>
+        <!-- Fin contenido de segunda navegación-->
+    </section>
+    <!--Fin contenido modify -->
+</div>

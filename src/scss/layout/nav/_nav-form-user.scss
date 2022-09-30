@@ -1,0 +1,151 @@
+// -----------------------------------------------------------------------------
+//  styles @imported from nav. layout/nav/_nav-form-user
+// -----------------------------------------------------------------------------
+.user {
+    display:flex;
+    padding:0px 15px;
+    width:100%;
+    background-color: $light-grey-color;
+    
+    @include media(mb) {
+        flex:1; 
+        align-items: center;
+        height: 60px;
+    }
+
+    @include media(dk) {
+        
+        height:$navbar-height;
+    }
+
+    .user_config {
+
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        margin-left:auto;
+
+        .user_info {
+
+            text-decoration:none;
+        }
+
+        .user_name {
+
+            font-family: $text-font-stack;
+            color: $semilight-grey-color;
+            font-weight: $medium-font-weight;
+            text-align:right;
+
+            @include media(mb) {
+                font-size: $t13;
+            }
+
+            @include media(dk) {
+                font-size: $t15;
+            }
+        }
+
+        .user_settings {
+
+            font-family: $text-font-stack;
+            color: $light-grey-color-2;
+            font-weight: $medium-font-weight;
+            text-transform:uppercase;
+            text-align:right;
+
+            @include media(mb) {
+                font-size: $t10;
+            }
+
+            @include media(dk) {
+                font-size: $t10;
+            }
+        }
+        
+    }
+
+    .user_alerts,.user_logout {
+
+        @include media(mb) {
+
+            display:none
+
+        }
+        @include media(dk) {
+
+            display:flex;
+            flex-direction:row;
+            align-items: center
+
+        }
+      
+    }
+
+    .icon {
+        
+        color:black;
+        font-size:18px;
+        text-decoration: none;
+    }
+
+}
+
+.user_item {
+
+    @include media(mb){
+        padding-left:7px;
+    }
+
+    @include media(dk){
+        padding:0px 10px;
+    }
+    
+}
+
+.has_alerts {
+   
+    .alerts {
+        position:relative;
+        display:block;
+    }
+
+    .on_alert {
+        position:absolute;
+        width:6px;
+        height:6px;
+        background: red;
+        border-radius:50%;
+        z-index: 3;
+    }
+
+    @include media(mb) {
+
+        .thumbs_container .on_alert {
+            display:block;
+            top: 0px;
+            right: 5px;
+        }
+        .user_alerts .on_alert {
+            display:none;
+        }
+        
+    }
+    @include media(dk) {
+    
+        .thumbs_container .on_alert {
+            display:none;
+        }
+        .user_alerts .on_alert {
+            display:block;
+            top: 3px;
+            right: 8px;
+        }
+        
+    }
+
+    
+    
+}
+
+

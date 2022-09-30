@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation only component.
+// -----------------------------------------------------------------------------
+
+
+//Navegación principal 
+
+	
+.navbar_nav{
+	margin-left:0px;
+	margin-top:1.3em;
+	padding:0px;
+	list-style:none;
+	display:flex;
+	flex-direction:row;
+	
+	.nav_item{
+		font-family: $text-font-stack;
+		color: white;
+		font-weight: $normal-font-weight;
+		
+		border-top:1px dotted $semilight-grey-color;
+		
+
+		.nav_link{
+			display:flex;
+			text-decoration:none;
+			font-family: $text-font-stack;
+			font-weight: $normal-font-weight;
+			font-size: $t10;
+			text-transform:uppercase;
+			letter-spacing: $letter-spacing-half;
+			color: $semilight-grey-color;
+			margin: 1.3em 1em 0em 1em;
+
+			
+		}
+
+		&:hover, &:active, &.active{
+			.nav_link{
+				font-weight: $bold-font-weight;
+				color: white;
+			}
+		}
+	}
+}
+

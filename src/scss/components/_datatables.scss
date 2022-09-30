@@ -1,0 +1,132 @@
+/* -----------------------------------------------------------------------------*/
+/* This file contains all styles related to the dataTable component.*/
+/* -----------------------------------------------------------------------------*/
+
+.dataTables_wrapper, 
+.myfilter, 
+.table-wrapper {
+	display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dataTables	{	
+
+		width: 100%;
+		// margin-bottom: $spacer;
+		color: $table-color;
+		border-collapse: collapse;
+
+	th,
+	td 	{
+
+		padding: $table-cell-padding;
+		vertical-align: middle;
+
+		&:focus {
+		outline: 0px;
+		}
+
+  	}
+ 
+  	tr{
+    
+    &:hover, &:focus {
+
+        td 	{
+
+			color: $semiblack-color;
+			font-weight: $medium-font-weight;
+			@include transition(all,0.3s,ease-in-out)
+
+        }
+    }
+
+	th,
+	td 	{
+
+		font-family: $text-font-stack;
+		color: $semiblack-color;
+		
+		font-weight: $normal-font-weight;
+		letter-spacing:$letter-spacing-half;
+		height: 54px;
+		overflow: hidden;
+
+		@include media(mb) {
+
+			font-size: $t13;
+		}
+
+		@include media(dk) {
+
+			font-size: $t14;
+		}
+
+	}
+	
+
+
+}
+
+
+thead tr{
+    
+	outline:0px;
+	
+		&:hover, &:focus{
+
+			outline:0px;
+			cursor:initial;
+			
+		}
+  }
+
+ 
+
+}
+.hidden-checkbox{
+
+	display:  none;
+	visibility: hidden;
+
+}
+
+
+//ellipsis para agregar tooltips a los tds
+td .ellipsis, td.ellipsis{
+
+	max-width: 110px;
+	padding: 0px 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display:block;
+	margin:0 auto;
+	font-family: $text-font-stack;
+	color: $grey-text-default-color;
+	font-size: inherit;
+	font-weight: $medium-font-weight;
+	text-transform: uppercase;
+
+}
+@include media(mb){
+
+	.table-responsive {
+
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+	}
+
+}
+
+    
+@import
+  	'datatables/datatable-search',
+	'../components/cursor',
+	'datatables/datatable-buttons';
+
+

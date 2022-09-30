@@ -1,0 +1,212 @@
+{
+    
+    "headerNavItems": [
+        {
+            "item_link": "https://my.assistcard.com/ar/landing/assistance#&_ga=2.166516734.1556444590.1590349147-68067901.1588788750&_gac=1.126962431.1586886289.CjwKCAjwvtX0BRAFEiwAGWJyZM2ghReBZce3GOML8hJSqftXoZgIVYhrGKrtNblwsNDY3_1Ud7or3xoCSFoQAvD_BwE",
+            "link_title": "XSolicitar Asistencia",
+            "item_name": "XSolicitar Asistencia",
+            "item_icon": "mdi-hospital-box"
+        },
+        {
+            "item_link": "tel:0810-122-1555",
+            "link_title": "XVenta telefónica",
+            "item_name": "XVenta 0810-122-1555",
+            "item_icon": "mdi-phone"
+        },
+        
+        {
+            "item_link": "https://my.assistcard.com/User/Login",
+            "link_title": "XMY ASSIST CARD",
+            "item_name": "XMY ASSIST CARD",
+            "item_icon": "mdi-account-key"
+
+        }        
+    ],
+    "footerItems": [
+        {
+            "footer_links":[
+                {
+                    "item_title": "XSobre Nosotros",
+                    "pages" : [
+                        
+                        {
+                            "item_link": "http://comunidadviajeros.assistcard.com/",
+                            "item_name": "XComunidad Viajeros"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/calidad",
+                            "item_name": "XPor qué elegirnos"
+                        },
+                        {
+                            "item_link": "https://aboutus.assistcard.com/",
+                            "item_name": "XConoce ASSIST CARD"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/recursos-humanos",
+                            "item_name": "XTrabaja con nosotros"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/Oficinas-assistcard",
+                            "item_name": "XSucursales"
+                        }
+                    ]
+                },
+                {
+                    "item_title": "X¿Qué ofrecemos?",
+                    "pages" : [
+                        
+                        {
+                            "item_link": "https://www.assistcard.com/ar/Coberturas-assistcard",
+                            "item_name": "X¿Qué cubrimos?"
+                        },
+                        {
+                            "item_link": "https://my.assistcard.com/ar/landing/assistance",
+                            "item_name": "XAyuda y Emergencias"
+                        },
+                        {
+                            "item_link": "https://my.assistcard.com/User/Login#_ga=2.98417375.1556444590.1590349147-68067901.1588788750&_gac=1.25305807.1586886289.CjwKCAjwvtX0BRAFEiwAGWJyZM2ghReBZce3GOML8hJSqftXoZgIVYhrGKrtNblwsNDY3_1Ud7or3xoCSFoQAvD_BwE",
+                            "item_name": "XMY ASSISTCARD"
+                        }
+                    ]
+                },
+                {
+                    "item_title": "XCorporativo",
+                    "pages" : [
+                        
+                        {
+                            "item_link": "https://www.assistcard.com/ar/opiniones",
+                            "item_name": "XTu opinión importa"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/vende-assistcard",
+                            "item_name": "XVende ASSIST CARD"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/contacto-corporativo",
+                            "item_name": "XContacto Corporativo"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/Quiero-ser-prestador",
+                            "item_name": "XQuiero ser prestador"
+                        }
+                    ]
+        
+                },
+                {
+                    "item_title": "XInfo útil para viajeros",
+                    "pages" : [
+                        
+                        {
+                            "item_link": "https://www.assistcard.com/ar/calidad",
+                            "item_name": "XPor qué elegirnos"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/peru-mas-que-machu-pichu",
+                            "item_name": "XPerú más que Machu Pichu"
+                        },
+                        {
+                            "item_link": "http://assistcard.com/ar/accidentes-en-viaje",
+                            "item_name": "XSeguro de accidentes en viaje"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/ano-nuevo-en-brasil",
+                            "item_name": "XDónde celebrar año nuevo en Brasil"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/deportes-de-aventura",
+                            "item_name": "XDestinos para practicar deportes de aventura"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/viajar-con-tu-mascota",
+                            "item_name": "X5 tips para viajar con tu mascota"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/seguro-de-viaje-estados-unidos",
+                            "item_name": "XSeguro de viaje para Estados Unidos"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/seguro-de-viaje-para-viajar-a-brasil",
+                            "item_name": "XSeguro de viaje para viajar a Brasil"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/asistencia-en-viaje-para-deportes",
+                            "item_name": "XSeguro de accidentes deportivos"
+                        },
+                        {
+                            "item_link": "https://www.assistcard.com/ar/Topic",
+                            "item_name": "X[+] Mostrar mas tópicos"
+                        }
+                    ]
+        
+                }
+            ]
+        },
+        
+        {
+         
+           "footer_social": [
+            {
+                "item_link": "https://www.facebook.com/ASSISTCARD",
+                "link_title": "Facebook",
+                "item_icon": "mdi-facebook"
+            },
+            {
+                "item_link": "https://twitter.com/assistcard",
+                "link_title": "Twitter",
+                "item_icon": "mdi-twitter"
+            },
+            
+            {
+                "item_link": "https://www.linkedin.com/company/assist-card/",
+                "link_title": "Linkedin",
+                "item_icon": "mdi-linkedin"
+    
+            },  
+            {
+                "item_link": "https://www.youtube.com/user/videosassistcard",
+                "link_title": "Youtube",
+                "item_icon": "mdi-youtube"
+            },
+            {
+                "item_link": "https://www.instagram.com/assistcard/",
+                "link_title": "Instagram",
+                "item_icon": "mdi-instagram"
+            },
+            
+            {
+                "item_link": "https://www.assistcard.com/ar/ContactUs",
+                "link_title": "Contact Us",
+                "item_icon": "mdi-email"
+    
+            }      
+
+           ]
+
+        },
+        {
+         
+            "footer_disclaimer": [
+               
+                    
+                {
+                    "item_link": "https://www.assistcard.com/ar/FAQ",
+                    "item_name": "XFAQs"
+                },
+                {
+                    "item_link": "https://ecommerceapi.assistcard.com/Api/DocumentHandler/GetDocument?recordId=184#_ga=2.137294832.1556444590.1590349147-68067901.1588788750&_gac=1.226059752.1586886289.CjwKCAjwvtX0BRAFEiwAGWJyZM2ghReBZce3GOML8hJSqftXoZgIVYhrGKrtNblwsNDY3_1Ud7or3xoCSFoQAvD_BwE",
+                    "item_name": "XCondiciones generales"
+                },
+                {
+                    "item_link": "https://ecommerceapi.assistcard.com/Api/DocumentHandler/GetDocument?recordId=12#_ga=2.137294832.1556444590.1590349147-68067901.1588788750&_gac=1.226059752.1586886289.CjwKCAjwvtX0BRAFEiwAGWJyZM2ghReBZce3GOML8hJSqftXoZgIVYhrGKrtNblwsNDY3_1Ud7or3xoCSFoQAvD_BwE",
+                    "item_name": "XPolitica de privacidad",
+                    "item_text": "XLos servicios ASSIST CARD tienen limitaciones exclusivas según el tipo de producto adquirido. Aplican las limitaciones y exclusiones de uso habitual y/o legal en el país en que se emita el Producto ASSIST CARD. A partir de los 70 años inclusive se aplica un incremento del 50% sobre las tarifas. Productos y tarifas de la web no aplican para pasajeros de 75 años o más. Los servicios y productos se rigen por Condiciones Generales que se informan con la compra de cada Producto ASSIST CARD y se hallan a su disposición ingresando en el portal web, así como en las oficinas comerciales y locales de ASSIST CARD donde pueden ser solicitadas en forma personal, telefónicamente o por e-mail. Las enfermedades preexistentes tienen exclusiones y limitaciones. ASSIST CARD no es una empresa de seguros, sino que actúa en calidad de tomadora en beneficio de sus clientes. ASSIST CARD Argentina S.A. de Servicios, Arias Nº 3751°, Piso 10, CP 1430, CABA. CUIT 33-54799242-9. Tel: +5411-5555-2000"
+                }
+                
+                   
+                
+            ]
+ 
+         }     
+    ]
+   
+}

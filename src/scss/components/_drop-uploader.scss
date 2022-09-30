@@ -1,0 +1,273 @@
+// -----------------------------------------------------------------------------
+// This file contains styles drop-uploader components
+// -----------------------------------------------------------------------------
+.drop_wrapper{
+    position:relative;
+    cursor: pointer;
+
+    &.items_added {
+        max-height: 112px;
+        border: 1px solid $active-green;
+        
+    }
+}
+.drop_uploader.drop_zone {
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid $semidark-grey-color;
+    border-radius: 0px;
+
+    .text_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 110px;
+        padding: 10px;
+  
+    }
+    
+}
+.text_wrapper .text, 
+.text_wrapper .text a{
+    display: flex;
+    flex-direction: column;
+    font-size:12px;
+    color: $grey-text-default-color;
+    font-weight:$normal-font-weight;
+    
+    &:hover {
+        text-transform:underline;
+    }
+
+    .subtitle {
+        margin-top: 0px;
+        font-size:12px;
+        color: $semilight-grey-color;
+    }
+}
+
+.drop_uploader.drop_zone.hover {
+    border: 1px solid var(--default-color);
+    background-color:rgba(var(--rgb-color), 0.1);
+}
+
+
+
+.drop_uploader.drop_zone .text_wrapper .icon {
+    font-size: 50px;
+    color: $semidark-grey-color;
+
+}
+
+.drop_uploader.drop_zone .upload_wrapper {
+    position:relative
+}
+.drop_uploader.drop_zone ul.files {
+    display:none;
+    list-style: none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    background-color: lighten($active-green, 42%);
+
+
+    &.added {
+        display:flex;
+        flex-direction:column;
+    }
+}
+.drop_uploader.drop_zone ul .icon{
+    color:$active-green;
+}
+.drop_uploader.drop_zone ul .icon-close{
+    display: flex;
+    align-self: flex-end;
+    padding: 10px;
+    // border-radius:5px;
+    cursor: pointer;
+    &:hover{
+        opacity:.8;
+        background-color: lighten($active-green, 32%);
+    }
+}
+.drop_uploader.drop_zone ul .icon-checkupload{
+    display: flex;
+    align-self: center;
+    font-size:$t24;
+
+    
+}
+
+.drop_uploader.drop_zone ul.files li {
+    display:flex;
+    font-size: 13px;
+    color: $grey-text-default-color;
+    margin: 0;
+    margin-top:auto;
+    padding: 5px;
+
+        .right{
+            margin-left:auto;
+        }
+
+}
+
+.drop_uploader.drop_zone ul.files li i.action-delete {
+    color: #ff0000;
+    float: right;
+    cursor: pointer;
+}
+
+.drop_uploader.drop_zone ul.files.thumb {
+    width: 90%;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 35px;
+    overflow: auto;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li {
+    min-width: 100px;
+    display: inline-block;
+    float: left;
+    font-family: "Raleway";
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px 8px 8px 8px;
+    background-size: cover;
+    margin: 0 auto;
+    border: 1px solid #e1e1e1;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail .du_hover_layer {
+    width: 100px;
+    height: 100px;
+    border-radius: 7px;
+    background: #fff;
+    opacity: 0;
+    position: absolute;
+
+    transition: opacity 0.1s ease-in;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail:hover .du_hover_layer {
+    opacity: .8;
+    position: absolute;
+
+    transition: opacity 0.1s ease-in;
+}
+
+.drop_uploader.drop_zone ul.files li .du_progress {
+    display: inline-block;
+    float: right;
+    margin: 0px;
+    position: relative;
+    right: 8px;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li .du_progress {
+    float: right;
+    width: 0px;
+    height: 0px;
+    margin-top: -100px;
+    position: relative;
+    right: 75px;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li .du_progress canvas {
+    margin-top: 25px;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail.rotate_90 {
+
+    transform: rotate(-90deg);
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail.rotate_180 {
+
+    transform: rotate(-180deg);
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail.rotate_270 {
+
+    transform: rotate(90deg);
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail i {
+    font-size: 32px;
+    position: relative;
+    top: calc(50% - 16px);
+    color:rgba(var(--rgb-color), 0.1);
+    display: block;
+}
+
+.drop_uploader.drop_zone ul.files.thumb.ajax li div.thumbnail:hover i {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail i.action-delete {
+    color: #FF0000;
+    visibility: hidden;
+    opacity: 0;
+    float: none;
+    transition: opacity 0.1s ease-in;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail:hover i.action-delete {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li span.title {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.drop_uploader.drop_zone ul.files li:nth-child(even) {
+    background-color: transparent;
+}
+
+.drop_uploader.drop_zone ul.files li i {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    margin: 0px 10px;
+}
+
+.drop_uploader.drop_zone .errors {
+    display: block;
+    position: absolute;
+    font-size: 12px;
+    color: $error-color;
+}
+
+.drop_uploader.drop_zone input[type=file] {
+    display: none;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+

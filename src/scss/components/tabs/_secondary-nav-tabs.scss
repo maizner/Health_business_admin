@@ -1,0 +1,90 @@
+// -----------------------------------------------------------------------------
+// This file contains secondary tabs navigation styles in components/tabs/_secondary-nav-tabs.scss.
+// -----------------------------------------------------------------------------
+
+.second_nav_tabs {
+    height:60px;
+    background-color: rgba(var(--rgb-color), 0.1);
+ 
+    
+    .nav_item {
+
+        //Excepciones para navegación en 320px (formatos viejos como iphone SE)
+
+        @include media(xs) {
+
+            .nav_link_content {
+                font-size:11px;
+            }
+        }
+        @include media(mb) {
+
+            width:auto;
+
+            .nav_link_content {
+                font-size:12px;
+            }
+
+        }
+        
+    }
+
+    .nav_link_content {
+        display:flex;
+        flex-direction:row;
+		align-items: center;
+        color: $semilight-grey-color;
+        
+
+        @include media(mb){
+            font-size: $t13;
+            .icon{
+                font-size:12px;
+                padding:3px;
+            }
+            
+        }
+        
+        @include media(dk){
+            
+            font-size: $t14;
+
+            .icon{
+                font-size:22px;
+            }
+        }
+        
+    }
+    
+    .text_ellipsis{  
+    
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        @include media(mb){
+
+            max-width: 85px;
+            
+        }
+        @include media(dk){
+            
+            max-width: 200px;
+        }
+    }
+
+    //Estilos de navegación secundaria para editables del sistema=> See/Edit/Delete
+    &.editable_tabs .nav_link{
+
+        .icon {
+            visibility:hidden;
+        }
+
+        &.active .icon{
+            visibility:visible;  
+        }
+
+    }
+
+}
+

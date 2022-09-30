@@ -1,0 +1,184 @@
+/* -----------------------------------------------------------------------------*/
+/* This file contains all styles related to the Table component.*/
+/* -----------------------------------------------------------------------------*/
+
+.table {
+	width: 100%;
+	margin-bottom: map-get($spacers, $spacer); //1rem
+	color: $table-color;
+	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+	
+	th, 
+	td{
+		border-left:0;
+		border-right:0;
+	}
+
+  td {
+	padding: $table-cell-padding;
+	vertical-align: top;
+	border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+	vertical-align: bottom;
+	// border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+
+//
+// Condensed table w/ half padding
+//
+
+.table-sm {
+	th,
+	td {
+		padding: $table-cell-padding-sm;
+	}
+}
+
+
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+
+.table-bordered {
+  	border: $table-border-width solid $table-border-color;
+
+	th,
+	td {
+		border: $table-border-width solid $table-border-color;
+	}
+
+  thead {
+    th,
+    td {
+      	border-bottom-width: 2 * $table-border-width;
+    }
+  }
+}
+
+.table-borderless {
+	th,
+	td,
+	thead th,
+	tbody + tbody {
+		border: 0;
+	}
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+
+	tbody tr:nth-of-type(#{$table-striped-order}) {
+		background-color: $table-accent-bg;
+	}
+
+	&.modal-striped-table,&.history-striped-table {
+	
+		background-color:white;
+
+	
+		tr{
+			&:hover, &:focus{
+				outline:2px solid $active-green;
+				cursor:pointer;
+				td{
+				color: $black-color;
+				font-weight: $medium-font-weight;
+				@include transition(all,0.3s,ease-in-out)
+				}
+			}
+
+			&.selected{
+				outline:2px solid $active-green;
+				cursor:pointer;
+				background-color: $duck-yellow;
+
+				td{
+				color: $black-color;
+				font-weight: $medium-font-weight;
+				@include transition(all,0.3s,ease-in-out)
+				}
+			}
+		}
+		
+		td{
+			width:50%;
+			padding:0.5em;
+			position: relative;
+
+			&.date{
+			
+			font-family: $text-font-stack;
+			color:  $grey-text-default-color;
+			font-weight: $normal-font-weight;
+			font-size:   $t13;
+			text-align:  left;
+
+			}
+
+			&.symptom{
+
+			font-family:    $text-font-stack;
+			color:          $grey-text-default-color;
+			font-weight:    $medium-font-weight;
+			font-size:      $t10;
+			text-transform: uppercase;
+			text-align:     right;
+			padding-right: 30px;
+			padding-top:    7px;
+			
+			&:after{
+
+				content: "";
+				width: 5px;
+				height: 7px;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='5' height='7' viewBox='0 0 5 7'%3e%3cpath fill='%234A4A4A' fill-rule='nonzero' d='M.75.996l.41-.371L4.5 3.75 1.16 6.875l-.41-.371L3.68 3.75z'/%3e%3c/svg%3e");
+				top: 10px;
+				right: 10px;
+				position: absolute;
+				display: inline-block;
+			}
+			
+		}
+		}
+	}
+
+}
+
+
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  tbody tr {
+      color: $table-hover-color;
+      background-color: $table-hover-bg;
+      @include transition(all,0.5s,ease-in-out);
+  }
+}
+
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+
+
+  //components/ tables /_table-styles
+
+  @import 'tables/table-styles';

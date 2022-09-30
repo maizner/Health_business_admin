@@ -1,0 +1,101 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "5" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/myweb.css">
+    
+{% endblock %} 
+
+
+{% block content %}
+
+{# Mensajes de error #}
+
+    <div class="layout myweb">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body">
+                {# <h1 class="page-title mb1">Personaliza tu web</h1> #}
+                <div class="cards_container">
+                    <form method="POST" action="#" class="formul">
+                        <div class="card">
+                            <h3 class="card_title">Logo Corporativo Color</h3>
+                            <div class="card_body">
+                                <div class="drop_wrapper">
+                                    <input type="file" 
+                                    class="file" 
+                                    name="file[]" 
+                                    accept="image/*"  
+                                    data-maxfilesize="500000" 
+                                    data-layout="list" 
+                                    value ="Hello">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3 class="card_title">Logo Corporativo Blanco</h3>
+                            <div class="card_body">
+                                <div class="drop_wrapper">
+                                    <input type="file" 
+                                    class="file" 
+                                    name="file[]" 
+                                    accept="image/*"  
+                                    data-maxfilesize="500000" 
+                                    data-layout="list">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3 class="card_title">Color Institucional</h3>
+                            <div class="card_body">
+                                {% block colorpicker %}
+                                    {% include "partials/myweb/_colorpicker.njk" %}
+                                {% endblock %}
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3 class="card_title">Imagen de fondo</h3>
+                            <div class="card_body">
+                                <div class="drop_wrapper">
+                                    <input type="file" 
+                                    class="file" 
+                                    name="file[]" 
+                                    accept="image/*"  
+                                    data-maxfilesize="3000000" 
+                                    data-layout="list">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="element_half_container">
+                            <button class="btn md_btn default_btn_2 ml-auto js_clean_form" >Cancelar</button>
+                            <button class="btn md_btn default_btn_1 js_confirm" type="submit" >Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% block modal_upload %}
+                {% include "shared/_modal-upload.njk" %}
+            {% endblock %}
+
+
+        </section>
+      
+    </div>
+    
+{% endblock %}
+{% block pagescript %} 
+    <script src="content/js/myweb.js"></script>
+    <script src="content/js/dropUpload/dropuploader.js"></script>
+    <script src="content/js/colorpicker/colorpicker.js"></script>
+    <script src="content/js/colorpicker/i18n/es.js"></script>
+{% endblock %}

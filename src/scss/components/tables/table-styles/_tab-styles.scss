@@ -1,0 +1,51 @@
+/* -----------------------------------------------------------------------------*/
+/* Tab content styles  components/tables/table-styles/_tab-styles
+/* -----------------------------------------------------------------------------*/
+
+.tab-content {
+
+    .first-pill-content .table-wrapper,
+    .second-pill-content .table-wrapper,
+    .third-pill-content .table-wrapper {
+  
+    
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    
+
+        @include media(mb){
+            //Este es el ancho mínimo puesto en la tabla para mobile. Usamos el mismo ancho
+            min-width: $table-min-width;
+        }
+        @include media(dk){
+            overflow:hidden;
+        }
+
+    }
+    .first-pill-content .table-wrapper {
+
+        border-top:2px solid $tab-a-color;
+
+    }
+    .second-pill-content .table-wrapper {
+
+        border-top:2px solid $tab-b-color;
+
+    }
+
+
+}
+
+//Pacientes
+.patients .third-pill-content .table-wrapper {
+
+    border-top:2px solid $tab-c-color;
+    
+}
+
+//Médicos
+.doctors .third-pill-content .table-wrapper {
+
+    border-top:2px solid $tab-d-color;
+    
+}

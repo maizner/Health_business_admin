@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the input component.
+// -----------------------------------------------------------------------------
+
+
+//generyc form
+input:-internal-autofill-selected,
+textarea:-internal-autofill-selected{
+	background-color: transparent !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type=number] { -moz-appearance:textfield; }
+
+
+//Default input styles
+input{
+	font-family: $text-font-stack;
+	color: $grey-text-default-color;
+	font-weight: $medium-font-weight;
+	letter-spacing:$letter-spacing-half;
+	font-size: $t13;
+	border: 1px solid lighten($semilight-grey-color, 15%);
+	border-radius:0;
+	height:50px;
+	padding: 8px 20px;
+	background: transparent;
+
+	&::placeholder {
+		color:lighten($semilight-grey-color, 15%);
+		font-weight: $normal-font-weight;
+	}
+
+	&:hover{
+		border-color: $semiblack-color;
+		
+	}
+
+	&:focus, .focus{
+		background-color: transparent ;	
+		box-shadow: none;
+		border-color: black;
+		outline-offset:none;
+		outline:black solid 1px;
+	}
+	&:disabled {
+		border-color: black;
+		cursor:not-allowed;
+	}
+
+		
+}
+
+input.form-control {
+	@include media(mb){
+		max-width:400px;
+	}
+	@include media(dk){
+		max-width:350px;
+	}
+	min-width: 170px;
+	width:100%;
+}

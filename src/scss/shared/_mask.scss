@@ -1,0 +1,97 @@
+// -----------------------------------------------------------------------------
+// This file contains all general masks styles 
+// -----------------------------------------------------------------------------
+
+.mask{
+    position: absolute;
+    width:100%;
+    height: 100%;
+}
+.ac-mask-left{
+    @include mask-gradient( 
+        $mask-ac-gradient-start, 0% , 
+        $mask-ac-gradient-2 , 15% , 
+        $mask-ac-gradient-3 , 52% , 
+        $mask-ac-gradient-end , 100%, 
+        155deg
+    );
+    /* z-index: -1 */
+}
+
+.ac-mask-right{
+    @include mask-gradient( 
+        $mask-ac-gradient-start, 0% , 
+        $mask-ac-gradient-2 , 8% , 
+        $mask-ac-gradient-3 , 52% , 
+        $mask-ac-gradient-end , 100%, 
+        190deg
+    );
+   /* z-index: -1 */
+
+}
+
+.ac-mask-top{
+    @include mask-gradient( 
+        $mask-ac-gradient-start, 0% , 
+        $mask-ac-gradient-2 , 10% , 
+        $mask-ac-gradient-3 , 59% , 
+        $mask-ac-gradient-end , 100%,   
+        180deg
+    );
+   /* z-index: -1 */
+}
+
+.ac-mask-bottom{
+    @include mask-gradient( 
+        $mask-ac-gradient-start, 0% , 
+        $mask-ac-gradient-2 , 8% , 
+        $mask-ac-gradient-3 , 59% , 
+        $mask-ac-gradient-end , 100%, 
+        0deg
+    )
+}
+
+.dark-mask-bottom{
+    @include mask-gradient( 
+        $dark-gradient-start, 0% , 
+        $dark-gradient-2 , 0.2% , 
+        $dark-gradient-3 , 99% , 
+        $dark-gradient-end , 100%, 
+        0deg
+    )
+    opacity:0.9
+}
+
+.overlay-mask{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color: #000;
+    opacity:0.5;
+    z-index: -2
+}
+
+.hero-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index: -3;
+    background-color: $brand-color;
+
+}
+
+
+
+
+// only for IE overlay grey background to replace multiply option
+@media all and (-ms-high-contrast:none){
+  .overlay-ie { position:absolute;width:100%;height:100%;background:#000;opacity:0.5;display:block;z-index: -2}
+  *::-ms-backdrop, .overlay-ie { position:absolute;width:100%;height:100%;background:#000;opacity:0.5;display:block;z-index: -1 }
+  
+  }
+@supports (-ms-ime-align:auto) {
+    .overlay-ie { position:absolute;width:100%;height:100%;background:#000;opacity:0.5;display:block;z-index: -1} 
+  *::-ms-backdrop, .overlay-ie { position:absolute;width:100%;height:100%;background:#000;opacity:0.5;display:block;z-index: -1 } 
+ 
+}
+  

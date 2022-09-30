@@ -1,0 +1,83 @@
+/* -----------------------------------------------------------------------------*/
+/* .Cursor of components/datatables => /datatables/_datatable-cursor
+/* -----------------------------------------------------------------------------*/
+//Estilo de cursor scroll (scroll-x)
+@include media(mb){
+
+    .cursor {
+    
+        display:block;
+        position:fixed;
+        top:260px;
+        z-index: $zindex-sticky;
+        &.cursor-l {
+            left:20px;
+        }
+        &.cursor-r {
+            right:20px  ;
+        }
+        .icon {
+            font-size: 30px;
+            color: lighten($semilight-grey-color, 10%);
+            opacity:0.5;
+
+            &:hover, 
+            &:active, 
+            .active {
+                opacity:1;
+            }
+        }
+    }
+}
+@include media(dk){
+    .cursor {
+        display:none;
+    }
+}
+
+//Estilo de cursor mostrar más + 
+.show-more {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: white;  
+    padding: 10px;
+    border-top: $table-border-width solid $table-border-color;
+    cursor:pointer;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    
+    .icon {
+
+        font-size:16px;
+        color:$semilight-grey-color;
+
+    }
+
+    .loader_sm {
+
+        position: relative;
+        height:20px;
+        width:20px;
+
+        .loader{
+            position:absolute;
+            top:-5px;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &:hover {
+        .icon {
+
+            color:darken($semilight-grey-color, 20%) ;
+    
+        }
+    }
+
+}

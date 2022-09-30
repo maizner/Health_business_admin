@@ -1,0 +1,269 @@
+// -----------------------------------------------------------------------------
+// This file contains toast styles ( shared/_toast.)
+// -----------------------------------------------------------------------------
+
+.toast-title {
+    font-weight: $toast-title-font-weight;
+}
+.toast.parsley{
+    padding:6px;
+
+    .toast-message,.parsley-type {
+        font-size: $toast-message-font-size;
+        font-weight: $toast-msj-font-weight;
+        letter-spacing:$letter-spacing-half;
+        color:white;
+        word-wrap: break-word;
+        display: inline-block;
+        margin-left:5px;
+        
+    }
+}
+
+
+
+#btn-box{
+    margin-top:3em;
+
+    .btn{
+        font-size: $t13;
+        font-weight: $bold-font-weight;
+       box-shadow: 0 0 0pt 1px $light-grey-color;
+
+        &.btn-outline{
+            background: transparent;
+            color: white;
+            &.focus,
+            &:focus,
+            &:hover{
+
+                color: $grey-text-default-color;
+                background: white;
+                @include transition(all,0.5s,ease-in-out);
+                
+            }
+
+        }
+         &.btn-full{
+            background: $light-grey-color;
+            color: $grey-text-default-color;
+            &.focus,
+            &:focus,
+            &:hover{
+                
+                color: $grey-text-default-color;
+                background: white;
+                @include transition(all,0.5s,ease-in-out);
+                
+            }
+
+        }
+    }
+}
+
+
+.toast-message,.toast-message a, .toast-message label {
+    font-size: $toast-message-font-size;
+    font-weight: $toast-msj-font-weight;
+    letter-spacing:$letter-spacing-half;
+    color: $toast-text-color;
+    // text-transform: lowercase ;
+
+    &::first-letter {
+        text-transform: capitalize;
+    }
+}
+
+.toast-message a:hover {
+    color: #ccc;
+    text-decoration: none
+}
+
+.toast-close-button {
+    position: relative;
+    right: -.3em;
+    top: -.3em;
+    float: right;
+    font-size: 20px;
+    height:18px;
+    font-weight: 300;
+    color: $grey-text-default-color;
+    opacity: .8;
+    filter: alpha(opacity=80)
+}
+
+.toast-close-button:focus, .toast-close-button:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .4;
+    filter: alpha(opacity=40)
+}
+
+button.toast-close-button {
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    -webkit-appearance: none
+}
+
+.toast-top-center {
+    top: 70px;
+    right: 0;
+    width: 100%
+}
+
+.toast-bottom-center {
+    bottom: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-top-full-width {
+    top: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-top-left {
+    top: 12px;
+    left: 12px
+}
+
+.toast-top-right {
+    top: 12px;
+    right: 12px
+}
+
+.toast-bottom-right {
+    right: 12px;
+    bottom: 12px
+}
+
+.toast-bottom-left {
+    bottom: 12px;
+    left: 12px
+}
+
+#toast-container {
+    position: fixed;
+    z-index: 999999
+}
+
+#toast-container * {
+    box-sizing: border-box
+}
+
+#toast-container > div {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 6px;
+    padding: 10px 15px 10px 15px;
+    width: 300px;
+    /* box-shadow: 0 0 12px #999; */
+    border-radius: 0px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    color: $toast-text-color;
+     opacity: .95;
+    filter: alpha(opacity=95); 
+    
+}
+
+#toast-container > :hover {
+    
+    opacity: 1;
+    filter: alpha(opacity=100);
+    cursor: pointer
+}
+
+#toast-container.toast-bottom-center > div, #toast-container.toast-top-center > div {
+    width: 300px;
+    margin: auto
+}
+
+#toast-container.toast-bottom-full-width > div, #toast-container.toast-top-full-width > div {
+    width: 100%;
+    margin: auto
+}
+
+.toast {
+    background-color: $toast-bg-color;
+    display: block;
+    text-align: center;
+   
+
+}
+
+.toast-success {
+    background-color: $toast-success-bg-color
+}
+
+.toast-error {
+    background-color: $toast-error-bg-color
+}
+
+.toast-info {
+    background-color: $toast-info-bg-color;
+
+    div{
+        color:$grey-text-default-color;
+        font-weight: $bold-font-weight;
+    }
+    .toast-close-button{
+        color:$grey-text-default-color;
+    }
+
+}
+
+.toast-warning {
+    background-color: $toast-warning-bg-color
+}
+
+.toast-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: $black-color;
+    opacity: .4;
+    filter: alpha(opacity=40)
+}
+
+@media all and (max-width: 240px) {
+    #toast-container > div {
+        padding: 8px 8px 8px 8px;
+        width: 11em
+    }
+
+    #toast-container .toast-close-button {
+        right: -.2em;
+        top: -.2em
+    }
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+    #toast-container > div {
+        padding: 8px 8px 8px 8px;
+        width: 18em
+    }
+
+    #toast-container .toast-close-button {
+        right: -.2em;
+        top: -.2em
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    #toast-container > div {
+        padding: 15px 15px 15px 8px;
+        width: 25em
+    }
+}

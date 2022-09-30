@@ -1,0 +1,135 @@
+// -----------------------------------------------------------------------------
+// Navbar default layout/_nav.
+// -----------------------------------------------------------------------------
+
+//Navegación principal
+
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	.icon{
+		padding:7px;
+
+	}
+
+}
+
+//estlos de UL
+.nav_list {
+	padding:0px;
+	list-style:none;
+	width:100%;
+
+	//Estilos de LI
+	.nav_item{
+
+		padding:8px 0px;
+
+
+		//Estilos de a
+		.nav_link{
+
+			font-family: $text-font-stack;
+			color: $grey-text-default-color;
+			font-weight: $normal-font-weight;
+			font-size: $t16;
+
+		}
+		a.nav_link:hover, a.nav-link:hover{
+			text-decoration:none;
+		}
+
+	}
+
+}
+
+.logo-container {
+	// display:flex;
+	// flex-direction:row;
+	// align-items: center;
+	display:block;
+	height:$navbar-height;
+	padding:10px;
+	width:100%;
+
+	img {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+	}
+
+	//Muestro icono de conexion solo en escritorios.
+	@include media(dk) {
+
+		.icon-connection {
+			display:flex;
+			margin-left:auto;
+			padding-right:0px;
+			color: $grey-text-default-color;
+			font-weight: $bold-font-weight;
+			font-size:18px;
+			&.connected {
+				color: $error-color;
+			}
+		}
+	}
+	@include media(mb) {
+
+		.icon-connection {
+			display:none;
+		}
+	}
+}
+
+.mobile_display {
+
+	.navbar-toggler{
+
+		background:transparent;
+		border:none;
+		padding:10px 0px;
+	}
+
+	@include media(mb){
+
+		display:flex;
+		flex-direction: row;
+		align-items: center;
+
+
+	}
+
+	@include media(dk){
+
+		display:none;
+
+	}
+
+
+}
+
+
+
+.nav_list_second {
+
+	.nav_item{
+		background-color: lighten($light-grey-color, 3%);
+		color: $grey-text-default-color;
+
+		.nav_link{
+			font-size: $t14;
+			color: $grey-text-default-color;
+		}
+
+
+
+	}
+
+
+}

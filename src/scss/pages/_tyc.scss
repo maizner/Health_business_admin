@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the tyc page.
+// -----------------------------------------------------------------------------
+
+.content_header {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	padding:0px 15px;
+	
+	
+	&.main {
+		height:85px;
+		border-bottom: 3px solid var(--default-color);
+	}
+
+	.md_btn {
+		height:40px;
+	}	
+}
+
+.tyc_title {
+	font-family: $text-font-stack;
+	font-weight: $medium-font-weight;
+	color:$grey-text-default-color;
+	font-size: $t14;
+	padding:1rem .5rem;
+	margin:0px;
+}
+
+table.last .version:first-child{
+    td {
+        border-top: 0px;
+        background-color: rgba(var(--rgb-color), 0.1);
+    }
+}
+
+.text_container {
+	font-family: $text-font-stack;
+	color:$grey-text-default-color;
+	padding:1rem 3rem;
+	margin:0px;
+
+}
+.text_container p, .tyc_textarea{
+	font-family: $text-font-stack;
+	font-weight: $normal-font-weight;
+	color:$grey-text-default-color;
+	font-size: $t14;
+	margin-top:0px;
+}
+.tyc_textarea{
+	padding:1rem;
+	border:1px solid lighten($light-grey-color-2, 5%);
+	width:100%;
+	height:90vh;
+	border-radius:0px;
+	resize: none;
+
+	&:focus {
+		outline: -webkit-focus-ring-color auto 0px;
+	
+    }
+}
+.content_body {
+	padding:1.5rem;
+}
+
+.date_wrapper {
+	display:flex;
+	flex-direction:row;
+	align-items: flex-end;
+}
+.date_wrapper .text-group {
+	font-family: $text-font-stack;
+	font-weight: $normal-font-weight;
+	color:$light-grey-color-2;
+	font-size: $t14;
+	margin-top:0px;
+	width:auto;
+	p {
+		width:100%;
+	}
+}

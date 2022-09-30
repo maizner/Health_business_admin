@@ -1,0 +1,80 @@
+/* -----------------------------------------------------------------------------*/
+/* This file contains CSS cllapsible-panel components
+/* -----------------------------------------------------------------------------*/
+
+//tomado de bootstrap fncionalidad basica de colapsables
+.fade {
+  @include transition($transition-fade);
+
+  &:not(.show) {
+    opacity: 0;
+  }
+}
+
+.collapsible_panel .collapse {
+  @include transition($transition-collapse);
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition($transition-collapse);
+}
+
+//Flecha colapsable
+.filter_collapse.collapsed .animated-arrow {	
+	transform: rotate(-90deg);
+}
+
+
+//Para uso header en colapsables
+.collapsible_panel {
+  
+	
+	.collapsible-header {
+		padding:   $collapsible-title-padding;
+		border-bottom:1px solid  $light-grey-color;
+		text-decoration:none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width:100%;
+		position:relative;
+	}
+	.vsearch-title, .collapsible-title {
+		font-family: $text-font-stack;
+		color:$grey-text-default-color;
+		font-weight: $normal-font-weight;
+		text-transform: uppercase;
+		font-size: $t16;
+	
+
+		&:hover{
+			text-decoration:none;
+			cursor:pointer;
+		}
+
+		
+
+	}
+  
+}
+
+/* 
+START ANIMATED ARROW CSS (GO WITH SCRIPT)=>
+Para uso header en colapsables
+*/
+.collapsible-header {
+	&:hover {
+		.animated-arrow .rotate {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+
+

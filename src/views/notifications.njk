@@ -1,0 +1,110 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "7" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/notificactions.css">
+{% endblock %} 
+
+
+{% block content %}
+
+    <div class="notifications layout">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body"> 
+                <div class="content_wrapper">
+                    {# <p class="notification_header">Notificaciones</p> #}
+                    <ul class="notifications_list ">
+                        <!-- Item a replicar por cada notificacion-->
+                        <li class="notification_item">
+                            <div class="notification_item-date">X12/10/2018</div>
+                            <div class="notification_item-title">
+                                XADMINISTRADOR MASIVO LARGO 
+                                <span class="icon icon-arrow-down"></span>
+                            </div>
+                            <div class="notification_item-text">
+                           <p> XSe realizaron con éxito las modificaciones en la nómina de afiliados.
+                            XLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur tempora.  
+                            XLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur tempora.  
+                            </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur tempora.</p>
+                            </div>
+                        </li>
+                        <li class="notification_item read">
+                            <div class="notification_item-date">X12/10/2018</div>
+                            <div class="notification_item-title">
+                               X ADMINISTRADOR MASIVO DOBLE LARGO EXTENSO
+                                <span class="icon icon-arrow-down"></span>
+                            </div>
+                            <div class="notification_item-text">
+                                <p>
+                                    XEl logo corporativo color fue cargado con éxito en el sistema y estará visible en los
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident error sunt assumenda voluptas dolorum rem et, 
+                                    eaque sapiente vel consequuntur magni odit ullam quia facilis enim animi aspernatur tempora.  
+                                </p>
+                            </div>
+                        </li>
+                        <li class="notification_item unread">
+                            <div class="notification_item-date">X12/10/2018</div>
+                            <div class="notification_item-title">
+                            XALTA MÉDICO
+                            <span class="icon icon-arrow-down"></span>
+                            </div>
+                            <div class="notification_item-text">XEl Dr. Esteban Quiroz fue dado de alta.
+                            </div>
+                        </li>
+                        <li class="notification_item">
+                            <div class="notification_item-date">X12/10/2018</div>
+                            <div class="notification_item-title">
+                                XESPERA PROLONGADA
+                                <span class="icon icon-arrow-down"></span>
+                            </div>
+                            <div class="notification_item-text">
+                            <p>XHay pacientes con espera prolongada que necesitan ser atendidos para recibir la atención requerida.</p>
+                            </div>
+                        </li>
+                        <li class="notification_item">
+                            <div class="notification_item-date">X12/10/2018</div>
+                            <div class="notification_item-title">
+                                XMÉDICO DESCONECTADO
+                                <span class="icon icon-arrow-down"></span>
+                            </div>
+                            <div class="notification_item-text">
+                                <p>XUn médico del staff en atención cambio su estado a desconectado.</p>
+                            </div>
+                        </li>
+                        <li class="notification_footer show-more">
+                            <span class="icon icon-arrow-down"></span>
+                        </li>
+                        <!-- Fin Item a replicar por cada notificacion -->
+                    </ul>
+                   
+                </div>
+            </div>
+        </section>
+        {% block confirmation_modal %}
+            {% include "shared/_modal-confirm.njk" %}
+        {% endblock %}
+        {% block success_modal %}
+            {% include "shared/_modal-success.njk" %}
+        {% endblock %}
+         {% block neutral_modal %}
+            {% include "shared/_modal-neutral.njk" %}
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block pagescript %}
+    <script src="content/js/notifications.js"></script>
+    {# <script src="Content/js/inputFile/inputfile.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+    <script src="content/js/vendor/select2-4.0.7/select2.js"></script> #}
+{% endblock %}

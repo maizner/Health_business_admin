@@ -1,0 +1,32 @@
+<form class="form_content parsley" name="Form" id="loginform"
+  data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden"
+  data-parsley-trigger="keyup change submit" data-parsley-priority-enabled="true" data-parsley-validate>
+
+    <h2 class="form_title">Iniciar Sesión</h2>
+    <div class="form-group">
+        <label for="InputEmail">Email<span class="req">*</span></label>
+        <input autocomplete="off" type="email" class="form-control" id="InputEmail" placeholder="nombre@tumail.com.ar" name="email"
+        data-parsley-errors-container=".toast-top-full-width"
+        data-parsley-trigger="change"
+        data-parsley-required>
+        {# <span class="errorspanemailinput"></span> #}
+    </div>
+
+    <div class="form-group password">
+        <label for="password">Constraseña<span class="req">*</span></label>
+        <input type="password" autocomplete="off" name="password" id="password1" class="form-control password" placeholder="+ 8 caracteres"
+        data-parsley-minlength="8"
+        data-parsley-errors-container=".toast-top-full-width"
+        data-parsley-trigger="change"
+        data-parsley-uppercase="1"
+        data-parsley-lowercase="1"
+        data-parsley-number="1"
+        data-parsley-special="1"
+        data-parsley-required />
+        <span class="icon icon-password-invisible"></span>
+        {# <span class="errorspannewpassinput"></span> #}
+        <a class="forgot_psw " href="forgotPsw.html">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <a class="btn md_btn default_btn_1" type="submit">Iniciar</a>
+</form>

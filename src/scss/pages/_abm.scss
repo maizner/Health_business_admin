@@ -1,0 +1,176 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the abm page.
+// -----------------------------------------------------------------------------
+
+.administrator, .abm, .amb{
+    p {
+        margin:0px;
+    }
+    // .main_body {
+    //     padding-right: 15px;
+    // }
+    
+
+    .main_nav_tabs .nav_item {
+        padding:0px 20px;
+    }
+
+    
+
+
+    //Escondo el tab de amb masivo en mobile
+    .second_nav_tabs .nav_item.third_tab {
+        @include media(mb) {
+
+            display:none
+        }
+    }
+    .first_content .collapse .button_container,
+    .second_content .collapse .button_container {
+        @include media(mb) {
+            padding: 20px 10px 40px 10px;
+        }
+    }
+    .third_content .btn .icon {
+        margin-right:5px;
+    }
+    .full-width-container {
+        width:100%;
+    }
+
+    .image_group_content {
+        
+        width:100%;
+
+        @include media(mb) {
+            
+            display:block;
+
+            .thumbs_container {
+                margin-top:20px;
+                margin-bottom:20px;
+            }
+        }
+
+        @include media(dk) {
+            display:flex;
+            flex-direction: row;
+            align-items: flex-end;
+            height:140px;
+            .thumbs_container {
+                margin-right:15px;
+
+            }
+        }
+
+        .user_item {
+            display:flex;
+            
+        align-items: flex-end;
+        }
+    }
+
+    table  .container-check {
+        height:100%;
+        @include media(mb) {
+            padding:5px
+        }
+        @include media(dk) {
+            padding:0px;
+        }
+       
+    }
+
+    .myfilter  .container-check {
+        height:100%;
+        padding:2px;
+        .text {
+            
+            @include media(mb) {
+                margin-left:20px;
+                font-size:11px;
+            }
+            @include media(dk) {
+                margin-left:40px;
+                font-size:14px;
+            }
+            display:block;
+            
+            font-weight:$medium-font-weight;
+        }
+
+        &.selected .text{
+            color: var(--default-color);
+        }
+    }
+    .resultTable  .table-wrapper {
+        thead {
+            display: none;
+        }
+        .row{
+            cursor: pointer;
+        }
+        .row .col_check {
+            
+            @include media(dk) {
+                padding-left:20px;
+            }
+        }
+        .row.selected-row {
+            background-color: lighten($light-grey-color, 2%);
+        }
+    }
+
+}
+.button_container_right {
+    padding-top:3rem;
+}
+
+.ml-auto {
+    margin-left:auto;
+}
+.bottom_container {
+    display:flex;
+    
+    .text {
+       
+  		font-weight: $medium-font-weight;
+        color: $semilight-grey-color;
+        font-weight: $normal-font-weight;
+        @include media(mb) {
+            font-size: $t12;
+        }
+        @include media(dk) {
+            font-size: $t14;
+        }
+    }
+    .icon {
+        margin-right:7px;
+        font-size:$t27;
+        
+    }
+    .elem_link {
+        display:flex;
+        align-items: center;
+    }
+}
+
+.element_container {
+	display:flex;
+	width:100%;
+}
+
+.element_half_container {
+	display:flex;
+	width:50%;
+	margin: 0px;
+	
+    align-items:center;
+    @include media(mb) {
+        padding: 1em;
+    }
+    @include media(dk) {
+        padding: 3em 1em;
+    }
+	
+}

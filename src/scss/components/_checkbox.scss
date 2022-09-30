@@ -1,0 +1,121 @@
+/* -----------------------------------------------------------------------------*/
+/* components/checkbox
+/* -----------------------------------------------------------------------------*/
+
+/* -----------------------------------------------------------------------------
+HTML
+
+	<label class="container-check success-color">
+		<input type="checkbox">
+		<span class="checkmark"></span>
+		<div class="text">El texto correspondiente</div>
+	</label>
+
+	colores= success-color:verde, brand-color:marca
+	Define el radio en variables
+ -----------------------------------------------------------------------------*/
+
+
+/* The container-check */
+.container-check {
+	display: block;
+	position: relative;
+	padding-left: $checkbox-padding;
+	margin-bottom: $checkbox-margin;
+	cursor: pointer;
+	font-size: $t14;
+	font-family: $text-font-stack;
+	color: $grey-text-default-color;
+	font-weight: $normal-font-weight;
+	user-select: none;
+
+  /* Hide the browser's default checkbox */
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+	.text {
+		color: $semiblack-color;
+		font-weight: $bold-font-weight;
+	}
+
+	&:hover input ~ .checkmark,
+	input:checked ~ .checkmark {
+		@include btn-border-radius($checkbox-radius);
+		@include transition(all,0.3s,ease-in-out);
+	}
+	
+
+	&.success-color:hover input ~ .checkmark,
+	&.success-color input:checked ~ .checkmark {
+		background-color: $checkbox-success-color;
+		border: 1px solid $checkbox-success-color;
+
+	}
+	&.brand-color:hover input ~ .checkmark,
+	&.brand-color input:checked ~ .checkmark {
+		background-color: var(--default-color);
+		border: 1px solid var(--default-color);
+
+		&:after {
+			border:0px;
+		}
+	}
+	
+	  
+}
+
+
+//CHECKBOX STYLES
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $checkbox-height;
+  width: $checkbox-width;
+  background-color: $checkbox-bg-color;
+  border: 1px solid $checkbox-border-color;
+  @include btn-border-radius($checkbox-radius);
+  
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.container-check input:checked ~ .checkmark:after {
+  	display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-check .checkmark:after {
+	left: 6px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+.container-check{
+	margin-top:1em;
+	@include media(mb) {
+
+		max-width:100%;
+	}
+	@include media(dk) {
+
+		max-width:300px;
+	}
+    
+}

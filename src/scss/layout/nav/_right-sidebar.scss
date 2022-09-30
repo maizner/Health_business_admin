@@ -1,0 +1,305 @@
+// -----------------------------------------------------------------------------
+// Right sidebar = > Notificaciones y Ayuda ( ubicado en layout/nav/_right-sidebar) 
+// -----------------------------------------------------------------------------
+.notify_menu {
+	@include media(dk) {
+		height:66px;
+    }
+	@include media(mb) {
+		// height:60px;
+		// display:none;
+    }
+	
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	padding:7px;
+
+	.user_config{
+		margin-left:0px;
+	}
+	
+	
+}
+  
+.right_sidebar {
+	position:relative;
+	ul{
+		list-style: none;
+		padding-left:0px;
+	}
+
+	.icon-close {
+		display:flex;
+		margin-left:auto;
+		position: initial;
+		cursor:pointer;
+
+		&:hover {
+			opacity:.8;
+		}
+	}
+
+
+}
+
+
+//Comenzamos con los estilos para las notificaciones fuera del dropright 
+//Drops del inicio
+.notification_menu {
+	position:absolute;
+	top:0px;
+	right: 0px;
+	padding: 0px;
+	min-height: 200px;
+	height: 100%;
+	width:100%;
+	z-index: $zindex-dropdown;
+	// display: none; // none by default, but block on "open" of the menu
+	background-color: white;
+	border: none;
+	border-radius: 0;
+	box-shadow: 0px 0px 11px 0px rgba($semiblack-color,0.55);
+	
+		
+	
+}
+//Drops invisible by default
+.dropright_nav{
+	width:0;
+	opacity:0;
+	visibility:hidden;
+	overflow: hidden;
+	
+	@include transition(opacity,.5s,ease-in-out);
+	@include transition(visibility,.5s,ease-in-out);
+	@include transition(width,.4s,ease-in-out);
+	
+	
+	@include media(mb) {
+		top:60px;
+		min-height: $dropdown-fixed-height;
+		height:100vh
+	}
+
+	@include media(dk) {
+		top:0;
+		//alto fijo de 525px
+		height: $dropdown-fixed-height;
+	}
+}
+//Drops visible on click
+.dropright_nav.show {
+	display: block;
+	opacity:1;
+	visibility:visible;
+
+	@include media(mb) {
+		width:100%;
+	}
+	@include media(dk) {
+		width:$dropdown-fixed-width;
+	}
+}
+
+.notifications-wrapper{
+	/*alto del componente con scroll */
+	
+	@include media(mb) {
+		height:90vh;
+	}
+	@include media(dk) {
+		max-height:424px;
+	}
+	position: relative;
+	overflow: hidden;
+	border-top: 1px solid $light-grey-color-2;
+	
+}
+
+.notifications-height{
+	/* 
+	UTILIZA BARRA DE SCROLL NANOSCROLLER:
+	Ancho y alto es lo que tiene que tener el contenido, lo que representa el nano-content es eso.
+	En este caso es un ancho especifico y alto  + alto máximo/minimo para que se forme la barra de scroll 
+	cuando llegue al mismo. 
+	*/
+	// min-height: 370px;
+	@include media(mb) {
+		height:80vh;
+	}
+	@include media(dk) {
+		height:370px;
+	}
+	
+	position: relative;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.notification_header {
+	display: flex;
+	align-items: center;
+	font-family: $text-font-stack;
+	font-weight: $medium-font-weight;
+	color:$grey-text-default-color;
+	font-size: $t14;
+	padding: 1.2rem ;
+	margin: 0; // for use with heading elements
+	white-space: nowrap; // as with > li > a
+	height: 56px;
+	border-top: 1px solid $light-grey-color-2;
+	border-bottom: 3px solid var(--default-color);
+
+	a{
+		padding: 0;
+	}
+
+
+}
+
+//Un item con contenido de texto dentro 
+.notification_item {
+	font-size:$base-font-size;
+	white-space: normal;
+	padding: 0.5rem 1rem 1rem 1.5rem;// Pendiente utilizar desde variable
+	border-bottom: 1px solid $light-grey-color-2;
+	@include transition(all,.5s,ease-in-out);
+
+	&:hover {
+		background-color: rgba(var(--rgb-color), 0.1);
+	}
+
+	// Estilamos la fecha
+	.notification_item-date {
+		font-family: $text-font-stack;
+		font-weight: $normal-font-weight;
+		color:$semilight-grey-color;
+		font-size: $t10;
+		line-height: 18px;
+		
+	}
+	// Estilamos un título
+	.notification_item-title {
+		display:flex;
+		flex-direction:row;
+		font-family: $text-font-stack;
+		font-weight: $medium-font-weight;
+		color:var(--default-color);
+		font-size: $t14;
+		line-height: 20px;
+		text-transform: uppercase;
+
+	}
+	// Estilamos un texto
+	.notification_item-text, 
+	.notification_item-text p{
+		font-family: $text-font-stack;
+		font-weight: $normal-font-weight;
+		color: $grey-text-default-color;
+		font-size: 12px;
+		line-height: 18px;
+		
+	}
+	.notification_item-text {
+		padding: .25rem 0rem;
+	}
+	.icon {
+		font-size: $t19;
+		color:$semilight-grey-color;
+		float: right;
+		@include transition(all,.2s,ease-in-out);
+	}		
+	//ellipsis de dos linea de texto manejado por el ancho aun no variable 
+		//se utilizara en drop de notificaciones
+	.notification_item-title,
+	.notification_item-text {
+		
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		@include transition(all,.5s,ease-in-out);
+		
+	}
+	
+	
+	&.read {
+		.notification_item-text {
+			color: $grey-text-default-color;
+		}
+	}
+	&.unread {
+		.notification_item-text {
+			color:darken($light-grey-color-2, 5%);
+		}
+	}
+	
+}
+
+@include media(mb) {
+	//Será agregada por medio de js la clase sidebar-item_expanded en layout.js
+	.notification_item.sidebar-item_expanded .notification_item-text{
+		-webkit-line-clamp: 10;
+	}
+	.notification_item.sidebar-item_expanded .icon {
+		transform:rotate(180deg);
+	}
+	
+}
+.notification_footer {
+
+	display: flex;
+	background: white;
+	border-bottom: none;
+	padding: 1em 1em 1.7em 1em;
+	border-top: 1px solid $light-grey-color-2;
+	//referente solamente al link del footer
+	.notification_link{
+		font-size: $t9;
+		text-transform: uppercase;
+	}
+	
+	
+}
+
+//referente a cualquier link del drop.
+.notification_link{
+	
+	font-family: $text-font-stack;
+	font-weight: $normal-font-weight;
+	color: $grey-text-default-color;
+	
+
+	&:hover, &:active, &.active{
+		color:var(--default-color);
+		text-decoration: none;
+	}
+
+	&.right-link{
+		margin-left: auto;
+	}
+
+	&.left-link{
+		margin-right: auto;
+	}
+
+}
+
+// Componente nanoscroller para la 
+
+/*para modificar el alfa en el componente nano. Momentaneamente solo para el drop*/
+.nano > .nano-pane > .nano-slider {
+    background: $light-grey-color;}
+/*nano things */
+  
+
+@import 'shared/transitions',
+		'components/scrollbar';
+
+ 
+
+
+
+
+

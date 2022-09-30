@@ -1,0 +1,9 @@
+ <ul class="nav-list">
+    {% for item in headerNavItems %}
+        <li class="nav-item">
+            <a class="nav-link {% if item.item_link == title|lower or (item.item_link == '/' and not title) %}active{% endif %}" title="{{item.link_title}}"  href="{{item.item_link}}">
+                <i class="mdi {{item.item_icon }}" aria-hidden="true"></i><p>{{ item.item_name }}</p>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

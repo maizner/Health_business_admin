@@ -1,0 +1,148 @@
+/* -----------------------------------------------------------------------------*/
+/* .components/select2/Dropdown.scss 
+/* -----------------------------------------------------------------------------*/
+
+.select2-dropdown {
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 0px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    left: -100000px;
+    width: 100%;
+    z-index: $zindex-dropdown;  
+
+   
+
+   .select2-results__options {
+       list-style: none;
+       margin: 0;
+       padding: 0; 
+
+        [aria-selected=true] {
+            background-color: #e3e3e3;
+            color: darken( #e3e3e3, 20%);
+        }
+   }
+   .select2-results__option {
+        padding: 6px;
+        user-select: none;
+   }
+
+  
+   .select2-results {
+       display: block; 
+   }
+
+}
+
+.select2-container--open {
+   .select2-dropdown {
+         left: 0;
+   }
+   &.select2-dropdown--above,
+   &.select2-dropdown--below {
+       border-bottom: none;
+       border-radius: 0; 
+   }
+   
+}
+.select2-search--dropdown {
+   display: block;
+   padding: 4px; 
+
+   .select2-search__field {
+       padding: 4px;
+       width: 100%;
+       box-sizing: border-box; 
+   }
+
+   &.select2-search--hide {
+       display: none; 
+   }
+}
+
+.select2-close-mask {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    z-index: 99;
+    background-color: white;
+    filter: alpha(opacity=0); 
+}
+.select2-container--default {
+   .select2-search--dropdown .select2-search__field {
+       border: 1px solid $semilight-grey-color; 
+       height:30px;
+   }
+   .select2-search--inline .select2-search__field {
+       background: transparent;
+       border: none;
+       outline: 0;
+       box-shadow: none;
+       -webkit-appearance: textfield; 
+   }
+}
+.select2-container .select2-search--inline {
+   float: left;
+   .select2-search__field {
+
+       box-sizing: border-box;
+       border: none;
+       font-size: 100%;
+    //    margin-top: 5px;
+       padding: 0; 
+   }
+}
+.select2-container--default {
+   .select2-results > .select2-results__options {
+       max-height: 200px;
+       overflow-y: auto;
+   }
+   .select2-results__option {
+       &[role=group]{
+           padding: 0;
+       }
+       &[aria-disabled=true] {
+           color: #999; 
+       }
+       
+   }
+   .select2-results__option {
+       padding-left: 1em;
+       .select2-results__group {
+           padding-left: 0; 
+       }
+       .select2-results__option {
+           margin-left: -1em;
+           padding-left: 2em; 
+           .select2-results__option {
+               margin-left: -2em;
+               padding-left: 3em; 
+               .select2-results__option {
+                   margin-left: -3em;
+                   padding-left: 4em;
+                   .select2-results__option {
+                       margin-left: -4em;
+                       padding-left: 5em;
+                       .select2-results__option {
+                           margin-left: -5em;
+                           padding-left: 6em;
+                       }
+                   }
+               }
+               
+           }
+       }
+   }
+}

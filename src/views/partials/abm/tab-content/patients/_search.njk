@@ -1,0 +1,129 @@
+{# import macros #}
+{% import "macros/macro-formField.njk" as pt %}
+
+<!--Sección colapsables => Filtros + Form-->
+<section class=" collapsible_panel">
+    <!-- Info DEV:  
+    •   El Elemento filters está oculto bajo la clase d-none. Se realiza interacción con el click del btn Buscar (js_form_collapse). 
+    •	Los filtros seleccionados se pueden eliminar de forma unitaria haciendo click en la X.
+    •	El botón “Cancelar” elimina todos los filtros q se hayan seleccionado juntos y limpia los resultados de la búsqueda. Es el mismo comportamiento que se tiene al ingresar al Buscar por primera vez. 
+    •	“Ver buscador” es el elemento que permite desplegar y colapsar los filtros. 
+    -->
+    <div class="filters d-none" >
+        <!-- Info DEV:El sector izquierdo carga filtros-->
+        <div class="button_container button_container_left">
+            <div class="filter" >
+                <span class="text" >OSDE</span>
+                <span class="icon icon-close remove_this" ></span>
+            </div>
+            <div class="filter" >
+                <span class="text" >210</span>
+                <span class="icon icon-close remove_this" ></span>
+            </div>
+        </div>
+         <!-- Info DEV:El sector derecho tiene btns : cancel=> Limpia filtros + descolapsa + agrega clase d-none a filters-->
+        <div class="button_container button_container_right">
+            <!--INFO DEV: filter_cancel LIMPIAR FILTROS DE LA TABLA -->
+            <a class="filter filter_cancel" >
+                <span class="text" >Cancel</span>
+                <span class="icon icon-close remove_all" ></span>
+            </a>
+            <a class="filter filter_collapse" data-toggle="collapse" 
+                href=".js_ptSearch" 
+                role="button" 
+                aria-expanded="false" 
+                aria-controls=".js_ptSearch">
+                
+                <span class="text" >Ver buscador</span>
+                <span class="icon icon-arrow-down animated-arrow"></span>
+            </a>
+        </div>
+
+    </div>
+    <!-- clase de bootstrap collapse para pasar de transitions a fw -->
+    <div class="collapse show js_ptSearch" >
+ 
+        <form action="#">
+            <div class="fields_container container-large">
+                
+                <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+                dentro de la estructura-->
+                 {% block nombre %}
+                    {{ pt.input("text", "nameSearch", "default","Nombre","Nombre", "") }}
+                {% endblock %} 
+
+                {% block apellido %}
+                    {{ pt.input("text", "lastnameSearch", "default","Apellido","Apellido", "") }}
+                {% endblock %} 
+
+                {% block doctypeCombo %}
+                    {{ pt.comboSingle("ptDoctypeSearch", "default", 
+                    "Documento Tipo", "Tipo", "width:100%", "DNI", "Passport", "LE", "LC") }}
+                {% endblock %}
+
+                {% block docNumber %}
+                    {{ pt.input("number", "docNumberSearch", "default","Número de Documento #","Número de documento", "") }}
+                {% endblock %} 
+
+                {% block birthdate %}
+                    {{ pt.input("date", "dateSearch", "default","Fecha de nacimiento","DD/MM/AAAA", "") }}
+                {% endblock %} 
+
+                {% block nationality %}
+                    {{ pt.input("text", "affiliateSearch", "default","Nacionalidad","Ingresa nacionalidad", "") }}
+                {% endblock %} 
+
+                {% block email %}
+                    {{ pt.input("email", "emailSearch", "default","Email","nombre@mail.com", "") }}
+                {% endblock %} 
+               
+                {% block celphone %}
+                    {{ pt.input( "number", "celphoneSearch","default","Número de celular","Ingresa celular", "") }}
+                {% endblock %} 
+
+                {% block linephone %}
+                    {{ pt.input("number", "linephoneSearch","default","Número de Teléfono","Ingresa Teléfono", "") }}
+                {% endblock %} 
+                
+                {% block planCombo %}
+                    {{ pt.comboSingle("osSearch", "default", 
+                    "Obra Social", "Tipo", "", "OSECAC", "OSDEPYM", "OSDE", "L. PASTEUR", "U. PERSONAL", "OSPACP", "OSPE", "OSMEDICA") }}
+                {% endblock %}
+
+                {% block negocioCombo %}
+                    {{ pt.comboSingle("Plan", "default", 
+                    "Plan", "Tipo", "", "1000", "2000", "3000", "4000") }}
+                {% endblock %}
+
+                {% block afiliado %}
+                    {{ pt.input("text", "affiliateSearch", "default",
+                    "Afiliado #","Número de afiliado", "") }}
+                {% endblock %} 
+
+               
+            </div>
+
+          
+             <div class="button_container button_container_right">
+                <a class="btn md_btn default_btn_1 js_form_collapse">Buscar</a>
+            </div>
+
+        </form>
+     
+    </div>
+</section>
+
+<!--Sección resultado de búsqueda => Tabla-->
+<section class="resultTable" >
+    <div class="table-responsive w-100">
+        {% block res_cursor_pt %}
+            {% include "shared/_mobile-cursor.njk" %}
+        {% endblock %}
+        {% block search_result_pt %}
+            {% include "Partials/abm/tables/_resultTable.njk" %}
+        {% endblock %}
+        {% block res_showmore_pt %}
+            {% include "shared/_show-more.njk" %}
+        {% endblock %}
+    </div>
+</section>

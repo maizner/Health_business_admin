@@ -1,0 +1,12 @@
+<img src="https://www.assistcard.com/Content/img/bottom-logo.png" alt="ASSIST CARD"/>
+<ul class="social-footer-list">
+    {% for item in footerItems %}
+        {% for footer_social in item.footer_social %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ footer_social.item_link }}" title="{{footer_social.link_title}}" target="_blank" >
+                    <i class="mdi {{footer_social.item_icon }}" aria-hidden="true"></i>
+                </a>
+            </li>
+        {% endfor %}
+    {% endfor %}
+</ul>

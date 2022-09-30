@@ -1,0 +1,44 @@
+<div class="tab_content">
+
+
+    <!-- Comienza sección contenido Delete-->
+    <section class="tab_pane main_first_pane active" >
+
+       
+        {% block second_nav_tab_delete %}
+            {% include "partials/abm/nav-tabs/tabs-content/patients/_second-nav-tabs-delete.njk" %}
+        {% endblock %}
+        
+
+        <!-- Comienza contenido de segunda navegación-->
+        <div class="tab_content first_tab_content">
+            <div class="tab_pane first_content active" >
+                {% block delete_first_dr %}
+                    {% include "partials/abm/tab-content/patients/delete/_form1.njk" %}
+                {% endblock %}  
+            </div>
+
+            <div class="tab_pane second_content" >
+
+                {% block delete_second_dr %}
+                    {% include "partials/abm/tab-content/patients/delete/_form2.njk" %}
+                {% endblock %}  
+
+            </div>
+
+            <div class="tab_pane third_content" >
+                {% block delete_third_dr %}
+                    {% include "partials/abm/tab-content/patients/delete/_form3.njk" %}
+                {% endblock %}  
+            </div>
+
+            <div class="tab_pane fourth_content" >
+                 {% block delete_fourth_dr %}
+                    {% include "partials/abm/tab-content/patients/delete/_form4.njk" %}
+                {% endblock %}  
+            </div>
+        </div>
+        <!-- Fin contenido de segunda navegación-->
+    </section>
+    <!--Fin contenido Delete -->
+</div>

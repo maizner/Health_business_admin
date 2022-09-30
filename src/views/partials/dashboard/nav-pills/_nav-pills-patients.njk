@@ -1,0 +1,29 @@
+<ul class="nav nav_pills">
+    <li class="nav_item first_pill">
+        <a class="nav_link active" data-toggle="pill" href=".first_pill_content">
+            <div class="nav_link_content">
+                {% block first_pill_affiliates %}
+                    {% include "partials/dashboard/nav-pills/pills-content/patients/_first-pill.njk" %}
+                {% endblock %}
+            </div>
+        </a>
+    </li>
+    <li class="nav_item second_pill">
+        <a class="nav_link" data-toggle="pill" href=".second_pill_content">
+            <div class="nav_link_content">
+                {% block second_pill_affiliates %}
+                    {% include "partials/dashboard/nav-pills/pills-content/patients/_second-pill.njk" %}
+                {% endblock %}
+            </div>
+        </a>
+    </li>
+    <li class="nav_item third_pill">
+        <a class="nav_link" data-toggle="pill" href=".third_pill_content">
+            <div class="nav_link_content">
+                 {% block third_pill_affiliates %}
+                    {% include "partials/dashboard/nav-pills/pills-content/patients/_third-pill.njk" %}
+                {% endblock %}
+            </div>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,84 @@
+{# import macros #}
+{% import "macros/macro-formField.njk" as pt %}
+<section class="registration">
+    <form action="#" class="form_content parsley js_form_validation alta">
+
+        <div class="fields_container container-large">
+            
+            <!--INFO DEV: Utilizar "default" y todo markup interno para configuración de nuevos elementos input 
+            dentro de la estructura-->
+            <div class="image_group_content">
+                
+                {% block thumb %}
+                    {{ pt.thumbFileComponent("thumb-big.jpeg", "explore_ptImg","Editar","" ) }}
+                {% endblock %} 
+                
+                {% block nombre %}
+                    {{ pt.inputValidation("text", "name", "default","Nombre","Nombre", "") }}
+                {% endblock %} 
+
+                {% block apellido %}
+                    {{ pt.inputValidation("text", "lastname", "default","Apellido","Apellido", "") }}
+                {% endblock %} 
+
+                {% block afiliado %}
+                    {{ pt.inputValidation("text", "affiliate", "default",
+                    "Afiliado #","Número de afiliado", "") }}
+                {% endblock %} 
+
+            </div>
+
+
+            {% block doctypeCombo %}
+                {{ pt.comboSingleValidation("ptDoctypeNew", "fixed-element", 
+                "Documento Tipo", "Tipo", "width:110px", "DNI", "Passport", "LE", "LC") }}
+            {% endblock %}
+
+            {% block docNumber %}
+                {{ pt.inputValidation("number", "docNumber", "default",
+                "Número de Documento #","Número de documento", "") }}
+            {% endblock %} 
+
+            {% block birthdate %}
+                {{ pt.inputValidation("date", "date", "default",
+                "Fecha de nacimiento","DD/MM/AAAA", "") }}
+            {% endblock %} 
+
+            {% block nationality %}
+                {{ pt.inputValidation("text", "affiliate", "default",
+                "Nacionalidad","Ingresa nacionalidad", "") }}
+            {% endblock %} 
+            
+            {% block email %}
+                {{ pt.inputMailValidation( "email", "default","Email","nombre@mail.com", "") }}
+            {% endblock %} 
+
+
+            {% block celphone %}
+                {{ pt.input( "number", "celphone","small","Número de celular","Ingresa celular", "") }}
+            {% endblock %} 
+
+            {% block linephone %}
+                {{ pt.input("number", "linephone","small","Número de Teléfono","Ingresa Teléfono", "") }}
+            {% endblock %} 
+
+            
+            {% block obrasocialcombo %}
+                {{ pt.comboSingleValidation("osNew", "small", 
+                    "Obra Social", "Tipo", "", "OSECAC", "OSDEPYM", "OSDE", "L. PASTEUR", "U. PERSONAL", "OSPACP", "OSPE", "OSMEDICA") }}
+            {% endblock %}
+
+          
+             {% block afiliadonew %}
+                    {{ pt.input("number", "affiliateSearch", "default",
+                    "Afiliado #","Número de afiliado", "") }}
+                {% endblock %} 
+
+        </div>
+
+        <div class="button_container button_container_right">
+            <button class="btn md_btn default_btn_1" type="submit">XGuardar</button>
+        </div>
+
+    </form>
+</section>

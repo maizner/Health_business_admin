@@ -1,0 +1,183 @@
+{# extending #}
+{% extends "layout/_default.njk" %}
+{% set page_id = "7" %}   
+
+
+{% block pagestyle %}
+    <link rel="stylesheet" type="text/css" href="content/css/myaccount.css">
+{% endblock %} 
+
+
+{% block content %}
+
+    <div class="myaccount layout">
+
+        {% block sidebar %}
+            {% include "layout/partials/nav/_sidebar.njk" %}
+        {% endblock %}
+        
+        <section class="main_section" >
+            {% block navigation %}
+                {% include "layout/partials/nav/_topbar.njk" %}
+            {% endblock %}
+            <div class="main_body"> 
+                <div class="content_wrapper">
+                    <form action="" class="js_form_validation my_account" >
+                        <div class="account_header" >
+
+                            <div class="thumbs_container fixed-element">
+                                <div class="thumbs_lg thumbs_circle thumbs_bordered"> 
+                                    <div class="js_input_file">
+                                        <div class="input_file">
+                                            
+                                            
+                                            <label for="myaccount_ptImg1" class="files_container">
+                                                <div class="file_uploaded ellipsis" title="XEditar"> Cambiar imagen </div>
+                                                <!--INFO: Aquí se subirá la imagen con el src correspondiente-->
+                                                <img src="content/img/thumb-small.jpg" alt="" width="100%" height="100%" height="auto" class="img" >
+                                            </label>
+                                            <input type="file" name="myaccount_ptImg1[]" id="myaccount_ptImg1" class=" d-none tooltip" data-multiple-caption="{count} files selected" multiple="">
+                                            <div class="acronym"> JR </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div  class="user_item user_info">
+                                <div class="user_name">Juan Rivarola</div>
+                                <div class="user_email">juanrivarola@mail.com</div>
+                                <div class="user_settings">Admin</div>
+                            </div>
+
+                            <div class="element_half_container left-auto desktop_show">
+                                <!--Cancelar vuelve a mostrar los datos previos a cualquier mmodificación-->
+                                <button class="btn md_btn default_btn_2 ml-auto js_cancel_form"  type="button" href="abm.html" disabled>Cancelar</button>
+                                <button class="btn md_btn default_btn_1 js_confirm" type="submit" disabled> Guardar</button>
+                            </div>
+                        </div>
+
+                        <div class="account_body" >
+
+                            <ul class="nav nav_tabs main_nav_tabs mobile_show">
+                                <li class="nav_item first_tab">
+                                    <button class="nav_link cool-link active" data-toggle="tab" href=".group_1">
+                                        <div class="nav_link_content show-bottom">
+                                            Perfil
+                                        </div>
+                                    </button>
+                                </li>
+                                <li class="nav_item second_tab">
+                                    <button class="nav_link cool-link" data-toggle="tab" href=".group_2">
+                                        <div class="nav_link_content show-bottom">
+                                        Contraseña
+                                        </div>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab_content" >
+                                <div class="account_title desktop_show">Perfil</div>
+                                <div class="tab_group group_1" >
+                                    
+                                    <div class="form-group">
+                                        <label for="InputEmail">Nombre</label>
+                                    
+                                        <input autocomplete="off" type="text" 
+                                        class="form-control" id="InputName" placeholder="Tu nombre" name="InputName" 
+                                        data-parsley-errors-container=".toast-top-full-width" 
+                                        data-parsley-trigger="submit" 
+                                        data-parsley-required-message="Debe ingresar un nombre" 
+                                        data-parsley-required=""
+                                        value="Juan">
+                                        <span class="default_validation_msj"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputEmail">Apellido</label>
+                                        
+                                        <input autocomplete="off" type="text" class="form-control" id="InputLastname" 
+                                        placeholder="Tu apellido " name="InputLastname" 
+                                        data-parsley-errors-container=".toast-top-full-width" 
+                                        data-parsley-trigger="submit" 
+                                        data-parsley-required-message="Debe ingresar un apellido" 
+                                        data-parsley-required=""
+                                        value="Rivarola">
+                                        <span class="default_validation_msj"></span>
+                                    </div>
+                                </div>
+                            
+                                <div class="account_title desktop_show">Contraseña</div>
+                                <div class="tab_group group_2" >
+                                    <div class="form-group password">
+                                        <label for="password">Constraseña</label>
+                                        <input type="password" autocomplete="off" 
+                                        name="password1" 
+                                        id="password1" 
+                                        class="form-control password" 
+                                        placeholder="Nueva Contraseña" 
+                                        data-parsley-errors-container=".toast-top-full-width" 
+                                        data-parsley-trigger="submit" 
+                                        data-parsley-minlength="8" 
+                                        data-parsley-uppercase="1" 
+                                        data-parsley-lowercase="1" 
+                                        data-parsley-number="1" 
+                                        data-parsley-special="1" 
+                                        data-parsley-required-message="Ingresar una contraseña para poder continuar" 
+                                        data-parsley-minlength-message="8 caractéres" 
+                                        data-parsley-uppercase-message="1 mayúscula" 
+                                        data-parsley-lowercase-message="1 minúscula" 
+                                        data-parsley-number-message="1 número" 
+                                        data-parsley-special-message="1 caracter especial" 
+                                        data-parsley-required=""
+                                        value="#Aa123456">
+                                        <span class="icon icon-password-invisible"></span>
+                                        <span class="default_validation_msj"></span>
+                                    </div>
+                                    <div class="form-group password">
+                                        <label for="password">Constraseña</label>
+                                        <input type="password" 
+                                        autocomplete="off" 
+                                        name="password2" 
+                                        id="password2" 
+                                        class="form-control password" 
+                                        placeholder="Repetir Contraseña" 
+                                        data-parsley-errors-container=".toast-top-full-width" 
+                                        data-parsley-trigger="submit" 
+                                        data-parsley-equalto="#password1" 
+                                        data-parsley-required-message="Ingresar una contraseña para poder continuar" 
+                                        data-parsley-equalto-message="La contraseña no coincide con la anterior." 
+                                        data-parsley-required=""
+                                        value="#Aa123456">
+                                        <span class="icon icon-password-invisible"></span>
+                                        <span class="default_validation_msj"></span>
+                                    </div>
+                                    <p class="comment-form">Utiliza un mínimo de 8 caracteres (letras, números y caracter especial) </p>
+                                    <p class="comment-form">Caracteres especiales: ~! @ # $% ^&amp; * -+ = ' | \ \ (){}\ []:; "' &lt;&gt;,.? /</p>
+                                </div>
+                            </div>
+
+                            <div class="element_half_container mobile_show left-auto">
+                                <button class="btn md_btn default_btn_2 ml-auto js_cancel_form left-auto"  type="button" href="abm.html" disabled>Cancelar</button>
+                                <button class="btn md_btn default_btn_1 js_confirm  " type="submit" disabled> Guardar</button>
+                            </div>
+                        </div>
+                    </form>   
+                </div>
+            </div>
+        </section>
+        {% block confirmation_modal %}
+            {% include "shared/_modal-confirm.njk" %}
+        {% endblock %}
+        {% block success_modal %}
+            {% include "shared/_modal-success.njk" %}
+        {% endblock %}
+         {% block neutral_modal %}
+            {% include "shared/_modal-neutral.njk" %}
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block pagescript %}
+    <script src="content/js/myaccount.js"></script>
+    <script src="content/js/inputFile/inputfile.js"></script>
+    <script src="content/js/vendor/scrollbar/nanoScroller.js"></script>
+    <script src="content/js/vendor/select2-4.0.7/select2.js"></script> 
+{% endblock %}

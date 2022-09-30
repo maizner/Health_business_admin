@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains sections/abm/search and table filters
+// -----------------------------------------------------------------------------
+.fields_container {
+    display:flex;
+    width:100%;
+    flex-wrap: wrap;
+    align-self: start;
+    align-items: flex-start;
+
+}
+@import 'table';

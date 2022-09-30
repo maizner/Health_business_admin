@@ -1,0 +1,36 @@
+/* -----------------------------------------------------------------------------*/
+/* cool links. effect components/_cool-links
+/* -----------------------------------------------------------------------------*/
+
+.cool-link {
+
+	.show-top {
+		
+		display: block;
+		background: transparent;
+		padding:15px;
+		border-top: 2px solid transparent;
+		@include transition(all,.2s,ease-in-out);
+		
+	}
+	.show-bottom {
+		
+		display: block;
+		background: transparent;
+		padding:20px 0 15px 0;
+		border-bottom: 2px solid transparent;
+		@include transition(all,.2s,ease-in-out);
+		
+	}
+
+}
+
+
+//Definimos el color del link. 
+//En este caso tomará el color de la variable incrustada en el :root, dentro del header
+.cool-link:hover .show-bottom,
+.cool-link:active .show-bottom,
+.cool-link.active .show-bottom {
+
+	border-bottom: solid var(--default-color);
+}

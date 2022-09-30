@@ -1,0 +1,66 @@
+/* -----------------------------------------------------------------------------*/
+/* components/_form-group-parsley styles only for login flow (login/newpsw/forgotpsw).*/
+/* -----------------------------------------------------------------------------*/
+
+.form-group{
+    //aqui pondremos validaciones de errores para label
+    position: relative;
+    &.error{
+       
+        label,.form-control,.default_validation_msj{
+            color:$error-color;
+        }
+        .default_validation_msj{
+            font-family: $text-font-stack;
+            font-size: $t10;
+            font-weight: $normal-font-weight;
+            letter-spacing: $letter-spacing-half;
+            position: absolute;
+            bottom:-18px;
+            left:15px;
+        }
+        input{
+            &.parsley-error{
+                border: 1px solid $error-color;
+                &:focus {
+                    outline: $error-color solid 1px;
+                }
+            }
+            &.parsley-success{
+                border: 1px solid $active-green;
+            }
+        }
+
+    }
+
+    .icon{
+        position: absolute;
+        top: 34px;
+        right:20px;
+    }
+    .forgot_psw {
+        display: flex;
+        align-self: flex-end;
+        font-size: $t11;
+        margin-top:10px;
+
+        &:hover {
+            text-decoration:underline;
+        }
+    }
+
+   
+    &.password .icon {
+        font-size: $t25;
+        color: $light-grey-color-2;
+        cursor:pointer;
+    }
+}
+.comment-form {
+    font-family: $text-font-stack;
+    font-weight: $normal-font-weight;
+    font-size: $t13;
+    color:$semilight-grey-color;
+    letter-spacing: $letter-spacing-one;
+    margin: 7px 10px;
+}
