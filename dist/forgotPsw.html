@@ -41,9 +41,10 @@
         
          
          
-            --color:40, 100%; /*the base color*/
-            --rgb-color:244,179,0; /*the rgb parameters*/ 
-            --l:50%; /*the initial lightness*/
+            --color:168, 80%; /*the base color*//*REEMPLAZAR EL PRIMER NUMERO POR MATIZ O H EN HSL , EL SEGUNDO NUMERO POR SATURACION O S EN HSL - SIN EL PORCENTAJE */
+            --rgb-color:32,213,150; /*REMPLAZAR PARAMETROS GRB COMPLETOS*/ 
+            --l:45%; /*EL NUMERO DE LIGHTNESS O L EN HSL SIN EL PORCENTAJE*/
+
             --default-color: hsl(var(--color),calc(var(--l)));
             --default-color-darkest: hsl(var(--color),calc(var(--l) - 5%));  
         }
@@ -79,10 +80,23 @@
         <img class="logo" src="content/img/logo-blanco.png" alt="Logo"/>
     </a>
 </div>
-<h1 class="title">Administrador salud</h1>
-<p class="subtitle">Monitorea tu consultorio en tiempo real. Gestioná altas, bajas y modificaciones de médicos y pacientes.</p>
+<h1 class="title">Administrador de Consultorios</h1>
+<p class="subtitle">Gestione <b>de modo seguro</b> toda la información de sus pacientes, profesionales, agenda de turnos, Historia clínica electrónica, video consulta,  informes y más.
+Solicite una demo o contáctenos para saber más. </p>
 
-
+<nav class="navbar navbar-default">
+    <ul class="navbar_nav">
+        <li class="nav_item active">
+            <a class="nav_link" href="#" >Español</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_link" href="#" >Portugues</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_link" href="#" >Inglés</a>
+        </li>
+    </ul>
+</nav> 
 
             
 

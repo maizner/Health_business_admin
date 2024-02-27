@@ -69,3 +69,49 @@
        url('../Fonts/roboto-v19-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../Fonts/roboto-v19-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
 }	
+
+/* raleway-700 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'),
+       url('../Fonts/Raleway-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+      
+}	
+/* raleway-100 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway-ExtraLight'), local('Raleway-ExtraLight'),
+       url('../Fonts/Raleway-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+      
+}	
+/* raleway-300 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway-Light'), local('Raleway-Light'),
+       url('../Fonts/Raleway-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+      
+}	
+/* raleway-400 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway-Regular'), local('Raleway-Regular'),
+       url('../Fonts/Raleway-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+      
+}	
+/* raleway-400 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway-Bold'), local('Raleway-Bold'),
+       url('../Fonts/Raleway-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+      
+}	

@@ -1,6 +1,6 @@
 Documentation - Gulp - Nunjucks
 ======
-<p align="center"><img src="./readme_assets/saas.jpg"></p>
+<p align="center"><img src="./readme_assets/telemedba.jpg"></p>
 
 What is included:
 

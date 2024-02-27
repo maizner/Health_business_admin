@@ -3,7 +3,7 @@
 /* -----------------------------------------------------------------------------*/
 body {
   color: $grey-text-default-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  font: normal 125% / 1.4 $text-font-stack-secondary;
   font-weight: $normal-font-weight;
   font-size:$base-font-size;
 }
@@ -26,13 +26,12 @@ body {
 		font-size: $t44;
 		line-height: 1.1em;
 		letter-spacing: $letter-spacing-half;
-		min-width: 700px;
 	}
 
 }
 .page-title {
 	font-family: $text-font-stack;
-	font-weight: $light-font-weight;
+	font-weight: $bold-font-weight;
 	color:$semilight-grey-color;
 	margin-bottom:0;
 	font-size: $t25;
@@ -40,8 +39,8 @@ body {
 	
 }
 .subtitle{
-	font-family: $text-font-stack;
-	font-weight: $light-font-weight;
+	font-family: $text-font-stack-secondary;
+	font-weight: $normal-font-weight;
 	font-size: $t17;
 	color:white;
 	margin-top:.5em;

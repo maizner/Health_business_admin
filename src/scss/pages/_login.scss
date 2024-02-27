@@ -36,7 +36,7 @@
 	}
 
 	.logo_container {
-		max-width:185px;
+		max-width:250px;
 		height:auto;
 		
 		@include media(mb){	
@@ -73,3 +73,14 @@
 }
 
 
+.default_login_background .subtitle, 
+.default_login_background h1{ 
+	max-width: 450px;
+}
+.hero_section .row {
+	justify-content: center;
+	.col-md{
+		padding-left:25px;
+		padding-right:25px; 
+	}
+}
